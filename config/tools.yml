@@ -1,0 +1,97 @@
+log:
+  init:
+    level: INFO
+    output_method: both
+    datefmt: '%d/%b/%y:%H:%M:%S %z'
+    logfmt: '[%(asctime)s] [%(processName)s.%(threadName)s:%(levelname)s] %(message)s'
+  logger:
+    level: DEBUG
+    handler: defaul.log
+    output_method: stream
+    datefmt: '%Y-%m-%d %H:%M:%S'
+    logfmt: '[%(asctime)s] [%(filename)s line:%(lineno)d] [%(levelname)s] %(message)s'
+
+
+#mongo:
+#  mon:
+#    host: mongodb://10.121.12.120:30017/mon
+
+
+#influx:
+#  init:
+#    username: root
+#    password: root
+#  mon:
+#    host: 10.121.12.120
+#    port: 31535
+#    database: mon
+
+
+#kafka:
+#  metrics:
+#    hosts: mongodb://10.121.12.120:30017/mon
+
+
+mysql:
+  init:
+    charset: utf8
+    autocommit: false
+    use_unicode: null
+    read_timeout: null
+    write_timeout: null
+    connect_timeout: 1d
+    connect_check_cycle: 10m
+#  gqylpy:
+#    db:
+#    host:
+#    port:
+#    user:
+#    passwd:
+#    charset: utf8
+
+
+aliyun:
+  init:
+    queue_mode: false
+    action_cycle: 10m
+    timeout: 15s
+    method: post
+    protocol_type: https
+    accept_format: json
+#  send_mail:
+#    name: SingleSendMail
+#    ak: LTAI4FnwB7NR2ccdPetQAxBp
+#    secret: Xb3YSmlakPqIYkclnrWlQAmBQlXpi2
+#    region_id: cn-hangzhou
+#    domain: dm.aliyuncs.com
+#    version: '2015-11-23'
+#    AddressType: 1
+#    ReplyToAddress: true
+#    AccountName: trigger@mail.gqylpy.com
+#    ToAddress: 137326237@qq.com
+#    FromAlias: Anomaly Detect
+
+
+dbpool:
+  init:
+    mincached: 0
+    maxcached: 1
+    maxshared: 0
+    maxconnections: 2
+    blocking: true
+    maxusage: null
+    setsession: null
+    ping: 1
+#  db1:
+#    creator: pymysql
+#    db:
+#    host:
+#    port:
+#    user:
+#    passwd:
+#    charset: utf8
+#    connect_timeout: 1d
+#    autocommit: false
+#    use_unicode: null
+#    read_timeout: null
+#    write_timeout: null

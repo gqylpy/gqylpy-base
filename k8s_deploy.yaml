@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: isddc
+  name: analytics-anomalydetection
+  labels:
+    app: isddc-monasca
+    chart: monasca-0.6.4
+    component: analytics-anomalydetection
+    heritage: Tiller
+    release: isddc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: isddc-monasca
+  template:
+    metadata:
+      labels:
+        app: isddc-monasca
+        component: analytics-anomalydetection
+    spec:
+#      nodeSelector:
+#        kubernetes.io/hostname: minikube
+      volumes:
+        - name: root
+          hostPath:
+            path: /opt/zyk/volumes/analytics-anomalydetection
+      containers:
+        - name: analytics-anomalydetection
+          image: analytics-anomalydetection:latest
+          imagePullPolicy: IfNotPresent
+#          volumeMounts:
+#            - mountPath: /root/analytics-anomalydetection
+#              name: root
+          ports:
+            - containerPort: 80
+          env:
+            - name: INFLUXDB
+              value: 10.121.12.120:31535
+            - name: MONGO
+              value: 10.121.12.120:30017
