@@ -7,11 +7,11 @@ import collections
 
 from . import log
 from . import mongo
-# from . import kafka
-# from . import mysql
-# from . import influx
-# from . import dbpool
-# from . import aliyun
+from . import kafka
+from . import mysql
+from . import influx
+from . import dbpool
+from . import aliyun
 from . import over_func
 
 from .workers import Workers
