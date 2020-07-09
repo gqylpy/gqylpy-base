@@ -60,3 +60,35 @@ def insure(mark: str = None, cycle: int = 10):
         return inner
 
     return timer
+
+
+def before_func(func=None):
+    def timer(fn):
+        @functools.wraps(fn)
+        def inner(*a, **kw):
+            ret = func(*a, **kw)
+
+            if ret:
+                return fn(ret)
+            else:
+                return fn(*a, **kw)
+
+        return inner
+
+    return timer
+
+
+def after_func(func=None, independent: bool = False):
+    def timer(fn):
+        @functools.wraps(fn)
+        def inner(*a, **kw):
+            ret = func(*a, **kw)
+
+            if independent:
+                return fn(*a, **kw)
+            else:
+                return fn(ret)
+
+        return inner
+
+    return timer

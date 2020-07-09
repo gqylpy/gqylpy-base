@@ -28,19 +28,20 @@ log:
 
 
 #kafka:
-#  metrics:
-#    hosts: mongodb://10.121.12.120:30017/mon
+#  test01:
+#    hosts: 10.121.12.120:31092
+#    zookeeper_hosts: 10.121.12.120:30325
 
 
-mysql:
-  init:
-    charset: utf8
-    autocommit: false
-    use_unicode: null
-    read_timeout: null
-    write_timeout: null
-    connect_timeout: 1d
-    connect_check_cycle: 10m
+#mysql:
+#  init:
+#    charset: utf8
+#    autocommit: false
+#    use_unicode: null
+#    read_timeout: null
+#    write_timeout: null
+#    connect_timeout: 1d
+#    connect_check_cycle: 10m
 #  gqylpy:
 #    db:
 #    host:
@@ -50,14 +51,14 @@ mysql:
 #    charset: utf8
 
 
-aliyun:
-  init:
-    queue_mode: false
-    action_cycle: 10m
-    timeout: 15s
-    method: post
-    protocol_type: https
-    accept_format: json
+#aliyun:
+#  init:
+#    queue_mode: false
+#    action_cycle: 10m
+#    timeout: 15s
+#    method: post
+#    protocol_type: https
+#    accept_format: json
 #  send_mail:
 #    name: SingleSendMail
 #    ak: LTAI4FnwB7NR2ccdPetQAxBp
@@ -72,16 +73,16 @@ aliyun:
 #    FromAlias: Anomaly Detect
 
 
-dbpool:
-  init:
-    mincached: 0
-    maxcached: 1
-    maxshared: 0
-    maxconnections: 2
-    blocking: true
-    maxusage: null
-    setsession: null
-    ping: 1
+#dbpool:
+#  init:
+#    mincached: 0
+#    maxcached: 1
+#    maxshared: 0
+#    maxconnections: 2
+#    blocking: true
+#    maxusage: null
+#    setsession: null
+#    ping: 1
 #  db1:
 #    creator: pymysql
 #    db:

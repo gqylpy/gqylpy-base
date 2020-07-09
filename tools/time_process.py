@@ -31,7 +31,7 @@ class time2second:
     one_day = one_hour * 24
 
     def __new__(cls, unit_time: str):
-        x = cls.pattern.findall(unit_time)[0]
+        x = cls.pattern.findall(unit_time.lower())[0]
 
         d = float(x[0] or 0)
         h = float(x[1] or 0)
