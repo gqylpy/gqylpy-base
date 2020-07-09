@@ -82,12 +82,12 @@ def after_func(func=None, independent: bool = False):
     def timer(fn):
         @functools.wraps(fn)
         def inner(*a, **kw):
-            ret = func(*a, **kw)
+            ret = fn(*a, **kw)
 
             if independent:
-                return fn(*a, **kw)
+                return func()
             else:
-                return fn(ret)
+                return func(ret)
 
         return inner
 
