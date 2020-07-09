@@ -85,7 +85,8 @@ def after_func(func=None, independent: bool = False):
             ret = fn(*a, **kw)
 
             if independent:
-                return func()
+                func()
+                return ret
             else:
                 return func(ret)
 
