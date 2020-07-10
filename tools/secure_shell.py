@@ -1,8 +1,7 @@
 import re
 import os
+import uuid
 import paramiko
-
-from tools import uuid4
 
 
 class SecureShell:
@@ -133,7 +132,7 @@ class SecureShell:
         :param remote_path: 远程路径
         :param flags: 是否在输出相关信息
         """
-        remote_path: str = remote_path or f'/root/{uuid4()}.txt'
+        remote_path: str = remote_path or f'/root/{uuid.uuid4().hex}.txt'
         if self.client.open_sftp().put(local_path, remote_path):
             flags and self._print(f'Uploaded successfully -> {remote_path}', 32)
             return True
@@ -152,7 +151,7 @@ class SecureShell:
         :param local_path: 本地路径
         :param flags: 是否在输出相关信息
         """
-        local_path: str = local_path or f'{uuid4()}.txt'
+        local_path: str = local_path or f'{uuid.uuid4().hex}.txt'
         self.client.open_sftp().get(remote_path, local_path)
         if os.path.isfile(local_path):
             flags and self._print(f'Download successful -> {remote_path}', 32)

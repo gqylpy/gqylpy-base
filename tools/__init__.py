@@ -1,6 +1,5 @@
 import os
 import copy
-import uuid
 import hashlib
 import subprocess
 import collections
@@ -15,6 +14,7 @@ from . import aliyun
 from . import over_func
 
 from .workers import Workers
+from .secure_shell import SecureShell
 
 from .crypto import encrypt
 from .crypto import decrypt
@@ -65,10 +65,6 @@ def exec_cmd(cmd: str) -> str:
 def save_pid(file: str):
     """Save the main program id to file"""
     filetor(file, os.getpid())
-
-
-def uuid4() -> str:
-    return str(uuid.uuid4())
 
 
 def prt(*args, color: int = 31, font: int = 0,
