@@ -38,7 +38,7 @@ from .filedir import dirname
 from .filedir import genpath
 from .filedir import filetor
 from .filedir import fetch_deep_path
-from .filedir import FileDataOperator
+from .filedir import FileDataOperatorV2
 
 
 @insure('InitTools', cycle=10)
