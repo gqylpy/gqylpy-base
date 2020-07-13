@@ -100,7 +100,7 @@ def fetch_deep_path(
     return paths
 
 
-class FileDataOperator:
+class FileDataOperatorV2:
 
     def __init__(self, db_dir: str):
         self._db: str = genpath(db_dir)
