@@ -92,7 +92,7 @@ def fetch_deep_path(
 
     for name in os.listdir(root):
         full = abspath(root, name)
-        paths[full.replace(__root, '')[1:].replace(os.sep, '.')] = full
+        paths[full.replace(__root, '')[1:].replace('\\', '/')] = full
 
         if os.path.isdir(full):
             fetch_deep_path(full, paths, __root)
@@ -103,56 +103,29 @@ def fetch_deep_path(
 class FileDataOperator:
 
     def __init__(self, db_dir: str):
-        self.db: str = genpath(db_dir)
-        for name, value in fetch_deep_path(db_dir).items():
-            if not hasattr(self, name):
-                setattr(self, name, value)
-            else:
-                setattr(self, f'{name}_', value)
+        self._db: str = genpath(db_dir)
 
-    def __getattribute__(self, name: str):
-        if name in ['db', 'path', '_FileDataOperator__full_path']:
-            return super().__getattribute__(name)
+        for name, value in fetch_deep_path(self._db).items():
+            setattr(self, name, value)
 
-        try:
-            return self.__full_path(super().__getattribute__(name))
-        except AttributeError:
-            return getattr(os.path, name)
+    def __getitem__(self, file):
+        return filetor(getattr(self, file))
 
-    def __full_path(self, func):
-        @functools.wraps(func)
-        def inner(*a, **kw):
-            if a:
-                a = list(a)
-                a[0] = abspath(self.db, a[0])
-            if 'file' in kw:
-                kw['file'] = abspath(self.db, kw['file'])
+    def __setitem__(self, file, data):
+        if not hasattr(self, file):
+            setattr(self, file, abspath(self._db, file))
 
-            return func(*a, **kw)
+        filetor(getattr(self, file), data)
 
-        return inner
+    def __delitem__(self, file):
+        full: str = getattr(self, file)
 
-    @staticmethod
-    def exists(file: str) -> bool:
-        return os.path.exists(file)
-
-    def listdir(self):
-        return os.listdir(self.db)
-
-    @staticmethod
-    def load(file: str, no_file_return=None):
-        return filetor(file, no_file_return=no_file_return)
-
-    def save(self, file: str, data: ...):
-        if not self.exists(dirname(file)):
-            genpath(dirname(file))
-
-        filetor(file, data)
-
-    @staticmethod
-    def delete(file: str):
-
-        if os.path.isfile(file):
-            os.remove(file)
+        if os.path.isfile(full):
+            os.remove(full)
         else:
-            os.removedirs(file)
+            os.removedirs(full)
+
+        delattr(self, file)
+
+    def __str__(self):
+        return str(self.__dict__)
