@@ -100,7 +100,7 @@ def fetch_deep_path(
     return paths
 
 
-class FileDataOperatorV2:
+class FileDataOperator:
 
     def __init__(self, db_dir: str):
         self._db: str = genpath(db_dir)
@@ -115,7 +115,12 @@ class FileDataOperatorV2:
         if not hasattr(self, file):
             setattr(self, file, abspath(self._db, file))
 
-        filetor(getattr(self, file), data)
+        full: str = getattr(self, file)
+
+        if not os.path.isdir(os.path.dirname(full)):
+            os.makedirs(os.path.dirname(full))
+
+        filetor(full, data)
 
     def __delitem__(self, file):
         full: str = getattr(self, file)
