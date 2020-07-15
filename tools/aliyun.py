@@ -34,8 +34,6 @@ SingleSendMail:
         TextBody: Email text body, limit 28K.
 """
 import sys
-import time
-import threading
 import collections
 
 from aliyunsdkcore.client import AcsClient
@@ -59,31 +57,18 @@ def __init__(config: dadclass.Dict):
     aliyun: dict = config.aliyun
     init: dict = aliyun.pop('init', {})
 
-    queue_mode: bool = init.pop('queue_mode', False)
-    action_cycle: int = init.pop('action_cycle', 600)
-
     for name, conf in aliyun.items():
 
         for item in init.items():
             conf.setdefault(*item)
 
-        setattr(this, name, Aliyun(conf, queue_mode))
-
-    if queue_mode:
-        threading.Thread(
-            target=__exec__,
-            args=(action_cycle,),
-            daemon=True,
-            name='AliyunAction'
-        ).start()
+        setattr(this, name, Aliyun(conf))
 
 
 class Aliyun:
     """Secondary encapsulation of `aliyunsdkcore`"""
 
-    def __init__(self, action: dadclass.Dict, queue_mode: bool):
-        self.queue_mode = queue_mode
-
+    def __init__(self, action: dadclass.Dict):
         self.client = AcsClient(
             ak=action.ak,
             secret=action.secret,
@@ -103,44 +88,10 @@ class Aliyun:
 
         self.request = request
 
-    def __call__(self, sync: bool = False, **active_params):
-        if sync or not self.queue_mode:
-            self.request._params.update(active_params)
-            log.logger.info(self.client.do_action(self.request))
-        else:
-            __queue__.appendleft((
-                self.client,
-                self.request,
-                active_params))
-
-
-def __exec__(action_cycle: int):
-    while True:
-        while __queue__:
-            try:
-                first: tuple = __queue__.pop()
-
-                # Hard to deal with:
-                if 'ConnectionError' in first:
-                    continue
-
-                count: int = __queue__.count(first)
-
-                while first in __queue__:
-                    __queue__.remove(first)
-
-                client, request, active_params = first
-
-                if count:
-                    active_params['Subject'] += f' +{count}'
-
-                request._params.update(active_params)
-                log.logger.info(client.do_action(request))
-
-            except Exception as e:
-                log.logger.error(e)
-
-        time.sleep(action_cycle)
+    def __call__(self, **active_params):
+        self.request._params.update(active_params)
+        result: bytes = self.client.do_action(self.request)
+        log.logger.info(result)
 
 
 send_mail: Aliyun

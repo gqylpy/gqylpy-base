@@ -45,6 +45,8 @@ if 'MONGODB' in os.environ:
 init_tools(tools)
 
 if abspath(sys.argv[0]) == abspath(tools.path.core, 'go.py'):
-    save_pid(abspath(tools.path.log, 'pid'))
+    if not _in_container:
+        save_pid(abspath(tools.path.log, 'pid'))
+
     over_func.add(log.logger.info, 'over')
     log.logger.info('start')

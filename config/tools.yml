@@ -53,8 +53,6 @@ log:
 
 #aliyun:
 #  init:
-#    queue_mode: false
-#    action_cycle: 10m
 #    timeout: 15s
 #    method: post
 #    protocol_type: https
