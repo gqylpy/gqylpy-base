@@ -11,7 +11,7 @@ from . import log
 from .dadclass import Dict
 from .decorator import insure
 
-self = sys.modules[__name__]
+__ = sys.modules[__name__]
 
 __lock__ = threading.Lock()
 
@@ -31,10 +31,10 @@ def __init__(config: Dict):
 
         conn = Connection(**conf)
 
-        setattr(self, name, conn)
+        setattr(__, name, conn)
 
-        if not hasattr(self, '__default__'):
-            setattr(self, '__default__', conn)
+        if not hasattr(__, '__default__'):
+            setattr(__, '__default__', conn)
 
     if mysql:
         __health_examination__(conn_check_cycle)
@@ -48,9 +48,8 @@ def sql(sql: str, one: bool = False, datastyle=dict, conn: Connection = None):
         result: int = cur.execute(sql)
         conn.commit()
 
-    # for action in ['INSERT', 'UPDATE', 'DELETE']:
-    #     if sql[:6].upper().startswith(action):
-    #         return result
+    # if sql[:6] in ['INSERT', 'UPDATE', 'DELETE']:
+    #     return result
 
     if not sql.lstrip()[:6].upper().startswith('SELECT'):
         return result

@@ -54,7 +54,7 @@ from .dadclass import Dict
 from .decorator import insure
 from .mysql import Transaction
 
-self = sys.modules[__name__]
+__ = sys.modules[__name__]
 
 __default__: PooledDB
 
@@ -72,10 +72,10 @@ def __init__(config: Dict):
 
         pool = PooledDB(**conf)
 
-        setattr(self, name, pool)
+        setattr(__, name, pool)
 
-        if not hasattr(self, '__default__'):
-            setattr(self, '__default__', pool)
+        if not hasattr(__, '__default__'):
+            setattr(__, '__default__', pool)
 
 
 class mysql(Transaction):

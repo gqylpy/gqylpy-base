@@ -5,7 +5,7 @@ import logging
 from .dadclass import Dict
 from .decorator import insure
 
-self = sys.modules[__name__]
+__ = sys.modules[__name__]
 
 __default__: logging.getLogger
 
@@ -40,11 +40,11 @@ def __init__(config: Dict):
             log.addHandler(stream_handler)
 
         # Create pointer in self module.
-        setattr(self, name, log)
+        setattr(__, name, log)
 
         # Set the default logger handler.
-        if not hasattr(self, '__default__'):
-            setattr(self, '__default__', log)
+        if not hasattr(__, '__default__'):
+            setattr(__, '__default__', log)
 
     return '_break_'
 

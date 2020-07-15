@@ -10,7 +10,7 @@ from . import log
 from .dadclass import Dict
 from .decorator import insure
 
-self = sys.modules[__name__]
+__ = sys.modules[__name__]
 
 __default__: Topic
 
@@ -27,10 +27,10 @@ def __init__(config: Dict):
         client = KafkaClient(**conf)
         topic: Topic = client.topics[name]
 
-        if not hasattr(self, '__default__'):
-            setattr(self, '__default__', topic)
+        if not hasattr(__, '__default__'):
+            setattr(__, '__default__', topic)
 
-        setattr(self, name.replace('-', '_'), topic)
+        setattr(__, name.replace('-', '_'), topic)
 
 
 def send(

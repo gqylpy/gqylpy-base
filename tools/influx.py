@@ -6,7 +6,7 @@ from . import over_func
 from .dadclass import Dict
 from .decorator import insure
 
-self = sys.modules[__name__]
+__ = sys.modules[__name__]
 
 __default__: InfluxDBClient
 
@@ -25,10 +25,10 @@ def __init__(config: Dict):
 
         over_func.add(client.close)
 
-        setattr(self, name, client)
+        setattr(__, name, client)
 
-        if not hasattr(self, '__default__'):
-            setattr(self, '__default__', client)
+        if not hasattr(__, '__default__'):
+            setattr(__, '__default__', client)
 
 
 def query(

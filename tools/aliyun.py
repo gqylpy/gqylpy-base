@@ -34,7 +34,6 @@ SingleSendMail:
         TextBody: Email text body, limit 28K.
 """
 import sys
-import collections
 
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
@@ -43,9 +42,7 @@ from . import log
 from . import dadclass
 from .decorator import insure
 
-this = sys.modules[__name__]
-
-__queue__ = collections.deque(maxlen=999)
+__ = sys.modules[__name__]
 
 
 @insure('InitAliyun', cycle=60)
@@ -62,7 +59,7 @@ def __init__(config: dadclass.Dict):
         for item in init.items():
             conf.setdefault(*item)
 
-        setattr(this, name, Aliyun(conf))
+        setattr(__, name, Aliyun(conf))
 
 
 class Aliyun:
