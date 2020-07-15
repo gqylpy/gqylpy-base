@@ -103,19 +103,17 @@ def fetch_deep_path(
 class FileDataOperator:
 
     def __init__(self, db_dir: str):
-        self._db: str = genpath(db_dir)
-
-        for name, value in fetch_deep_path(self._db).items():
-            setattr(self, name, value)
+        self.db: str = genpath(db_dir)
+        self.path: Dict = fetch_deep_path(self.db)
 
     def __getitem__(self, file):
-        return filetor(getattr(self, file))
+        return filetor(self.path[file])
 
     def __setitem__(self, file, data):
-        if not hasattr(self, file):
-            setattr(self, file, abspath(self._db, file))
+        if file not in self.path:
+            self.path[file] = abspath(self.db, file)
 
-        full: str = getattr(self, file)
+        full: str = self.path[file]
 
         if not os.path.isdir(os.path.dirname(full)):
             os.makedirs(os.path.dirname(full))
@@ -123,7 +121,7 @@ class FileDataOperator:
         filetor(full, data)
 
     def __delitem__(self, file):
-        full: str = getattr(self, file)
+        full: str = self.path[file]
 
         if os.path.isfile(full):
             os.remove(full)
@@ -132,5 +130,5 @@ class FileDataOperator:
 
         delattr(self, file)
 
-    def __str__(self):
-        return str(self.__dict__)
+    def __iter__(self):
+        yield from os.listdir(self.db)

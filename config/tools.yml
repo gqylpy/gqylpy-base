@@ -28,8 +28,8 @@ log:
 
 
 #kafka:
-#  test01:
-#    hosts: 10.121.12.120:31092
+#  compliance-engine:
+#    hosts: 10.121.11.232:31092
 #    zookeeper_hosts: 10.121.12.120:30325
 
 

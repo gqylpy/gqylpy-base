@@ -133,7 +133,7 @@ def dict_inter_process(data: dict, func=None) -> dict:
     :param data: A dict.
     :param func: Your handler functions, ps:
         def func(name, value):
-            if name == 'some value':
+            if name == 'xxx':
                 return process(value)
     """
 
@@ -144,6 +144,8 @@ def dict_inter_process(data: dict, func=None) -> dict:
         return data
 
     def two(name=None, value={}):
+        value = func(name, value) or value
+
         if isinstance(value, dict):
             return one(value)
 
@@ -151,20 +153,18 @@ def dict_inter_process(data: dict, func=None) -> dict:
                 and not isinstance(value, str):
             return [two(value=v) for v in value]
 
-        value = func(name, value) or value
-
         return value
 
     return one(data)
 
 
 def in_container() -> bool:
-    """Is currently running in the container."""
+    """Whether to run in the container."""
     if os.name == 'posix':
 
         if exec_cmd('fdisk -l'):
             return False
 
-        return False
+        return True
 
     return False
