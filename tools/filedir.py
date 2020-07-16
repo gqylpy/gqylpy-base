@@ -146,8 +146,5 @@ class FileDataOperator:
     def __delattr__(self, file):
         del self[file]
 
-    def __iter__(self):
-        yield from os.listdir(self.root)
-
     def __str__(self):
         return self.root
