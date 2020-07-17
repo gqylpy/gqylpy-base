@@ -1,4 +1,5 @@
 import os
+import sys
 import copy
 import hashlib
 import subprocess
@@ -168,3 +169,18 @@ def in_container() -> bool:
         return True
 
     return False
+
+
+def load_module(module: str):
+    __import__(module)
+    return sys.modules[module]
+
+
+def load_name(module: str):
+    module, _, name = module.rpartition('.')
+    module = load_module(module)
+    return getattr(module, name)
+
+
+def load_object(module: str, *a, **kw):
+    return load_name(module)(*a, **wk)
