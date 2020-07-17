@@ -107,7 +107,7 @@ class FileDataOperator:
         self.path: Dict = fetch_deep_path(genpath(db_dir))
 
     def __getitem__(self, file):
-        full: str = self.path[file]
+        full = self.path[file]
 
         if os.path.isfile(full):
             return filetor(self.path[file])
@@ -118,7 +118,7 @@ class FileDataOperator:
         if file not in self.path:
             self.path[file] = abspath(self.root, file)
 
-        full: str = self.path[file]
+        full = self.path[file]
 
         if not os.path.isdir(os.path.dirname(full)):
             os.makedirs(os.path.dirname(full))
@@ -126,7 +126,7 @@ class FileDataOperator:
         filetor(full, data)
 
     def __delitem__(self, file):
-        full: str = self.path.pop(file)
+        full = self.path.pop(file)
 
         if os.path.isfile(full):
             os.remove(full)
