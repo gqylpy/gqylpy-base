@@ -183,4 +183,4 @@ def load_name(module: str):
 
 
 def load_object(module: str, *a, **kw):
-    return load_name(module)(*a, **wk)
+    return load_name(module)(*a, **kw)
