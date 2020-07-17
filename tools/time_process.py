@@ -30,14 +30,13 @@ class time2second:
     one_hour = 60 * 60
     one_day = one_hour * 24
 
-    def __new__(cls, unit_time: str):
-        x = cls.pattern.findall(unit_time.lower())[0]
+    @classmethod
+    def g(cls, x: str):
+        return float(x) if x else 0
 
-        d = float(x[0] or 0)
-        h = float(x[1] or 0)
-        m = float(x[2] or 0)
-        s = float(x[3] or 0)
-
+    def __new__(cls, unit_time: str) -> int or float:
+        d, h, m, s = cls.pattern.findall(unit_time.lower())[0]
+        d, h, m, s = cls.g(d), cls.g(h), cls.g(m), cls.g(s)
         return cls.one_day * d + cls.one_hour * h + 60 * m + s
 
 
