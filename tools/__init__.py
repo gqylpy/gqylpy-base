@@ -176,11 +176,11 @@ def load_module(module: str):
     return sys.modules[module]
 
 
-def load_name(module: str):
-    module, _, name = module.rpartition('.')
+def load_name(name: str):
+    module, _, name = name.rpartition('.')
     module = load_module(module)
     return getattr(module, name)
 
 
-def load_object(module: str, *a, **kw):
-    return load_name(module)(*a, **kw)
+def load_object(class_path: str, *a, **kw):
+    return load_name(class_path)(*a, **kw)
