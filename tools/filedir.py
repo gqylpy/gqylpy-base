@@ -104,7 +104,7 @@ class FileDataOperator:
 
     def __init__(self, db_dir: str):
         self.root: str = genpath(db_dir)
-        self.path: Dict = fetch_deep_path(genpath(db_dir))
+        self.path: Dict = fetch_deep_path(self.root)
 
     def __getitem__(self, file):
         full = self.path[file]
