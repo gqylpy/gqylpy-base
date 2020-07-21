@@ -184,3 +184,7 @@ def load_name(name: str):
 
 def load_object(class_path: str, *a, **kw):
     return load_name(class_path)(*a, **kw)
+
+
+def hump(name: str) -> str:
+    return ''.join(_.capitalize() for _ in name.split('_'))

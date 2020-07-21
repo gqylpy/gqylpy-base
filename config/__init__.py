@@ -3,6 +3,7 @@ import re
 import sys
 
 from tools import log
+from tools import hump
 from tools import Dict
 from tools import abspath
 from tools import dirname
@@ -20,7 +21,7 @@ tools: Dict
 
 _in_container: bool = in_container()
 _file = FileDataOperator(dirname(__file__, level=2))
-_title: str = os.path.basename(_file.root)
+_title: str = hump(os.path.basename(_file.root))
 
 for _name in os.listdir(_file.path.config):
     if _name.endswith('.yml') or _name.endswith('.yaml'):
