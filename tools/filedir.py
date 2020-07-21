@@ -38,7 +38,7 @@ def filetor(
         no_file_return: ... = None,
         type: 'enum(text, yaml, json)' = None,
         encoding: str = 'UTF-8',
-        *a, **kw) -> str or dict:
+        *a, **kw):
     """
     if `data` is None:
         Read file according to `type`.
@@ -76,7 +76,10 @@ def filetor(
             operating = 'json.dump(data, f, *a, **kw)'
 
     with open(file, mode, encoding=encoding) as f:
-        return Dict(eval(operating))
+        if mode == 'r' and type != 'text':
+            return Dict(eval(operating))
+        else:
+            return eval(operating)
 
 
 def fetch_deep_path(
