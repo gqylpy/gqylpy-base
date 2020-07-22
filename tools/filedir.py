@@ -76,10 +76,7 @@ def filetor(
             operating = 'json.dump(data, f, *a, **kw)'
 
     with open(file, mode, encoding=encoding) as f:
-        if mode == 'r' and type != 'text':
-            return Dict(eval(operating))
-        else:
-            return eval(operating)
+        return eval(operating)
 
 
 def fetch_deep_path(
