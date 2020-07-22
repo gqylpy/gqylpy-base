@@ -31,7 +31,7 @@ for _name in os.listdir(_file.path.config):
             _title, _file, _file.path, _in_container
 
         dict_inter_process(_cnf, lambda k, v: re.findall(
-            time2second.pattern.pattern, str(v)) and time2second(v))
+            time2second.pattern.pattern, str(v), re.X) and time2second(v))
 
         setattr(sys.modules[__name__], _name.split('.')[0], _cnf)
 
