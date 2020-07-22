@@ -46,7 +46,5 @@ def __init__(config: Dict):
         if not hasattr(__, '__default__'):
             setattr(__, '__default__', log)
 
-    return '_break_'
-
 
 logger: logging.getLogger
