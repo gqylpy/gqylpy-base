@@ -19,13 +19,12 @@ def str2stamp(
 
 
 class time2second:
-    pattern = re.compile(
-        r'^'
-        r'(?:(\d+(?:\.\d+)?)d)?'  # day
-        r'(?:(\d+(?:\.\d+)?)h)?'  # hour
-        r'(?:(\d+(?:\.\d+)?)m)?'  # minute
-        r'(?:(\d+(?:\.\d+)?)s)?'  # second
-        r'$')
+    pattern = re.compile(r'''^
+        (?:(\d+(?:\.\d+)?)d)?  # day
+        (?:(\d+(?:\.\d+)?)h)?  # hour
+        (?:(\d+(?:\.\d+)?)m)?  # minute
+        (?:(\d+(?:\.\d+)?)s)?  # second
+    $''', flags=re.X)
 
     one_hour = 60 * 60
     one_day = one_hour * 24
