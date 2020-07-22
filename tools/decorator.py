@@ -50,9 +50,9 @@ def while_true(cond=True, cycle: int = 0, before: bool = False):
 
 def insure(mark: str = None, cycle: int = 10):
     def timer(fn):
-        @functools.wraps(fn)
         @while_true(cycle=cycle)
         @try_except(mark=mark)
+        @functools.wraps(fn)
         def inner(*a, **kw):
             fn(*a, **kw)
             return '_break_'
