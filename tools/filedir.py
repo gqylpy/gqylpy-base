@@ -2,7 +2,6 @@
 import os
 import json
 import yaml
-import functools
 
 from .dadclass import Dict
 
