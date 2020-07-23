@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 import copy
 import hashlib
@@ -188,3 +189,12 @@ def load_object(class_path: str, *a, **kw):
 
 def hump(name: str) -> str:
     return ''.join(_.capitalize() for _ in name.split('_'))
+
+
+def underline(name: str) -> str:
+    for _ in re.findall(r'([A-Z]+)[A-Z]', name):
+        name = name.replace(_, _.capitalize())
+
+    result: list = re.findall(r'[A-Z][a-z]+|[A-Z]\d', name)
+
+    return '_'.join(_.lower() for _ in result)
