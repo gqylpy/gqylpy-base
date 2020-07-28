@@ -200,10 +200,10 @@ def underline(name: str) -> str:
     return '_'.join(_.lower() for _ in result)
 
 
-def get_caller(layer: int = 1) -> str:
+def get_caller(level: int = 1) -> str:
     back = sys._getframe().f_back
 
-    for _ in range(layer):
+    for _ in range(level):
         back = back.f_back
 
     return back.f_code.co_name
