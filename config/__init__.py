@@ -28,7 +28,7 @@ for _name in os.listdir(_file.path.config):
     if _name.endswith('.yml') or _name.endswith('.yaml'):
         _cnf = Dict(filetor(abspath(_file.path.config, _name)) or {})
 
-        _cnf.title, _cnf.file, _cnf._db, _cnf.path, _cnf.in_container = \
+        _cnf.title, _cnf.file, _cnf.db, _cnf.path, _cnf.in_container = \
             _title, _file, _db, _file.path, _in_container
 
         dict_inter_process(_cnf, lambda k, v: re.findall(
