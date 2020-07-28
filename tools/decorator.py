@@ -1,6 +1,7 @@
 import time
 import functools
 
+import tools
 from . import log
 
 
@@ -17,11 +18,9 @@ def try_except(
                 return fn(*a, **kw)
             except except_type as e:
                 if not no_log:
-                    try:
-                        log.logger.error(
-                            f'{mark or fn.__name__}.{type(e).__name__}: {e}')
-                    except Exception as e:
-                        print(f'Exception handler error: {type(e).__name__}: {e}')
+                    sign: str = mark or tools.hump(fn.__name__)
+                    name: str = type(e).__name__
+                    log.logger.error(f'{sign}.{name}: {e}')
 
             return except_return
 
