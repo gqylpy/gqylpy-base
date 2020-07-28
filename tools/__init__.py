@@ -198,3 +198,12 @@ def underline(name: str) -> str:
     result: list = re.findall(r'[A-Z][a-z]+|[A-Z]\d', name)
 
     return '_'.join(_.lower() for _ in result)
+
+
+def get_caller(layer: int = 1) -> str:
+    back = sys._getframe().f_back
+
+    for _ in range(layer):
+        back = back.f_back
+
+    return back.f_code.co_name
