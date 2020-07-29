@@ -18,7 +18,7 @@ def str2stamp(
     return time.mktime(time.strptime(string, format))
 
 
-class time2second:
+class Time2Second:
     pattern = re.compile(r'''^
         (?:(\d+(?:\.\d+)?)d)?  # day
         (?:(\d+(?:\.\d+)?)h)?  # hour
@@ -59,3 +59,6 @@ def second2time(sec: int or float, x: 'Not param' = '') -> str:
         x += f'{s}s'
 
     return x
+
+
+time2second = Time2Second

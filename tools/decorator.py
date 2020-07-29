@@ -5,58 +5,72 @@ import tools
 from . import log
 
 
-def try_except(
-        except_type: type = Exception,
-        mark: str = None,
-        no_log: bool = False,
-        except_return: ... = None
-):
-    def wrapper(fn):
-        @functools.wraps(fn)
+class TryExcept:
+
+    def __init__(
+            self,
+            except_type: type = Exception,
+            mark: str = None,
+            no_log: bool = False,
+            except_return: ... = None
+    ):
+        self.mark = mark
+        self.no_log = no_log
+        self.except_type = except_type
+        self.except_return = except_return
+
+    def __call__(self, func):
+        @functools.wraps(func)
         def inner(*a, **kw):
             try:
-                return fn(*a, **kw)
-            except except_type as e:
-                if not no_log:
-                    sign: str = mark or tools.hump(fn.__name__)
+                return func(*a, **kw)
+            except self.except_type as e:
+                if not self.no_log:
+                    sign: str = self.mark or tools.hump(func.__name__)
                     name: str = type(e).__name__
                     log.logger.error(f'{sign}.{name}: {e}')
 
-            return except_return
+            return self.except_return
 
         return inner
 
-    return wrapper
 
+class WhileTrue:
 
-def while_true(cond=True, cycle: int = 0, before: bool = False):
-    def sleep(cyc: int):
-        try:
-            time.sleep(cyc)
-        except KeyboardInterrupt:
-            exit()
+    def __init__(
+            self,
+            cond=True,
+            cycle: int = 0,
+            before: bool = False
+    ):
+        self.cond = cond
+        self.cycle = cycle
+        self.before = before
 
-    def wrapper(fn):
-        @functools.wraps(fn)
+    def __call__(self, func):
+        @functools.wraps(func)
         def inner(*a, **kw):
-            while cond:
-                before and sleep(cycle)
-                ret = fn(*a, **kw)
+            while self.cond:
+                if self.before:
+                    time.sleep(self.cycle)
+
+                ret = func(*a, **kw)
+
                 if ret == '_break_':
                     break
                 if ret == '_continue_':
                     continue
-                before or sleep(cycle)
+
+                if not self.before:
+                    time.sleep(self.cycle)
 
         return inner
-
-    return wrapper
 
 
 def insure(mark: str = None, cycle: int = 10):
     def wrapper(fn):
-        @while_true(cycle=cycle)
-        @try_except(mark=mark)
+        @WhileTrue(cycle=cycle)
+        @TryExcept(mark=mark)
         @functools.wraps(fn)
         def inner(*a, **kw):
             fn(*a, **kw)
@@ -98,3 +112,7 @@ def after_func(func=None, independent: bool = False):
         return inner
 
     return timer
+
+
+try_except = TryExcept
+while_true = WhileTrue
