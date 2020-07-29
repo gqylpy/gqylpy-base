@@ -21,7 +21,7 @@ class TryExcept:
 
     def __call__(self, func):
         @functools.wraps(func)
-        def inner(*a, **kw):
+        def _try_except_(*a, **kw):
             try:
                 return func(*a, **kw)
             except self.exc_type as e:
@@ -32,7 +32,7 @@ class TryExcept:
 
             return self.exc_return
 
-        return inner
+        return _try_except_
 
 
 class WhileTrue:
@@ -49,7 +49,7 @@ class WhileTrue:
 
     def __call__(self, func):
         @functools.wraps(func)
-        def inner(*a, **kw):
+        def _while_true_(*a, **kw):
             while self.cond:
                 if self.before:
                     time.sleep(self.cycle)
@@ -64,7 +64,7 @@ class WhileTrue:
                 if not self.before:
                     time.sleep(self.cycle)
 
-        return inner
+        return _while_true_
 
 
 class Retry:
@@ -99,7 +99,7 @@ class Retry:
                     log.logger.warning(msg)
                     return
 
-                log.logger.error(msg)
+                raise self.retry_exc(msg)
 
             return '_break_'
 
