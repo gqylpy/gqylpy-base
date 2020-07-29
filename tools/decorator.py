@@ -48,23 +48,23 @@ class WhileTrue:
         self.before = before
 
     def __call__(self, func):
-        @functools.wraps(func)
-        def inner(*a, **kw):
-            while self.cond:
-                if self.before:
-                    time.sleep(self.cycle)
+        self.func = func
+        return self.inner
 
-                ret = func(*a, **kw)
+    def inner(self, *a, **kw):
+        while self.cond:
+            if self.before:
+                time.sleep(self.cycle)
 
-                if ret == '_break_':
-                    break
-                if ret == '_continue_':
-                    continue
+            ret = self.func(*a, **kw)
 
-                if not self.before:
-                    time.sleep(self.cycle)
+            if ret == '_break_':
+                break
+            if ret == '_continue_':
+                continue
 
-        return inner
+            if not self.before:
+                time.sleep(self.cycle)
 
 
 def insure(mark: str = None, cycle: int = 10):
