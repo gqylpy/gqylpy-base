@@ -11,7 +11,7 @@ def try_except(
         no_log: bool = False,
         except_return: ... = None
 ):
-    def timer(fn):
+    def wrapper(fn):
         @functools.wraps(fn)
         def inner(*a, **kw):
             try:
@@ -26,29 +26,35 @@ def try_except(
 
         return inner
 
-    return timer
+    return wrapper
 
 
 def while_true(cond=True, cycle: int = 0, before: bool = False):
-    def timer(fn):
+    def sleep(cyc: int):
+        try:
+            time.sleep(cyc)
+        except KeyboardInterrupt:
+            exit()
+
+    def wrapper(fn):
         @functools.wraps(fn)
         def inner(*a, **kw):
             while cond:
-                before and time.sleep(cycle)
+                before and sleep(cycle)
                 ret = fn(*a, **kw)
                 if ret == '_break_':
                     break
                 if ret == '_continue_':
                     continue
-                before or time.sleep(cycle)
+                before or sleep(cycle)
 
         return inner
 
-    return timer
+    return wrapper
 
 
 def insure(mark: str = None, cycle: int = 10):
-    def timer(fn):
+    def wrapper(fn):
         @while_true(cycle=cycle)
         @try_except(mark=mark)
         @functools.wraps(fn)
@@ -58,7 +64,7 @@ def insure(mark: str = None, cycle: int = 10):
 
         return inner
 
-    return timer
+    return wrapper
 
 
 def before_func(func=None):
