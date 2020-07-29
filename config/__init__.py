@@ -26,15 +26,15 @@ _title: str = hump(os.path.basename(_file.root))
 
 for _name in os.listdir(_file.path.config):
     if _name.endswith('.yml') or _name.endswith('.yaml'):
-        _cnf = Dict(filetor(abspath(_file.path.config, _name)) or {})
+        __ = filetor(abspath(_file.path.config, _name)) or Dict()
 
-        _cnf.title, _cnf.file, _cnf.db, _cnf.path, _cnf.in_container = \
+        __.title, __.file, __.db, __.path, __.in_container = \
             _title, _file, _db, _file.path, _in_container
 
-        dict_inter_process(_cnf, lambda k, v: re.findall(
+        dict_inter_process(__, lambda k, v: re.findall(
             time2second.pattern.pattern, str(v), re.X) and time2second(v))
 
-        setattr(sys.modules[__name__], _name.split('.')[0], _cnf)
+        setattr(sys.modules[__name__], _name.split('.')[0], __)
 
 init_tools(tools)
 
