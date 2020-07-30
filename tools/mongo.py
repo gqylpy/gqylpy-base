@@ -5,10 +5,10 @@ from pymongo.database import Database
 
 from . import over_func
 from .dadclass import Dict
-from .decorator import insure
+from .decorator import Retry
 
 
-@insure('InitMongo', cycle=60)
+@Retry('InitMongo', cycle=60)
 def __init__(config: Dict):
     init: Dict = config.mongo.pop('init', {})
 

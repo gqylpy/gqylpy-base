@@ -3,14 +3,14 @@ import sys
 import logging
 
 from .dadclass import Dict
-from .decorator import insure
+from .decorator import Retry
 
 __ = sys.modules[__name__]
 
 __default__: logging.getLogger
 
 
-@insure('InitLog', cycle=60)
+@Retry('InitLog', cycle=60)
 def __init__(config: Dict):
     init: Dict = config.log.pop('init', {})
 

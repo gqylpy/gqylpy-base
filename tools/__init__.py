@@ -29,7 +29,7 @@ from .time_process import stamp2str
 from .time_process import time2second
 from .time_process import second2time
 
-from .decorator import insure
+from .decorator import Retry
 from .decorator import try_except
 from .decorator import while_true
 from .decorator import after_func
@@ -43,7 +43,7 @@ from .filedir import fetch_deep_path
 from .filedir import FileDataOperator
 
 
-@insure('InitTools', cycle=10)
+@Retry('InitTools', cycle=10)
 def __init__(config: Dict):
     config = copy.deepcopy(config)
 

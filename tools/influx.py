@@ -4,14 +4,14 @@ from influxdb import InfluxDBClient
 
 from . import over_func
 from .dadclass import Dict
-from .decorator import insure
+from .decorator import Retry
 
 __ = sys.modules[__name__]
 
 __default__: InfluxDBClient
 
 
-@insure('InitInflux', cycle=60)
+@Retry('InitInflux', cycle=60)
 def __init__(config: Dict):
     influx: Dict = config.influx
     init: Dict = influx.pop('init', {})

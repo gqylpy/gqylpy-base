@@ -21,7 +21,7 @@ class TryExcept:
 
     def __call__(self, func):
         @functools.wraps(func)
-        def _try_except_(*a, **kw):
+        def try_except(*a, **kw):
             try:
                 return func(*a, **kw)
             except self.exc_type as e:
@@ -32,7 +32,7 @@ class TryExcept:
 
             return self.exc_return
 
-        return _try_except_
+        return try_except
 
 
 class WhileTrue:
@@ -49,7 +49,7 @@ class WhileTrue:
 
     def __call__(self, func):
         @functools.wraps(func)
-        def _while_true_(*a, **kw):
+        def while_true(*a, **kw):
             while self.cond:
                 if self.before:
                     time.sleep(self.cycle)
@@ -64,60 +64,45 @@ class WhileTrue:
                 if not self.before:
                     time.sleep(self.cycle)
 
-        return _while_true_
+        return while_true
 
 
 class Retry:
 
     def __init__(
             self,
-            retry_exc: type = Exception,
-            retry_count: int = None,
+            mark: str = None,
+            count: int = None,
             cycle: int = 10,
-            mark: str = None
+            retry_exc: type = Exception,
     ):
         self.retry_exc = retry_exc
-        self.retry_count = retry_count
+        self.count = count
         self.mark = mark
         self.cycle = cycle
-        self.count = 0
+        self._count = 0
 
     def __call__(self, func):
-        sign: str = self.mark or tools.hump(func.__name__)
-
-        @while_true(cycle=self.cycle)
         @functools.wraps(func)
-        def wrapper(*a, **kw):
-            try:
-                func(*a, **kw)
-            except self.retry_exc as e:
-                self.count += 1
-                exc_name: str = type(e).__name__
-                msg = f'[retry:{self.count}] {sign}.{exc_name}: {e}'
+        def retry(*a, **kw):
+            while True:
+                try:
+                    return func(*a, **kw)
+                except self.retry_exc as e:
+                    self._count += 1
 
-                if self.retry_count and self.count < self.retry_count:
-                    log.logger.warning(msg)
-                    return
+                    sign: str = self.mark or tools.hump(func.__name__)
+                    exc_name: str = type(e).__name__
 
-                raise self.retry_exc(msg)
+                    log.logger.warning(
+                        f'[count:{self._count}] {sign}.{exc_name}: {e}')
 
-            return '_break_'
+                    if self.count and self._count == self.count:
+                        raise e
 
-        return wrapper
+                time.sleep(self.cycle)
 
-
-def insure(mark: str = None, cycle: int = 10):
-    def wrapper(fn):
-        @WhileTrue(cycle=cycle)
-        @TryExcept(mark=mark)
-        @functools.wraps(fn)
-        def inner(*a, **kw):
-            fn(*a, **kw)
-            return '_break_'
-
-        return inner
-
-    return wrapper
+        return retry
 
 
 def before_func(func=None):
