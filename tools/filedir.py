@@ -33,7 +33,6 @@ def genpath(*a) -> str:
 def filetor(
         file: str,
         data: ... = None,
-        no_file_return: ... = None,
         type: 'enum(text, yaml, json)' = None,
         encoding: str = 'UTF-8',
         *a, **kw):
@@ -55,8 +54,6 @@ def filetor(
             type = 'text'
 
     if data is None:
-        if not os.path.isfile(file):
-            return no_file_return
         mode = 'r'
         if type == 'text':
             operating = 'f.read()'

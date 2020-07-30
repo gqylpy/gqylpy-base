@@ -24,9 +24,9 @@ _file = FileDataOperator(dirname(__file__, level=2))
 _db = FileDataOperator(_file.path.db)
 _title: str = hump(os.path.basename(_file.root))
 
-for _name in os.listdir(_file.path.config):
+for _name in _file.config:
     if _name.endswith('.yml') or _name.endswith('.yaml'):
-        __ = filetor(abspath(_file.path.config, _name)) or Dict()
+        __ = Dict(_file[f'config/{_name}'] or {})
 
         __.title, __.file, __.db, __.path, __.in_container = \
             _title, _file, _db, _file.path, _in_container
