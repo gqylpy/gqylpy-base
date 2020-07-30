@@ -8,14 +8,14 @@ from pykafka import KafkaClient
 
 from . import log
 from .dadclass import Dict
-from .decorator import Retry
+from .decorator import retry
 
 __ = sys.modules[__name__]
 
 __default__: Topic
 
 
-@Retry('InitKafka', cycle=60)
+@retry('InitKafka', cycle=60)
 def __init__(config: Dict):
     init: Dict = config.kafka.pop('init', {})
 

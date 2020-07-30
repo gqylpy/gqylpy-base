@@ -9,7 +9,7 @@ from pymysql.connections import Connection
 
 from . import log
 from .dadclass import Dict
-from .decorator import Retry
+from .decorator import retry
 
 __ = sys.modules[__name__]
 
@@ -18,7 +18,7 @@ __lock__ = threading.Lock()
 __default__: Connection
 
 
-@Retry('InitMySQL', cycle=60)
+@retry('InitMySQL', cycle=60)
 def __init__(config: Dict):
     mysql: Dict = config.mysql
     init: Dict = mysql.pop('init', {})

@@ -40,12 +40,12 @@ from aliyunsdkcore.request import CommonRequest
 
 from . import log
 from . import dadclass
-from .decorator import Retry
+from .decorator import retry
 
 __ = sys.modules[__name__]
 
 
-@Retry('InitAliyun', cycle=60)
+@retry('InitAliyun', cycle=60)
 def __init__(config: dadclass.Dict):
     """
     Generate all action objects and

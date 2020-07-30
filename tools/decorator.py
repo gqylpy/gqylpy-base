@@ -138,5 +138,6 @@ def after_func(func=None, independent: bool = False):
     return timer
 
 
+retry = Retry
 try_except = TryExcept
 while_true = WhileTrue
