@@ -7,7 +7,6 @@ from tools import hump
 from tools import Dict
 from tools import abspath
 from tools import dirname
-from tools import filetor
 from tools import save_pid
 from tools import over_func
 from tools import time2second

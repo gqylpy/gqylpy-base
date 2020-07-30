@@ -80,24 +80,26 @@ class Retry:
         self.count = count
         self.mark = mark
         self.cycle = cycle
-        self._count = 0
 
     def __call__(self, func):
+
         @functools.wraps(func)
         def retry(*a, **kw):
+            count = 0
+
             while True:
                 try:
                     return func(*a, **kw)
                 except self.retry_exc as e:
-                    self._count += 1
+                    count += 1
 
                     sign: str = self.mark or tools.hump(func.__name__)
                     exc_name: str = type(e).__name__
 
                     log.logger.warning(
-                        f'[count:{self._count}] {sign}.{exc_name}: {e}')
+                        f'[count:{count}] {sign}.{exc_name}: {e}')
 
-                    if self.count and self._count == self.count:
+                    if self.count and count == self.count:
                         raise e
 
                 time.sleep(self.cycle)
