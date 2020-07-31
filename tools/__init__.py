@@ -48,8 +48,13 @@ def __init__(config: Dict):
     config = copy.deepcopy(config)
 
     for name in config:
-        if name in globals() and hasattr(globals()[name], '__init__'):
-            globals()[name].__init__(config)
+        try:
+            module = load_module(f'{__name__}.{name}')
+        except ModuleNotFoundError:
+            continue
+
+        if hasattr(module, '__init__'):
+            module.__init__(config)
 
 
 def exec_cmd(cmd: str) -> str:
