@@ -33,41 +33,41 @@ def genpath(*a) -> str:
 def filetor(
         file: str,
         data: ... = None,
-        type: 'enum(text, yaml, json)' = None,
+        tp: 'enum(text, yaml, json)' = None,
         encoding: str = 'UTF-8',
         *a, **kw):
     """
     if `data` is None:
-        Read file according to `type`.
+        Read file according to `tp`.
     else:
-        Write `data` to `file` according to `type`.
+        Write `data` to `file` according to `tp`.
     """
     mode: 'w or r'
     operating: 'Code string'
 
-    if type is None:
+    if tp is None:
         if file.endswith('yaml') or file.endswith('yml'):
-            type = 'yaml'
+            tp = 'yaml'
         elif file.endswith('json'):
-            type = 'json'
+            tp = 'json'
         else:
-            type = 'text'
+            tp = 'text'
 
     if data is None:
         mode = 'r'
-        if type == 'text':
+        if tp == 'text':
             operating = 'f.read()'
-        if type == 'yaml':
+        if tp == 'yaml':
             operating = 'yaml.safe_load(f)'
-        if type == 'json':
+        if tp == 'json':
             operating = 'json.load(f, *a, **kw)'
     else:
         mode = 'w'
-        if type == 'text':
+        if tp == 'text':
             operating = 'f.write(str(data))'
-        if type == 'yaml':
+        if tp == 'yaml':
             operating = 'yaml.safe_dump(data, f, **kw)'
-        if type == 'json':
+        if tp == 'json':
             operating = 'json.dump(data, f, *a, **kw)'
 
     with open(file, mode, encoding=encoding) as f:
