@@ -69,6 +69,13 @@ def exec_cmd(cmd: str) -> str:
     return output
 
 
+def regular_string_to_dict(regular_string: str) -> list:
+    """用于将命令输出的带有标题的结果转为字典"""
+    result = [[value.strip() for value in line.split('\t')]
+              for line in regular_string.splitlines()]
+    return [dict(zip(result[0], values)) for values in result[1:]]
+
+
 def save_pid(file: str):
     """Save the main program id to file"""
     filetor(file, os.getpid())
