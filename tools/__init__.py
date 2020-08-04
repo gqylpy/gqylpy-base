@@ -73,7 +73,8 @@ def regular_string_to_dict(regular_string: str) -> list:
     """用于将命令输出的带有标题的结果转为字典"""
     result = [[value.strip() for value in line.split('\t')]
               for line in regular_string.splitlines()]
-    return [dict(zip(result[0], values)) for values in result[1:]]
+    keys = [key.lower() for key in result[0]]
+    return [dict(zip(keys, values)) for values in result[1:]]
 
 
 def save_pid(file: str):
