@@ -69,9 +69,12 @@ def exec_cmd(cmd: str) -> str:
     return output
 
 
-def regular_string_to_dict(regular_string: str) -> list:
+def regular_string_to_dict(
+        regular_string: str,
+        split: str = None
+) -> list:
     """用于将命令输出的带有标题的结果转为字典"""
-    result = [[value.strip() for value in line.split('\t')]
+    result = [[value.strip() for value in line.split(split)]
               for line in regular_string.splitlines()]
     keys = [key.lower() for key in result[0]]
     return [dict(zip(keys, values)) for values in result[1:]]
