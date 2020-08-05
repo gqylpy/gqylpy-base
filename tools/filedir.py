@@ -33,9 +33,8 @@ def genpath(*a) -> str:
 def filetor(
         file: str,
         data: ... = None,
-        tp: 'enum(text, yaml, json)' = None,
-        encoding: str = 'UTF-8',
-        *a, **kw):
+        tp: 'enum(text, yaml, json)' = None
+) -> ...:
     """
     if `data` is None:
         Read file according to `tp`.
@@ -70,7 +69,7 @@ def filetor(
         if tp == 'json':
             operating = 'json.dump(data, f, *a, **kw)'
 
-    with open(file, mode, encoding=encoding) as f:
+    with open(file, mode, encoding='UTF-8') as f:
         return eval(operating)
 
 
