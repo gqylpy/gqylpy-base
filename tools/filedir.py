@@ -58,9 +58,9 @@ class FileDataOperator:
 class Filetor:
     """
     if `data` is None:
-        Read file according to `tp`.
+        Read file according to `ftype`.
     else:
-        Write `data` to `file` according to `tp`.
+        Write `data` to `file` according to `ftype`.
     """
 
     def __new__(
