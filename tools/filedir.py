@@ -5,95 +5,6 @@ import yaml
 from .dadclass import Dict
 
 
-def abspath(*a) -> str:
-    """Return an absolute path"""
-    return os.path.abspath(os.path.join(*a))
-
-
-def dirname(path: str, level: int = 1) -> str:
-    """Culling directories from the
-    end according to `level`, usually
-    used to get the project root path.
-    """
-    for n in range(level):
-        path = os.path.dirname(os.path.abspath(path))
-    return path
-
-
-def genpath(*a) -> str:
-    """Generate path
-    Generates a directory based on the passed in value,
-    creates it if it does not exist, and returns it.
-    """
-    dir: str = abspath(*a)
-    os.path.exists(dir) or os.makedirs(dir)
-    return dir
-
-
-def filetor(
-        file: str,
-        data: ... = None,
-        tp: 'enum(text, yaml, json)' = None
-) -> ...:
-    """
-    if `data` is None:
-        Read file according to `tp`.
-    else:
-        Write `data` to `file` according to `tp`.
-    """
-    mode: 'w or r'
-    operating: 'Code string'
-
-    if tp is None:
-        if file.endswith('yaml') or file.endswith('yml'):
-            tp = 'yaml'
-        elif file.endswith('json'):
-            tp = 'json'
-        else:
-            tp = 'text'
-
-    if data is None:
-        mode = 'r'
-        if tp == 'text':
-            operating = 'f.read()'
-        if tp == 'yaml':
-            operating = 'yaml.safe_load(f)'
-        if tp == 'json':
-            operating = 'json.load(f, *a, **kw)'
-    else:
-        mode = 'w'
-        if tp == 'text':
-            operating = 'f.write(str(data))'
-        if tp == 'yaml':
-            operating = 'yaml.safe_dump(data, f, **kw)'
-        if tp == 'json':
-            operating = 'json.dump(data, f, *a, **kw)'
-
-    with open(file, mode, encoding='UTF-8') as f:
-        return eval(operating)
-
-
-def fetch_deep_path(
-        root: str = None,
-        __paths: 'Not param' = None,
-        __root: 'Not param' = None
-) -> Dict:
-    paths = __paths or Dict()
-    __root = __root or root
-
-    if root == __root:
-        paths['root'] = root
-
-    for name in os.listdir(root):
-        full = abspath(root, name)
-        paths[full.replace(__root, '')[1:].replace('\\', '/')] = full
-
-        if os.path.isdir(full):
-            fetch_deep_path(full, paths, __root)
-
-    return paths
-
-
 class FileDataOperator:
 
     def __init__(self, db_dir: str):
@@ -142,3 +53,103 @@ class FileDataOperator:
 
     def __str__(self):
         return self.root
+
+
+class Filetor:
+    """
+    if `data` is None:
+        Read file according to `tp`.
+    else:
+        Write `data` to `file` according to `tp`.
+    """
+
+    def __new__(
+            cls,
+            file: str,
+            data=None,
+            ftype: 'enum(json, yaml, text)' = None
+    ):
+        mode = 'r' if data is None else 'w'
+
+        if ftype is None:
+            ftype: str = file.split('.')[-1]
+
+        with open(file, mode, encoding='UTF-8') as fp:
+            try:
+                return getattr(cls, f'_for_{ftype}_')(fp, data)
+            except AttributeError:
+                return cls._for_text_(fp, data)
+
+    @classmethod
+    def _for_json_(cls, fp: open, data=None):
+        if data is None:
+            return json.load(fp)
+
+        json.dump(data, fp)
+
+    @classmethod
+    def _for_yaml_(cls, fp: open, data=None):
+        if data is None:
+            return yaml.safe_load(fp)
+
+        return yaml.safe_dump(data, fp)
+
+    @classmethod
+    def _for_text_(cls, fp: open, data=None):
+        if data is None:
+            return fp.read()
+
+        return fp.write(str(data))
+
+    @classmethod
+    def _for_yml_(cls, *a, **kw):
+        return cls._for_yaml_(*a, **kw)
+
+
+def fetch_deep_path(
+        root: str = None,
+        __paths: 'Not param' = None,
+        __root: 'Not param' = None
+) -> Dict:
+    paths = __paths or Dict()
+    __root = __root or root
+
+    if root == __root:
+        paths['root'] = root
+
+    for name in os.listdir(root):
+        full = abspath(root, name)
+        paths[full.replace(__root, '')[1:].replace('\\', '/')] = full
+
+        if os.path.isdir(full):
+            fetch_deep_path(full, paths, __root)
+
+    return paths
+
+
+def abspath(*a) -> str:
+    """Return an absolute path"""
+    return os.path.abspath(os.path.join(*a))
+
+
+def dirname(path: str, level: int = 1) -> str:
+    """Culling directories from the
+    end according to `level`, usually
+    used to get the project root path.
+    """
+    for n in range(level):
+        path = os.path.dirname(os.path.abspath(path))
+    return path
+
+
+def genpath(*a) -> str:
+    """Generate path
+    Generates a directory based on the passed in value,
+    creates it if it does not exist, and returns it.
+    """
+    dir: str = abspath(*a)
+    os.path.exists(dir) or os.makedirs(dir)
+    return dir
+
+
+filetor = Filetor
