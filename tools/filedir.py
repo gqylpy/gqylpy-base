@@ -74,11 +74,13 @@ class Filetor:
         if ftype is None:
             ftype: str = file.split('.')[-1]
 
+        process_func = f'_for_{ftype}_'
+
         with open(file, mode, encoding='UTF-8') as fp:
-            try:
-                return getattr(cls, f'_for_{ftype}_')(fp, data)
-            except AttributeError:
-                return cls._for_text_(fp, data)
+            if hasattr(cls, process_func):
+                return getattr(cls, process_func)(fp, data)
+
+            return cls._for_text_(fp, data)
 
     @classmethod
     def _for_json_(cls, fp: open, data=None):
@@ -104,6 +106,10 @@ class Filetor:
     @classmethod
     def _for_yml_(cls, *a, **kw):
         return cls._for_yaml_(*a, **kw)
+
+    @classmethod
+    def _for_txt_(cls, *a, **kw):
+        return cls._for_text_(*a, **kw)
 
 
 def fetch_deep_path(
