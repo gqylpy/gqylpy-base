@@ -180,21 +180,31 @@ class TestFuncSpeed:
             print(f'{action.__name__}: {result}')
 
 
-def record_duration(func):
-    name = tools.hump(func.__name__)
+class RecordDuration:
 
-    @functools.wraps(func)
-    def inner(*a, **kw):
+    def __init__(self, mark: str = None):
+        self.mark = mark
+
+    def __call__(self, func):
+
+        @functools.wraps(func)
+        def inner(*a, **kw):
+            return self.record_duration(func, *a, **kw)
+
+        return inner
+
+    def record_duration(self, func, *a, **kw):
         start = time.time()
         func(*a, **kw)
         end = time.time()
 
-        exec_time = round(end - start, 2)
-        log.decorator.info(f'{name} execute time: {exec_time}s')
+        exec_time: float = round(end - start, 2)
+        mark: str = self.mark or tools.hump(func.__name__)
 
-    return inner
+        log.decorator.info(f'{mark}: {exec_time}s')
 
 
 retry = Retry
 try_except = TryExcept
 while_true = WhileTrue
+record_duration = RecordDuration
