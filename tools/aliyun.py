@@ -47,8 +47,8 @@ __ = sys.modules[__name__]
 
 @retry('InitAliyun', cycle=60)
 def __init__(config: Dict):
-    aliyun: dict = config.aliyun
-    init: dict = aliyun.pop('init', {})
+    aliyun: Dict = config.aliyun
+    init: Dict = aliyun.pop('init', {})
 
     for name, conf in aliyun.items():
 
