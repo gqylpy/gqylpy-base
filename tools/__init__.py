@@ -49,12 +49,9 @@ def __init__(config: Dict):
 
     for name in config:
         try:
-            module = load_module(f'{__name__}.{name}')
-        except ModuleNotFoundError:
-            continue
-
-        if hasattr(module, '__init__'):
-            module.__init__(config)
+            load_name(f'{__name__}.{name}.__init__')(config)
+        except (ModuleNotFoundError, AttributeError):
+            pass
 
 
 def exec_cmd(cmd: str) -> str:

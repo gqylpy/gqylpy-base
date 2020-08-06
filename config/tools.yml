@@ -14,7 +14,7 @@ log:
 
 #mongo:
 #  mon:
-#    host: mongodb://10.121.12.120:30017/mon
+#    host: mongodb://10.121.11.219:30017/mon
 
 
 #influx:
