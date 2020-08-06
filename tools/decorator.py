@@ -38,6 +38,7 @@ class TryExcept:
             exc_name: str = type(e).__name__
 
             log.decorator.error(f'{mark}.{exc_name}: {e}')
+
             # tools.aliyun.send_mail(
             #     Subject=f'{mark}.{exc_name}', TextBody=e)
 
@@ -175,7 +176,7 @@ class TestFuncSpeed:
             end = time.time()
             speeds.append(end - start)
 
-        for action in min, max, tools.mean:
+        for action in min, max, tools.mean, sum:
             result = round(action(speeds), self.keep)
             print(f'{action.__name__}: {result}')
 
