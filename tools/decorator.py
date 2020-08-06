@@ -32,9 +32,14 @@ class TryExcept:
             return func(*a, **kw)
         except self.exc_type as e:
             if not self.no_log:
-                sign: str = self.mark or tools.hump(func.__name__)
-                exc_name: str = type(e).__name__
-                log.decorator.error(f'{sign}.{exc_name}: {e}')
+                return
+
+            mark: str = self.mark or tools.hump(func.__name__)
+            exc_name: str = type(e).__name__
+
+            log.decorator.error(f'{mark}.{exc_name}: {e}')
+            # tools.aliyun.send_mail(
+            #     Subject=f'{mark}.{exc_name}', TextBody=e)
 
         return self.exc_return
 
