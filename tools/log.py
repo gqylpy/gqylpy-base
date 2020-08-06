@@ -7,8 +7,6 @@ from .decorator import retry
 
 __ = sys.modules[__name__]
 
-__default__: logging.getLogger
-
 
 @retry('InitLog', cycle=60)
 def __init__(config: Dict):
@@ -39,12 +37,7 @@ def __init__(config: Dict):
             stream_handler.setFormatter(formatter)
             log.addHandler(stream_handler)
 
-        # Create pointer in self module.
         setattr(__, name, log)
-
-        # Set the default logger handler.
-        if not hasattr(__, '__default__'):
-            setattr(__, '__default__', log)
 
 
 logger: logging.getLogger
