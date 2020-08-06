@@ -35,7 +35,7 @@ class TryExcept:
             if not self.no_log:
                 sign: str = self.mark or tools.hump(func.__name__)
                 exc_name: str = type(e).__name__
-                log.logger.error(f'{sign}.{exc_name}: {e}')
+                log.decorator.error(f'{sign}.{exc_name}: {e}')
 
         return self.exc_return
 
@@ -110,7 +110,7 @@ class Retry:
                 sign: str = self.mark or tools.hump(func.__name__)
                 exc_name: str = type(e).__name__
 
-                log.logger.warning(
+                log.decorator.warning(
                     f'[count:{count}] {sign}.{exc_name}: {e}')
 
                 if self.count and count == self.count:
@@ -180,15 +180,15 @@ def record_time(func):
     name = tools.hump(func.__name__)
 
     @functools.wraps(func)
-    def record_time(*a, **kw):
+    def inner(*a, **kw):
         start = time.time()
         func(*a, **kw)
         end = time.time()
 
         exec_time = round(end - start, 2)
-        log.logger.info(f'{name} execute time: {exec_time}s')
+        log.decorator.info(f'{name} execute time: {exec_time}s')
 
-    return record_time
+    return inner
 
 
 retry = Retry

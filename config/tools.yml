@@ -1,15 +1,18 @@
 log:
   init:
-    level: INFO
-    output_method: both
+    level: DEBUG
+    output: both
+    handler: default.log
     datefmt: '%d/%b/%y:%H:%M:%S %z'
     logfmt: '[%(asctime)s] [%(processName)s.%(threadName)s:%(levelname)s] %(message)s'
   logger:
-    level: DEBUG
-    handler: defaul.log
-    output_method: stream
+    output: stream
     datefmt: '%Y-%m-%d %H:%M:%S'
     logfmt: '[%(asctime)s] [%(module)s.%(funcName)s line:%(lineno)d] [%(levelname)s] %(message)s'
+  decorator:
+    level: WARNING
+    datefmt: '%Y-%m-%d %H:%M:%S'
+    logfmt: '[%(asctime)s] [%(levelname)s] %(message)s'
 
 
 #mongo:

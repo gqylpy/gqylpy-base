@@ -23,7 +23,7 @@ def __init__(config: Dict):
         log.setLevel(conf.level)
         formatter = logging.Formatter(conf.logfmt, conf.datefmt)
 
-        if conf.output_method in ['file', 'both']:
+        if conf.output in ['file', 'both']:
             if not os.path.isabs(conf.handler):
                 conf.handler = os.path.join(config.path.log, conf.handler)
 
@@ -34,7 +34,7 @@ def __init__(config: Dict):
             file_handler.setFormatter(formatter)
             log.addHandler(file_handler)
 
-        if conf.output_method in ['stream', 'both']:
+        if conf.output in ['stream', 'both']:
             stream_handler = logging.StreamHandler()
             stream_handler.setFormatter(formatter)
             log.addHandler(stream_handler)
@@ -48,3 +48,4 @@ def __init__(config: Dict):
 
 
 logger: logging.getLogger
+decorator: logging.getLogger
