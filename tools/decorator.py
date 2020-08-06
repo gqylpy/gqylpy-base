@@ -31,7 +31,7 @@ class TryExcept:
         try:
             return func(*a, **kw)
         except self.exc_type as e:
-            if not self.no_log:
+            if self.no_log:
                 return
 
             mark: str = self.mark or tools.hump(func.__name__)
