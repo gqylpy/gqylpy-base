@@ -1,4 +1,5 @@
 import time
+import numpy
 import functools
 
 import tools
@@ -20,19 +21,23 @@ class TryExcept:
         self.exc_return = exc_return
 
     def __call__(self, func):
+
         @functools.wraps(func)
-        def try_except(*a, **kw):
-            try:
-                return func(*a, **kw)
-            except self.exc_type as e:
-                if not self.no_log:
-                    sign: str = self.mark or tools.hump(func.__name__)
-                    exc_name: str = type(e).__name__
-                    log.logger.error(f'{sign}.{exc_name}: {e}')
+        def inner(*a, **kw):
+            return self.try_except(func, *a, **kw)
 
-            return self.exc_return
+        return inner
 
-        return try_except
+    def try_except(self, func, *a, **kw):
+        try:
+            return func(*a, **kw)
+        except self.exc_type as e:
+            if not self.no_log:
+                sign: str = self.mark or tools.hump(func.__name__)
+                exc_name: str = type(e).__name__
+                log.logger.error(f'{sign}.{exc_name}: {e}')
+
+        return self.exc_return
 
 
 class WhileTrue:
@@ -48,23 +53,27 @@ class WhileTrue:
         self.before = before
 
     def __call__(self, func):
+
         @functools.wraps(func)
-        def while_true(*a, **kw):
-            while self.cond:
-                if self.before:
-                    time.sleep(self.cycle)
+        def inner(*a, **kw):
+            self.while_true(func, *a, **kw)
 
-                ret = func(*a, **kw)
+        return inner
 
-                if ret == '_break_':
-                    break
-                if ret == '_continue_':
-                    continue
+    def while_true(self, func, *a, **kw):
+        while self.cond:
+            if self.before:
+                time.sleep(self.cycle)
 
-                if not self.before:
-                    time.sleep(self.cycle)
+            ret = func(*a, **kw)
 
-        return while_true
+            if ret == '_break_':
+                break
+            if ret == '_continue_':
+                continue
+
+            if not self.before:
+                time.sleep(self.cycle)
 
 
 class Retry:
@@ -84,27 +93,30 @@ class Retry:
     def __call__(self, func):
 
         @functools.wraps(func)
-        def retry(*a, **kw):
-            count = 0
+        def inner(*a, **kw):
+            return self.retry(func, *a, **kw)
 
-            while True:
-                try:
-                    return func(*a, **kw)
-                except self.retry_exc as e:
-                    count += 1
+        return inner
 
-                    sign: str = self.mark or tools.hump(func.__name__)
-                    exc_name: str = type(e).__name__
+    def retry(self, func, *a, **kw):
+        count = 0
 
-                    log.logger.warning(
-                        f'[count:{count}] {sign}.{exc_name}: {e}')
+        while True:
+            try:
+                return func(*a, **kw)
+            except self.retry_exc as e:
+                count += 1
 
-                    if self.count and count == self.count:
-                        raise e
+                sign: str = self.mark or tools.hump(func.__name__)
+                exc_name: str = type(e).__name__
 
-                time.sleep(self.cycle)
+                log.logger.warning(
+                    f'[count:{count}] {sign}.{exc_name}: {e}')
 
-        return retry
+                if self.count and count == self.count:
+                    raise e
+
+            time.sleep(self.cycle)
 
 
 def before_func(func=None):
@@ -138,6 +150,45 @@ def after_func(func=None, independent: bool = False):
         return inner
 
     return timer
+
+
+class TestFuncSpeed:
+
+    def __init__(self, count: int, keep: int = 7):
+        self.count = count
+        self.keep = keep
+
+    def __call__(self, func):
+        self.func = func
+        return self.test_func_speed
+
+    def test_func_speed(self, *a, **kw):
+        speeds = []
+
+        for _ in range(self.count):
+            start = time.time()
+            self.func(*a, **kw)
+            end = time.time()
+            speeds.append(end - start)
+
+        for action in min, max, numpy.mean:
+            result = round(action(speeds), self.keep)
+            print(f'{action.__name__}: {result}')
+
+
+def record_time(func):
+    name = tools.hump(func.__name__)
+
+    @functools.wraps(func)
+    def record_time(*a, **kw):
+        start = time.time()
+        func(*a, **kw)
+        end = time.time()
+
+        exec_time = round(end - start, 2)
+        log.logger.info(f'{name} execute time: {exec_time}s')
+
+    return record_time
 
 
 retry = Retry
