@@ -33,24 +33,11 @@ def __init__(config: Dict):
         setattr(__, name.replace('-', '_'), topic)
 
 
-def send(
-        type: str,
-        ids: list or str = 'All',
-        action: str = None,
-        topic: Topic = None):
+def send(msg: dict, topic: Topic = None):
     """Simple transmitter."""
-
-    # Generate msg.
-    msg = Dict()
-    msg.type = type
-    msg.ids = ids
-    if action:
-        msg.action = action
-
-    # Send msg.
     pro: Producer = (topic or __default__).get_sync_producer()
     pro.produce(json.dumps(msg).encode())
-    log.logger.info(f'kafka.send: {msg}')
+    log.logger.info(f'Send successfully: {msg}')
 
     # `pro.stop()` is very slow, so:
     th.Thread(
