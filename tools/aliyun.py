@@ -39,14 +39,14 @@ from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
 
 from . import log
-from . import dadclass
+from .dadclass import Dict
 from .decorator import retry
 
 __ = sys.modules[__name__]
 
 
 @retry('InitAliyun', cycle=60)
-def __init__(config: dadclass.Dict):
+def __init__(config: Dict):
     """
     Generate all action objects and
     establish pointers in the current module.
@@ -65,7 +65,7 @@ def __init__(config: dadclass.Dict):
 class Aliyun:
     """Secondary encapsulation of `aliyunsdkcore`"""
 
-    def __init__(self, action: dadclass.Dict):
+    def __init__(self, action: Dict):
         self.client = AcsClient(
             ak=action.ak,
             secret=action.secret,
