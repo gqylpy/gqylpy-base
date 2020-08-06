@@ -34,6 +34,7 @@ from .decorator import try_except
 from .decorator import while_true
 from .decorator import after_func
 from .decorator import before_func
+from .decorator import record_time
 
 from .filedir import abspath
 from .filedir import dirname
