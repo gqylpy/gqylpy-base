@@ -81,12 +81,11 @@ class Aliyun:
         request._protocol_type = action.protocol_type
         request._accept_format = action.accept_format
 
-        request._params = action
-
+        self.params = request._params = action
         self.request = request
 
     def __call__(self, **active_params):
-        self.request._params.update(active_params)
+        self.params.update(active_params)
         result: bytes = self.client.do_action(self.request)
         log.logger.info(result)
 
