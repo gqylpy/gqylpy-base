@@ -221,3 +221,12 @@ def get_caller(level: int = 1) -> str:
         back = back.f_back
 
     return back.f_code.co_name
+
+
+def mean(numbers: list) -> float:
+    result = 0
+
+    for num in numbers:
+        result += num
+
+    return result / len(numbers)

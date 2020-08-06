@@ -114,21 +114,21 @@ class Filetor:
 
 def fetch_deep_path(
         root: str = None,
-        __paths: 'Not param' = None,
-        __root: 'Not param' = None
+        _paths: 'Not param' = None,
+        _root: 'Not param' = None
 ) -> Dict:
-    paths = __paths or Dict()
-    __root = __root or root
+    paths = _paths or Dict()
+    _root = _root or root
 
-    if root == __root:
+    if root == _root:
         paths['root'] = root
 
     for name in os.listdir(root):
         full = abspath(root, name)
-        paths[full.replace(__root, '')[1:].replace('\\', '/')] = full
+        paths[full.replace(_root, '')[1:].replace('\\', '/')] = full
 
         if os.path.isdir(full):
-            fetch_deep_path(full, paths, __root)
+            fetch_deep_path(full, paths, _root)
 
     return paths
 

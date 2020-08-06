@@ -1,5 +1,4 @@
 import time
-import numpy
 import functools
 
 import tools
@@ -171,7 +170,7 @@ class TestFuncSpeed:
             end = time.time()
             speeds.append(end - start)
 
-        for action in min, max, numpy.mean:
+        for action in min, max, tools.mean:
             result = round(action(speeds), self.keep)
             print(f'{action.__name__}: {result}')
 
