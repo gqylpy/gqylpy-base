@@ -55,6 +55,7 @@ def __init__(config: Dict):
             pass
 
 
+@retry(count=3, cycle=5)
 def exec_cmd(cmd: str) -> str:
     """
     if exec the cmd success:
