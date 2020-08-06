@@ -180,7 +180,7 @@ class TestFuncSpeed:
             print(f'{action.__name__}: {result}')
 
 
-def record_time(func):
+def record_duration(func):
     name = tools.hump(func.__name__)
 
     @functools.wraps(func)
