@@ -47,10 +47,6 @@ __ = sys.modules[__name__]
 
 @retry('InitAliyun', cycle=60)
 def __init__(config: Dict):
-    """
-    Generate all action objects and
-    establish pointers in the current module.
-    """
     aliyun: dict = config.aliyun
     init: dict = aliyun.pop('init', {})
 
@@ -63,7 +59,6 @@ def __init__(config: Dict):
 
 
 class Aliyun:
-    """Secondary encapsulation of `aliyunsdkcore`"""
 
     def __init__(self, action: Dict):
         self.client = AcsClient(
