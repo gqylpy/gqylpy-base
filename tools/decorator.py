@@ -198,8 +198,8 @@ class RecordDuration:
         func(*a, **kw)
         end = time.time()
 
-        exec_time: float = round(end - start, 2)
         mark: str = self.mark or tools.hump(func.__name__)
+        exec_time: float = round(end - start, 2)
 
         log.simple.info(f'{mark}: {exec_time}s')
 
