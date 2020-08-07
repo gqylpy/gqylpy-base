@@ -37,10 +37,9 @@ class TryExcept:
             mark: str = self.mark or tools.hump(func.__name__)
             exc_name: str = type(e).__name__
 
-            log.decorator.error(f'{mark}.{exc_name}: {e}')
-
-            # tools.aliyun.send_mail(
-            #     Subject=f'{mark}.{exc_name}', TextBody=e)
+            log.simple.error(f'{mark}.{exc_name}: {e}')
+            tools.aliyun.send_mail(
+                Subject=f'{mark}.{exc_name}', TextBody=e)
 
         return self.exc_return
 
@@ -115,7 +114,7 @@ class Retry:
                 sign: str = self.mark or tools.hump(func.__name__)
                 exc_name: str = type(e).__name__
 
-                log.decorator.warning(
+                log.simple.warning(
                     f'[count:{count}] {sign}.{exc_name}: {e}')
 
                 if self.count and count == self.count:
@@ -202,7 +201,7 @@ class RecordDuration:
         exec_time: float = round(end - start, 2)
         mark: str = self.mark or tools.hump(func.__name__)
 
-        log.decorator.info(f'{mark}: {exec_time}s')
+        log.simple.info(f'{mark}: {exec_time}s')
 
 
 retry = Retry

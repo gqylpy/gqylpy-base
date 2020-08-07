@@ -41,5 +41,5 @@ if abspath(sys.argv[0]) == tools.path['go.py']:
     if not _in_container:
         save_pid(abspath(tools.path.log, 'pid'))
 
-    over_func.add(log.logger.info, 'over')
-    log.logger.info('start')
+    over_func.add(log.simple.info, 'over')
+    log.simple.info('start')

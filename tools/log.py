@@ -41,4 +41,4 @@ def __init__(config: Dict):
 
 
 logger: logging.getLogger
-decorator: logging.getLogger
+simple: logging.getLogger

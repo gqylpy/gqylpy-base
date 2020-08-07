@@ -30,7 +30,7 @@ SingleSendMail:
         Label, negligible.
     :param **active_params:
         Subject: Email subject, it is recommended to fill in.
-        HtmlBody: Email HTML body, limit 28K. Priority greater than 'Textbody'.
+        HtmlBody: Email HTML body, limit 28K. Priority greater than 'TextBody'.
         TextBody: Email text body, limit 28K.
 """
 import sys
