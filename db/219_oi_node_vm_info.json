@@ -1,0 +1,2859 @@
+[
+  {
+    "_id": "5f2cfd32177320da4a26d2f6",
+    "timestamp": "2z020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1073741824.0,
+      "cpu_usage": "0.0",
+      "uuid": "24cc9271-2430-4a46-a026-404c67f68a08",
+      "name": "scen_vm_xeL4",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet50",
+          "net_receive_reques": 1,
+          "mac": "00:1a:4a:16:02:40",
+          "net_receive_write": 90
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 0,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 1,
+          "source_type": "block",
+          "total_size": 1073741824,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/bb11d713-6c64-404c-a250-6eb349d2e36a/d01bf670-c1e9-4665-8dc7-12dabc53a3df",
+          "disk_write": 0,
+          "disk_read": 512,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 1,
+      "memory_total": 1073741824.0,
+      "domain_name": "scen_vm_xeL4",
+      "state": 1,
+      "memory_usage": 100.0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "24cc9271-2430-4a46-a026-404c67f68a08",
+      "name": "scen_vm_xeL4",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d2f7",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 2774507520.0,
+      "cpu_usage": "0.312007994443",
+      "uuid": "b43b3b91-763c-4e4a-a0fe-e22001b700b2",
+      "name": "keystone",
+      "nics": [
+        {
+          "net_send_read": 740874819,
+          "net_send_request": 1998509,
+          "ip": "",
+          "nic_name": "vnet3",
+          "net_receive_reques": 3126495,
+          "mac": "00:1a:4a:16:01:00",
+          "net_receive_write": 537821745
+        },
+        {
+          "net_send_read": 10827977,
+          "net_send_request": 66173,
+          "ip": "",
+          "nic_name": "vnet11",
+          "net_receive_reques": 850661,
+          "mac": "00:1a:4a:16:01:21",
+          "net_receive_write": 49491609
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 4,
+          "source_type": "file",
+          "total_size": 0,
+          "allocated_size": 0,
+          "source_path": "",
+          "disk_write": 0,
+          "disk_read": 152,
+          "source": "",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 0,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 8995,
+          "source_type": "block",
+          "total_size": 107374182400,
+          "allocated_size": 15446769664,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/3775dbce-9120-415e-9ee0-b4ddf4df13bd/f08a2ee8-7df9-11ea-a2c2-6805caab8de0",
+          "disk_write": 1998875648,
+          "disk_read": 223529984,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 17045651456,
+          "disk_write_request": 302380
+        }
+      ],
+      "cpus": 16,
+      "memory_total": 8199946240.0,
+      "domain_name": "keystone",
+      "state": 1,
+      "memory_usage": 33.83567939099074
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "b43b3b91-763c-4e4a-a0fe-e22001b700b2",
+      "name": "keystone",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d2f8",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 920133632.0,
+      "cpu_usage": "0.140266366835",
+      "uuid": "2678aa9a-34aa-47fc-ad6e-a02a873a2f9d",
+      "name": "appVmbpzRk1596072167",
+      "nics": [
+        {
+          "net_send_read": 242845798,
+          "net_send_request": 1046628,
+          "ip": "",
+          "nic_name": "vnet47",
+          "net_receive_reques": 1146216,
+          "mac": "00:1a:4a:16:02:2e",
+          "net_receive_write": 274258058
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 24,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 1052876,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 15,
+          "source_type": "file",
+          "total_size": 385024,
+          "allocated_size": 385024,
+          "source_path": "/var/run/mecnode/payload/2678aa9a-34aa-47fc-ad6e-a02a873a2f9d.bc4e90199b40dca60be4875c478d6b27.img",
+          "disk_write": 0,
+          "disk_read": 37068,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdd",
+          "used_size": 385024,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 7721,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 324337664,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/b1906179-b8fa-4d50-9b42-7b684b7c6796/06e7ad4b-9142-402c-8a9b-b00895758a3c",
+          "disk_write": 795268608,
+          "disk_read": 262423552,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 1073741824,
+          "disk_write_request": 78696
+        }
+      ],
+      "cpus": 64,
+      "memory_total": 3942268928.0,
+      "domain_name": "appVmbpzRk1596072167",
+      "state": 1,
+      "memory_usage": 23.34020455745022
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "2678aa9a-34aa-47fc-ad6e-a02a873a2f9d",
+      "name": "appVmbpzRk1596072167",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d2f9",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "70.9258832583",
+      "uuid": "b17e59eb-7eb0-45c0-a803-ed56f5f55f8b",
+      "name": "HostedEngine",
+      "nics": [
+        {
+          "net_send_read": 9928673751,
+          "net_send_request": 20763037,
+          "ip": "",
+          "nic_name": "vnet1",
+          "net_receive_reques": 114752186,
+          "mac": "00:14:4a:35:67:4f",
+          "net_receive_write": 15177515351
+        },
+        {
+          "net_send_read": 6536157980,
+          "net_send_request": 20137808,
+          "ip": "",
+          "nic_name": "vnet2",
+          "net_receive_reques": 19706219,
+          "mac": "00:16:3e:08:75:97",
+          "net_receive_write": 32950275338
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 48753,
+          "source_type": "block",
+          "total_size": 55834574848,
+          "allocated_size": 55833518080,
+          "source_path": "/var/run/mecnode/storage/3b2d3b26-d1c5-4356-8c29-68466b8bc2c0/fabd6597-3be2-42a9-a856-1875a5d80bbd/ddaa0fa9-eb41-4796-bcf0-72482422a567",
+          "disk_write": 712368320512,
+          "disk_read": 3350502400,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 55834574848,
+          "disk_write_request": 46214278
+        },
+        {
+          "disk_read_request": 4,
+          "source_type": "file",
+          "total_size": 0,
+          "allocated_size": 0,
+          "source_path": "",
+          "disk_write": 0,
+          "disk_read": 152,
+          "source": "",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 0,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "HostedEngine",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "b17e59eb-7eb0-45c0-a803-ed56f5f55f8b",
+      "name": "HostedEngine",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d2fa",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 41553661952.0,
+      "cpu_usage": "18.3413460257",
+      "uuid": "cf0edfb3-1832-4aae-8076-90656fa03b0f",
+      "name": "SVM1",
+      "nics": [],
+      "disks": [
+        {
+          "disk_read_request": 132101,
+          "source_type": "file",
+          "total_size": 107374182400,
+          "allocated_size": 15917260800,
+          "source_path": "/images/SVM.qcow2",
+          "disk_write": 1641142174720,
+          "disk_read": 1502960640,
+          "source": "file",
+          "device_type": "disk",
+          "device": "hda",
+          "used_size": 15917121536,
+          "disk_write_request": 23413616
+        }
+      ],
+      "cpus": 16,
+      "memory_total": 42020708352.0,
+      "domain_name": "SVM1",
+      "state": 1,
+      "memory_usage": 98.88853277748763
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "cf0edfb3-1832-4aae-8076-90656fa03b0f",
+      "name": "SVM1",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d2fb",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "0.249735040443",
+      "uuid": "1f9f1dc6-f4c1-41eb-aeca-4ad291cbd4cb",
+      "name": "houtf-3n-pool01",
+      "nics": [
+        {
+          "net_send_read": 16425551,
+          "net_send_request": 109789,
+          "ip": "",
+          "nic_name": "vnet10",
+          "net_receive_reques": 96693560,
+          "mac": "00:1a:4a:16:01:d0",
+          "net_receive_write": 7124319485
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 64793,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 82444288,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/1542686c-e130-491b-9cef-2374a2223863/c3def604-ad61-4e92-9a66-0ee7128bbd96",
+          "disk_write": 1203501568,
+          "disk_read": 169762816,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "hda",
+          "used_size": 1073741824,
+          "disk_write_request": 186480
+        },
+        {
+          "disk_read_request": 24,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 1052876,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "houtf-3n-pool01",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "1f9f1dc6-f4c1-41eb-aeca-4ad291cbd4cb",
+      "name": "houtf-3n-pool01",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d2fc",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1073741824.0,
+      "cpu_usage": "0.998328860538",
+      "uuid": "af3d071a-fb1c-4f4d-86cf-a53b07df49e1",
+      "name": "scen_vm_5cfc",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet40",
+          "net_receive_reques": 1,
+          "mac": "00:1a:4a:16:02:01",
+          "net_receive_write": 90
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 0,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 1,
+          "source_type": "block",
+          "total_size": 1073741824,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/1e7f0272-877a-4d65-bee8-32263517a2dc/d81bba7f-f923-4351-9f21-a7e544676b76",
+          "disk_write": 0,
+          "disk_read": 512,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 1,
+      "memory_total": 1073741824.0,
+      "domain_name": "scen_vm_5cfc",
+      "state": 1,
+      "memory_usage": 100.0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "af3d071a-fb1c-4f4d-86cf-a53b07df49e1",
+      "name": "scen_vm_5cfc",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d2fd",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 14930186240.0,
+      "cpu_usage": "1.99457689407",
+      "uuid": "e4b6f706-6c26-4ae2-b578-4dcc72ca8cc0",
+      "name": "oi-dataconnector-ligh",
+      "nics": [
+        {
+          "net_send_read": 2196118837978,
+          "net_send_request": 177162445,
+          "ip": "",
+          "nic_name": "vnet33",
+          "net_receive_reques": 206028128,
+          "mac": "00:1a:4a:16:01:fc",
+          "net_receive_write": 74839397577
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 35053,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 4590674164,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 65752,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 43270537216,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/6420d56a-ca63-45fa-8a2a-fb45b45c850a/d86cfd0a-0e0a-477a-8a8a-88937d0f1d5d",
+          "disk_write": 149899962368,
+          "disk_read": 4770587648,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 44023414784,
+          "disk_write_request": 1065534
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 16654893056.0,
+      "domain_name": "oi-dataconnector-ligh",
+      "state": 1,
+      "memory_usage": 89.64444376676039
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "e4b6f706-6c26-4ae2-b578-4dcc72ca8cc0",
+      "name": "oi-dataconnector-ligh",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d2fe",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "0.249362133424",
+      "uuid": "b6ceae7a-8810-4601-b085-cab5601fb5a9",
+      "name": "houminxi-OptimizeTarget-2",
+      "nics": [
+        {
+          "net_send_read": 19091,
+          "net_send_request": 141,
+          "ip": "",
+          "nic_name": "vnet30",
+          "net_receive_reques": 780382,
+          "mac": "00:1a:4a:16:01:48",
+          "net_receive_write": 43090716
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 35053,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 4590674164,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 366258,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 181207040,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/731e20ec-c22d-4340-9a5c-4737842283f8/d4a7b74a-96a0-4ebc-bcf2-823f76a15325",
+          "disk_write": 2415392256,
+          "disk_read": 15642847232,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 1073741824,
+          "disk_write_request": 320069
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "houminxi-OptimizeTarget-2",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "b6ceae7a-8810-4601-b085-cab5601fb5a9",
+      "name": "houminxi-OptimizeTarget-2",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d2ff",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 2959179776.0,
+      "cpu_usage": "0.515089316464",
+      "uuid": "d442af3a-84fa-4ad6-8fa4-845b13c8a77a",
+      "name": "app-supply-test",
+      "nics": [
+        {
+          "net_send_read": 17227005756,
+          "net_send_request": 100914190,
+          "ip": "",
+          "nic_name": "vnet45",
+          "net_receive_reques": 107472953,
+          "mac": "00:1a:4a:16:02:25",
+          "net_receive_write": 53376062326
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 24,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 1052876,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 126003,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 6918766592,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/a0712499-59fb-4c73-8f26-5ef89818d6de/3efa81fb-185e-4b56-982e-c62d4b0239dd",
+          "disk_write": 9944555520,
+          "disk_read": 3085605888,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 7516192768,
+          "disk_write_request": 100493
+        }
+      ],
+      "cpus": 64,
+      "memory_total": 3942256640.0,
+      "domain_name": "app-supply-test",
+      "state": 1,
+      "memory_usage": 75.06309320338922
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "d442af3a-84fa-4ad6-8fa4-845b13c8a77a",
+      "name": "app-supply-test",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d300",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "0.498876954031",
+      "uuid": "f2c517ac-432f-4a96-ae53-ac3c10c2130f",
+      "name": "houminxi-OptimizeTarget-12",
+      "nics": [
+        {
+          "net_send_read": 19059,
+          "net_send_request": 141,
+          "ip": "",
+          "nic_name": "vnet27",
+          "net_receive_reques": 780830,
+          "mac": "00:1a:4a:16:01:5b",
+          "net_receive_write": 43121215
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 35053,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 4590674164,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 339143,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 182255616,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/667012e8-06f7-4976-9620-8d5e3388a5fc/ad7fe962-1b5a-4b20-84b8-08f7a7b77e2e",
+          "disk_write": 2413201408,
+          "disk_read": 14224832000,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 1073741824,
+          "disk_write_request": 320070
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "houminxi-OptimizeTarget-12",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "f2c517ac-432f-4a96-ae53-ac3c10c2130f",
+      "name": "houminxi-OptimizeTarget-12",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d301",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1073741824.0,
+      "cpu_usage": "0.0",
+      "uuid": "f8c2c8c2-b70c-4ae5-8438-417b9f7d421d",
+      "name": "scen_vm_eD7A",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet49",
+          "net_receive_reques": 1,
+          "mac": "00:1a:4a:16:02:3a",
+          "net_receive_write": 90
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 0,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 1,
+          "source_type": "block",
+          "total_size": 1073741824,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/41f46115-b3e7-40fd-8948-c40d93d29976/8b7056f6-159e-4ad9-8aeb-2a95f84989f2",
+          "disk_write": 0,
+          "disk_read": 512,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 1,
+      "memory_total": 1073741824.0,
+      "domain_name": "scen_vm_eD7A",
+      "state": 1,
+      "memory_usage": 100.0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "f8c2c8c2-b70c-4ae5-8438-417b9f7d421d",
+      "name": "scen_vm_eD7A",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d302",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 6204366848.0,
+      "cpu_usage": "0.399358635005",
+      "uuid": "611236f5-86c4-4504-a1ff-08d7fd00f053",
+      "name": "container-node2",
+      "nics": [
+        {
+          "net_send_read": 7013345,
+          "net_send_request": 70964,
+          "ip": "",
+          "nic_name": "vnet7",
+          "net_receive_reques": 851818,
+          "mac": "00:1a:4a:16:01:13",
+          "net_receive_write": 48631929
+        },
+        {
+          "net_send_read": 511658118,
+          "net_send_request": 6857458,
+          "ip": "",
+          "nic_name": "vnet8",
+          "net_receive_reques": 7423989,
+          "mac": "00:1a:4a:16:01:20",
+          "net_receive_write": 466654784
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 4,
+          "source_type": "file",
+          "total_size": 0,
+          "allocated_size": 0,
+          "source_path": "",
+          "disk_write": 0,
+          "disk_read": 152,
+          "source": "",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 0,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 85468,
+          "source_type": "block",
+          "total_size": 214748364800,
+          "allocated_size": 125353197568,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/f43fa43e-a225-40a3-9a98-319bb42134a8/168f3b1c-8398-11ea-8dbe-6805caab8de0",
+          "disk_write": 8413437440,
+          "disk_read": 1495252480,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 126567317504,
+          "disk_write_request": 213304
+        }
+      ],
+      "cpus": 10,
+      "memory_total": 20882366464.0,
+      "domain_name": "container-node2",
+      "state": 1,
+      "memory_usage": 29.71103327152108
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "611236f5-86c4-4504-a1ff-08d7fd00f053",
+      "name": "container-node2",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d303",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "0.0",
+      "uuid": "1fedbfe0-511f-4fd6-9f4b-f0ec1fd173c2",
+      "name": "houminxi-OptimizeTarget-17",
+      "nics": [
+        {
+          "net_send_read": 18839,
+          "net_send_request": 138,
+          "ip": "",
+          "nic_name": "vnet26",
+          "net_receive_reques": 780893,
+          "mac": "00:1a:4a:16:01:66",
+          "net_receive_write": 43126937
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 35053,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 4590674164,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 398449,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 180748288,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/4b8d6d94-f87d-4e4f-923d-4949c5947033/de1f417d-9d89-472b-9ffe-e560aa1b3bf2",
+          "disk_write": 2431655936,
+          "disk_read": 17367573504,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 1073741824,
+          "disk_write_request": 320876
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "houminxi-OptimizeTarget-17",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "1fedbfe0-511f-4fd6-9f4b-f0ec1fd173c2",
+      "name": "houminxi-OptimizeTarget-17",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d304",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "0.0",
+      "uuid": "dddee7bc-3b16-44e7-885c-5cee1b475a3b",
+      "name": "houminxi-OptimizeTarget-26",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet32",
+          "net_receive_reques": 779777,
+          "mac": "00:1a:4a:16:01:76",
+          "net_receive_write": 42996497
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 66809,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 4776249872,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 0,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/f27f9dd8-da0e-4c1a-8b15-7ad6235633b2/17fee431-470b-4fb1-96de-5f3a70d2b045",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "houminxi-OptimizeTarget-26",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "dddee7bc-3b16-44e7-885c-5cee1b475a3b",
+      "name": "houminxi-OptimizeTarget-26",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d305",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 12276723712.0,
+      "cpu_usage": "14.4736291233",
+      "uuid": "cdaee486-2be1-4ef6-b928-78cb85fdfcc5",
+      "name": "logservice",
+      "nics": [
+        {
+          "net_send_read": 658104149,
+          "net_send_request": 9346833,
+          "ip": "",
+          "nic_name": "vnet22",
+          "net_receive_reques": 13802902,
+          "mac": "00:1a:4a:16:01:08",
+          "net_receive_write": 16969531192
+        },
+        {
+          "net_send_read": 6165453,
+          "net_send_request": 58466,
+          "ip": "",
+          "nic_name": "vnet23",
+          "net_receive_reques": 839863,
+          "mac": "00:1a:4a:16:01:23",
+          "net_receive_write": 47844324
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 4,
+          "source_type": "file",
+          "total_size": 0,
+          "allocated_size": 0,
+          "source_path": "",
+          "disk_write": 0,
+          "disk_read": 152,
+          "source": "",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 0,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 43702,
+          "source_type": "block",
+          "total_size": 21474836480,
+          "allocated_size": 18974834688,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/91612a11-e298-438e-9e95-b082f4180376/0c5d4be0-7e37-11ea-be90-6805caab8de0",
+          "disk_write": 5714008576,
+          "disk_read": 1532951040,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 19864223744,
+          "disk_write_request": 680908
+        },
+        {
+          "disk_read_request": 594891,
+          "source_type": "block",
+          "total_size": 536870912000,
+          "allocated_size": 234161438720,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/e4136e7f-584f-4a25-99ec-a0e9dfeb6227/5a7a314c-ee4e-42de-8724-2833c1118370",
+          "disk_write": 2114114342912,
+          "disk_read": 15492777472,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vdb",
+          "used_size": 235149459456,
+          "disk_write_request": 69661251
+        }
+      ],
+      "cpus": 8,
+      "memory_total": 12596584448.0,
+      "domain_name": "logservice",
+      "state": 1,
+      "memory_usage": 97.46073439732477
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "cdaee486-2be1-4ef6-b928-78cb85fdfcc5",
+      "name": "logservice",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d306",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1073741824.0,
+      "cpu_usage": "0.998360702953",
+      "uuid": "1e502d92-ed50-4ad3-913c-e8f014adcf7e",
+      "name": "scen_vm_6W2X",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet43",
+          "net_receive_reques": 1,
+          "mac": "00:1a:4a:16:02:13",
+          "net_receive_write": 90
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 0,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 1,
+          "source_type": "block",
+          "total_size": 1073741824,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/fce797b6-0689-47d9-a2d7-707075b2d097/83e4772a-bc70-4f2b-b0d0-96c3b4b15a40",
+          "disk_write": 0,
+          "disk_read": 512,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 1,
+      "memory_total": 1073741824.0,
+      "domain_name": "scen_vm_6W2X",
+      "state": 1,
+      "memory_usage": 100.0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "1e502d92-ed50-4ad3-913c-e8f014adcf7e",
+      "name": "scen_vm_6W2X",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d307",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 16017100800.0,
+      "cpu_usage": "0.873736569335",
+      "uuid": "430c0577-b7d8-470e-b5fd-5cd1935c1781",
+      "name": "SCVM",
+      "nics": [
+        {
+          "net_send_read": 556274,
+          "net_send_request": 3769,
+          "ip": "",
+          "nic_name": "vnet0",
+          "net_receive_reques": 585945,
+          "mac": "52:54:00:96:16:73",
+          "net_receive_write": 105500687
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 100460,
+          "source_type": "file",
+          "total_size": 107374182400,
+          "allocated_size": 53979787264,
+          "source_path": "/images/SCVM.qcow2",
+          "disk_write": 243559232512,
+          "disk_read": 3706137600,
+          "source": "file",
+          "device_type": "disk",
+          "device": "hda",
+          "used_size": 53979774976,
+          "disk_write_request": 15996893
+        }
+      ],
+      "cpus": 8,
+      "memory_total": 16656818176.0,
+      "domain_name": "SCVM",
+      "state": 1,
+      "memory_usage": 96.1594263127532
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "430c0577-b7d8-470e-b5fd-5cd1935c1781",
+      "name": "SCVM",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d308",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1325748224.0,
+      "cpu_usage": "0.0155951356579",
+      "uuid": "dfeca021-66ee-4945-a82c-d16ad919755b",
+      "name": "appVmjLCJz1595893407",
+      "nics": [
+        {
+          "net_send_read": 48860679479,
+          "net_send_request": 113723864,
+          "ip": "",
+          "nic_name": "vnet44",
+          "net_receive_reques": 115974379,
+          "mac": "00:1a:4a:16:02:22",
+          "net_receive_write": 20730747606
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 24,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 1052876,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 15,
+          "source_type": "file",
+          "total_size": 385024,
+          "allocated_size": 385024,
+          "source_path": "/var/run/mecnode/payload/dfeca021-66ee-4945-a82c-d16ad919755b.609823dcac49db4c9414c19415202f43.img",
+          "disk_write": 0,
+          "disk_read": 37068,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdd",
+          "used_size": 385024,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 42942,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 12471304192,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/f6d55493-9f26-46cf-86c2-26614f3020a4/81e66542-95a3-4825-94f7-41f5a9413c5e",
+          "disk_write": 15950450688,
+          "disk_read": 10513593344,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 13958643712,
+          "disk_write_request": 153698
+        }
+      ],
+      "cpus": 64,
+      "memory_total": 3942256640.0,
+      "domain_name": "appVmjLCJz1595893407",
+      "state": 1,
+      "memory_usage": 33.62917093089099
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "dfeca021-66ee-4945-a82c-d16ad919755b",
+      "name": "appVmjLCJz1595893407",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d309",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1073741824.0,
+      "cpu_usage": "0.0",
+      "uuid": "e1807856-9fe9-4b96-b88e-6337a9af5acb",
+      "name": "jstest1",
+      "nics": [
+        {
+          "net_send_read": 1380,
+          "net_send_request": 4,
+          "ip": "",
+          "nic_name": "vnet37",
+          "net_receive_reques": 513,
+          "mac": "00:1a:4a:16:01:d6",
+          "net_receive_write": 38550
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 0,
+          "source_type": "file",
+          "total_size": 0,
+          "allocated_size": 0,
+          "source_path": "",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "",
+          "device_type": "cdrom",
+          "device": "sdc",
+          "used_size": 0,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 0,
+          "source_type": "block",
+          "total_size": 21474836480,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/b44cd84a-438e-466b-b214-fb829e974552/edf1439a-5cc4-4791-97d3-a1c11e01139e",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 21474836480,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 1,
+      "memory_total": 1073741824.0,
+      "domain_name": "jstest1",
+      "state": 1,
+      "memory_usage": 100.0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "e1807856-9fe9-4b96-b88e-6337a9af5acb",
+      "name": "jstest1",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d30a",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1073741824.0,
+      "cpu_usage": "0.998489281421",
+      "uuid": "3be6681e-42fe-4d37-bdea-97a0d481b29e",
+      "name": "scen_vm_bB8L",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet51",
+          "net_receive_reques": 1,
+          "mac": "00:1a:4a:16:02:43",
+          "net_receive_write": 90
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 0,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 1,
+          "source_type": "block",
+          "total_size": 1073741824,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/023c9fdd-0dc8-49d3-98e1-5d5da7306670/af62253d-4f21-4b14-b154-abf9ce2a5978",
+          "disk_write": 0,
+          "disk_read": 512,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 1,
+      "memory_total": 1073741824.0,
+      "domain_name": "scen_vm_bB8L",
+      "state": 1,
+      "memory_usage": 100.0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "3be6681e-42fe-4d37-bdea-97a0d481b29e",
+      "name": "scen_vm_bB8L",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d30b",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 2439393280.0,
+      "cpu_usage": "0.249664459572",
+      "uuid": "88564974-36a7-4457-8426-b3a7aed93b54",
+      "name": "NFS-Server",
+      "nics": [
+        {
+          "net_send_read": 10708205258,
+          "net_send_request": 50351717,
+          "ip": "",
+          "nic_name": "vnet20",
+          "net_receive_reques": 62790173,
+          "mac": "00:1a:4a:12:05:3f",
+          "net_receive_write": 25282450177
+        },
+        {
+          "net_send_read": 10410,
+          "net_send_request": 39,
+          "ip": "",
+          "nic_name": "vnet21",
+          "net_receive_reques": 781417,
+          "mac": "00:1a:4a:16:01:3b",
+          "net_receive_write": 43129602
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 24,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 1052876,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 8269,
+          "source_type": "block",
+          "total_size": 536870912000,
+          "allocated_size": 7256997888,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/8b96c0e2-f662-44b8-a2a4-3606101b739e/489c120f-2fe9-4b9e-8ac6-6f8e8ce231a6",
+          "disk_write": 149348444160,
+          "disk_read": 562255360,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 8589934592,
+          "disk_write_request": 41916378
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 3972087808.0,
+      "domain_name": "NFS-Server",
+      "state": 1,
+      "memory_usage": 61.41337749600927
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "88564974-36a7-4457-8426-b3a7aed93b54",
+      "name": "NFS-Server",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d30c",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1381818368.0,
+      "cpu_usage": "1.37336282393",
+      "uuid": "786622df-e644-4ccd-8493-057f96628597",
+      "name": "rll-node1",
+      "nics": [
+        {
+          "net_send_read": 2858785349,
+          "net_send_request": 7900871,
+          "ip": "",
+          "nic_name": "vnet9",
+          "net_receive_reques": 106138535,
+          "mac": "00:1a:4a:16:02:03",
+          "net_receive_write": 12209658339
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 24,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 1052876,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 13044,
+          "source_type": "block",
+          "total_size": 107374182400,
+          "allocated_size": 2644312064,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/5b031d7b-79a6-4109-ac8f-d7c1c029a835/f8f08ae8-6211-4d04-99fb-e8377527cbcd",
+          "disk_write": 748733440,
+          "disk_read": 582809600,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 3221225472,
+          "disk_write_request": 46117
+        }
+      ],
+      "cpus": 8,
+      "memory_total": 16655609856.0,
+      "domain_name": "rll-node1",
+      "state": 1,
+      "memory_usage": 8.296414120808763
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "786622df-e644-4ccd-8493-057f96628597",
+      "name": "rll-node1",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d30d",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "0.0",
+      "uuid": "4dc2f8e3-5ce6-45ff-871b-a7ea089bb59d",
+      "name": "houminxi-OptimizeTarget-37",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet41",
+          "net_receive_reques": 410562,
+          "mac": "00:1a:4a:16:01:91",
+          "net_receive_write": 24398025
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 66805,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 4776385040,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 0,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/7fb0ac2d-fbe5-49d3-b5ea-b5124d170ede/d1bbac26-9962-410c-a46e-751cc524977b",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "houminxi-OptimizeTarget-37",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "4dc2f8e3-5ce6-45ff-871b-a7ea089bb59d",
+      "name": "houminxi-OptimizeTarget-37",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d30e",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 519368704.0,
+      "cpu_usage": "0.0",
+      "uuid": "83711888-45eb-45b7-a343-67cb7c1eef4e",
+      "name": "Front",
+      "nics": [
+        {
+          "net_send_read": 918,
+          "net_send_request": 13,
+          "ip": "",
+          "nic_name": "vnet12",
+          "net_receive_reques": 566190,
+          "mac": "00:1a:4a:16:01:05",
+          "net_receive_write": 93978202
+        },
+        {
+          "net_send_read": 6076449,
+          "net_send_request": 57699,
+          "ip": "",
+          "nic_name": "vnet13",
+          "net_receive_reques": 839143,
+          "mac": "00:1a:4a:16:01:16",
+          "net_receive_write": 47767166
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 4,
+          "source_type": "file",
+          "total_size": 0,
+          "allocated_size": 0,
+          "source_path": "",
+          "disk_write": 0,
+          "disk_read": 152,
+          "source": "",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 0,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 7417,
+          "source_type": "block",
+          "total_size": 107374182400,
+          "allocated_size": 6541617664,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/5d9f5c32-6076-4625-909f-974db80c0aee/3097ca4a-7e3b-11ea-916d-6805caab8de0",
+          "disk_write": 1147673088,
+          "disk_read": 163741696,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 8724152320,
+          "disk_write_request": 156968
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 3972939776.0,
+      "domain_name": "Front",
+      "state": 1,
+      "memory_usage": 13.072654842075309
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "83711888-45eb-45b7-a343-67cb7c1eef4e",
+      "name": "Front",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d30f",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1073741824.0,
+      "cpu_usage": "0.0",
+      "uuid": "0cefbf37-792b-4693-99bb-908381ba5a1b",
+      "name": "scen_vm_v1ia",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet46",
+          "net_receive_reques": 1,
+          "mac": "00:1a:4a:16:02:29",
+          "net_receive_write": 90
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 0,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 1,
+          "source_type": "block",
+          "total_size": 1073741824,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/d2c7d254-14ab-4233-957d-bbd3025d00eb/3242bba5-e7c8-4780-a382-ae5423eb1309",
+          "disk_write": 0,
+          "disk_read": 512,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 1,
+      "memory_total": 1073741824.0,
+      "domain_name": "scen_vm_v1ia",
+      "state": 1,
+      "memory_usage": 100.0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "0cefbf37-792b-4693-99bb-908381ba5a1b",
+      "name": "scen_vm_v1ia",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d310",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "0.249629332665",
+      "uuid": "059f68c6-6b25-47b8-b63f-89071c4616f0",
+      "name": "houminxi-OptimizeTarget-35",
+      "nics": [
+        {
+          "net_send_read": 18559,
+          "net_send_request": 134,
+          "ip": "",
+          "nic_name": "vnet31",
+          "net_receive_reques": 779939,
+          "mac": "00:1a:4a:16:01:8c",
+          "net_receive_write": 43060269
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 35053,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 4590674164,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 266553,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 180944896,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/52ac2e25-ff70-49d0-a60d-1fdfb75a41a9/6be846c1-1c03-4aab-83af-426347ef5e44",
+          "disk_write": 2402036736,
+          "disk_read": 10500762112,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 1073741824,
+          "disk_write_request": 318572
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "houminxi-OptimizeTarget-35",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "059f68c6-6b25-47b8-b63f-89071c4616f0",
+      "name": "houminxi-OptimizeTarget-35",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d311",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 7216017408.0,
+      "cpu_usage": "0.999038905624",
+      "uuid": "60298077-e58a-4fbc-9954-5238462f1777",
+      "name": "gateway",
+      "nics": [
+        {
+          "net_send_read": 41125722528,
+          "net_send_request": 119616533,
+          "ip": "",
+          "nic_name": "vnet15",
+          "net_receive_reques": 107596441,
+          "mac": "00:1a:4a:16:01:17",
+          "net_receive_write": 46216601670
+        },
+        {
+          "net_send_read": 1471484064,
+          "net_send_request": 5687373,
+          "ip": "",
+          "nic_name": "vnet16",
+          "net_receive_reques": 102806421,
+          "mac": "00:1a:4a:16:01:56",
+          "net_receive_write": 8627506477
+        },
+        {
+          "net_send_read": 2876113385,
+          "net_send_request": 2261087,
+          "ip": "",
+          "nic_name": "vnet17",
+          "net_receive_reques": 2140484,
+          "mac": "00:1d:4a:15:07:0d",
+          "net_receive_write": 243891498
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 4,
+          "source_type": "file",
+          "total_size": 0,
+          "allocated_size": 0,
+          "source_path": "",
+          "disk_write": 0,
+          "disk_read": 152,
+          "source": "",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 0,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 13354,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 12126912512,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/422ecbbf-af0b-4957-925c-ffe1e947f0e2/6804e253-99f6-4f11-8e53-903b8381013f",
+          "disk_write": 39840126976,
+          "disk_read": 463658496,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 12884901888,
+          "disk_write_request": 4587561
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 8199946240.0,
+      "domain_name": "gateway",
+      "state": 1,
+      "memory_usage": 88.00078923444259
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "60298077-e58a-4fbc-9954-5238462f1777",
+      "name": "gateway",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d312",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 527884288.0,
+      "cpu_usage": "0.0",
+      "uuid": "a348cf9b-d50c-4ee7-9f5b-d4d192baf638",
+      "name": "nfs-server",
+      "nics": [
+        {
+          "net_send_read": 4764,
+          "net_send_request": 74,
+          "ip": "",
+          "nic_name": "vnet18",
+          "net_receive_reques": 565913,
+          "mac": "00:1a:4a:16:01:1b",
+          "net_receive_write": 93962926
+        },
+        {
+          "net_send_read": 38137062,
+          "net_send_request": 214617,
+          "ip": "",
+          "nic_name": "vnet19",
+          "net_receive_reques": 351315,
+          "mac": "00:1a:4a:16:01:1c",
+          "net_receive_write": 55826930
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 4,
+          "source_type": "file",
+          "total_size": 0,
+          "allocated_size": 0,
+          "source_path": "",
+          "disk_write": 0,
+          "disk_read": 152,
+          "source": "",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 0,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 6082,
+          "source_type": "block",
+          "total_size": 536870912000,
+          "allocated_size": 4230217728,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/8269a838-2ab1-455f-bba0-a2a547a9058b/942fad75-9a29-4ccf-a7a7-d02931979dd9",
+          "disk_write": 2387512320,
+          "disk_read": 157607424,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 6442450944,
+          "disk_write_request": 316594
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 3972075520.0,
+      "domain_name": "nfs-server",
+      "state": 1,
+      "memory_usage": 13.289885485359553
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "a348cf9b-d50c-4ee7-9f5b-d4d192baf638",
+      "name": "nfs-server",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d313",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1073741824.0,
+      "cpu_usage": "0.99863976741",
+      "uuid": "22e2e879-2f89-44b5-b242-fc2b67655844",
+      "name": "scen_vm_EWci",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet38",
+          "net_receive_reques": 1,
+          "mac": "00:1a:4a:16:01:e3",
+          "net_receive_write": 90
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 0,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 1,
+          "source_type": "block",
+          "total_size": 1073741824,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/affa8a9d-2410-42a7-8f3b-4bf574ae7814/21cf2a73-f211-4596-9321-c78d4acc39f4",
+          "disk_write": 0,
+          "disk_read": 512,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 1,
+      "memory_total": 1073741824.0,
+      "domain_name": "scen_vm_EWci",
+      "state": 1,
+      "memory_usage": 100.0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "22e2e879-2f89-44b5-b242-fc2b67655844",
+      "name": "scen_vm_EWci",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d314",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "0.249837623272",
+      "uuid": "bdd0ce89-4354-4626-a8c0-4b29c57a84cf",
+      "name": "houminxi-OptimizeTarget-29",
+      "nics": [
+        {
+          "net_send_read": 19036,
+          "net_send_request": 142,
+          "ip": "",
+          "nic_name": "vnet29",
+          "net_receive_reques": 780402,
+          "mac": "00:1a:4a:16:01:7a",
+          "net_receive_write": 43092050
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 35053,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 4590674164,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 334300,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 178323456,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/d3188b49-5ce6-4400-99c6-a0495b08ec83/8131b787-4c92-4102-9f7a-281c5f3dd7d1",
+          "disk_write": 2399683584,
+          "disk_read": 13997485568,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 1073741824,
+          "disk_write_request": 317346
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "houminxi-OptimizeTarget-29",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "bdd0ce89-4354-4626-a8c0-4b29c57a84cf",
+      "name": "houminxi-OptimizeTarget-29",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d315",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 962478080.0,
+      "cpu_usage": "0.997737056585",
+      "uuid": "5f9b7c8b-4c95-4abe-8583-03dffc09d813",
+      "name": "metering",
+      "nics": [
+        {
+          "net_send_read": 2054149,
+          "net_send_request": 40770,
+          "ip": "",
+          "nic_name": "vnet24",
+          "net_receive_reques": 526194,
+          "mac": "00:1a:4a:16:01:07",
+          "net_receive_write": 92526343
+        },
+        {
+          "net_send_read": 38588004,
+          "net_send_request": 214770,
+          "ip": "",
+          "nic_name": "vnet25",
+          "net_receive_reques": 67335,
+          "mac": "00:1a:4a:16:01:22",
+          "net_receive_write": 13060766
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 8647,
+          "source_type": "block",
+          "total_size": 107374182400,
+          "allocated_size": 4193648640,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/ed8d07dc-7ee7-4b6e-aca1-698849f5d317/51f2a377-0f07-48a4-8145-5864b853c231",
+          "disk_write": 3103543296,
+          "disk_read": 198956032,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 5368709120,
+          "disk_write_request": 348837
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 3972075520.0,
+      "domain_name": "metering",
+      "state": 1,
+      "memory_usage": 24.231112302718756
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "5f9b7c8b-4c95-4abe-8583-03dffc09d813",
+      "name": "metering",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d316",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 10154369024.0,
+      "cpu_usage": "1.69606504227",
+      "uuid": "1bbc0954-2559-45dc-b799-d2e42b2a1c1d",
+      "name": "container-master",
+      "nics": [
+        {
+          "net_send_read": 762443102,
+          "net_send_request": 14043373,
+          "ip": "",
+          "nic_name": "vnet5",
+          "net_receive_reques": 14611162,
+          "mac": "00:1a:4a:16:01:09",
+          "net_receive_write": 1141312746
+        },
+        {
+          "net_send_read": 5830188,
+          "net_send_request": 35517,
+          "ip": "",
+          "nic_name": "vnet6",
+          "net_receive_reques": 823876,
+          "mac": "00:1a:4a:16:01:0f",
+          "net_receive_write": 67529853
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 8,
+          "source_type": "file",
+          "total_size": 0,
+          "allocated_size": 0,
+          "source_path": "",
+          "disk_write": 0,
+          "disk_read": 304,
+          "source": "",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 0,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 47383,
+          "source_type": "block",
+          "total_size": 214748364800,
+          "allocated_size": 53932851200,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/39e4f31d-37b0-45da-84d7-fda3fd08069a/73ed4142-8397-11ea-bde1-6805caab8de0",
+          "disk_write": 37884998144,
+          "disk_read": 2375839232,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 54492397568,
+          "disk_write_request": 2930411
+        }
+      ],
+      "cpus": 10,
+      "memory_total": 10313830400.0,
+      "domain_name": "container-master",
+      "state": 1,
+      "memory_usage": 98.45390732816394
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "1bbc0954-2559-45dc-b799-d2e42b2a1c1d",
+      "name": "container-master",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d317",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 549150720.0,
+      "cpu_usage": "0.0",
+      "uuid": "9e89635e-f1eb-44d0-a591-472fd842fe8f",
+      "name": "appVmXFHkz1596072812",
+      "nics": [
+        {
+          "net_send_read": 35329224,
+          "net_send_request": 183112,
+          "ip": "",
+          "nic_name": "vnet48",
+          "net_receive_reques": 228660,
+          "mac": "00:1a:4a:16:02:2f",
+          "net_receive_write": 42150657
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 24,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 1052876,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 15,
+          "source_type": "file",
+          "total_size": 385024,
+          "allocated_size": 385024,
+          "source_path": "/var/run/mecnode/payload/9e89635e-f1eb-44d0-a591-472fd842fe8f.7e1d18e964c756a9c0bb7782b6ee7b5f.img",
+          "disk_write": 0,
+          "disk_read": 37068,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdd",
+          "used_size": 385024,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 6746,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 76611584,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/96de41a9-d14e-47bb-975a-eef8dda95b96/44ecc44a-b9d6-464e-a34f-5683bdce0815",
+          "disk_write": 428208128,
+          "disk_read": 154350592,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 1073741824,
+          "disk_write_request": 68061
+        }
+      ],
+      "cpus": 64,
+      "memory_total": 3942256640.0,
+      "domain_name": "appVmXFHkz1596072812",
+      "state": 1,
+      "memory_usage": 13.929857189612092
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "9e89635e-f1eb-44d0-a591-472fd842fe8f",
+      "name": "appVmXFHkz1596072812",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d318",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1073741824.0,
+      "cpu_usage": "0.998171341755",
+      "uuid": "0df5d6b9-30a5-4909-b377-598996bc2c0f",
+      "name": "scen_vm_FO0C",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet42",
+          "net_receive_reques": 1,
+          "mac": "00:1a:4a:16:02:0b",
+          "net_receive_write": 90
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 0,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 1,
+          "source_type": "block",
+          "total_size": 1073741824,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/626c868d-dc52-4beb-9622-303c9a2388fa/0fd00dba-4b30-49d1-8b65-f4c32060788f",
+          "disk_write": 0,
+          "disk_read": 512,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 1,
+      "memory_total": 1073741824.0,
+      "domain_name": "scen_vm_FO0C",
+      "state": 1,
+      "memory_usage": 100.0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "0df5d6b9-30a5-4909-b377-598996bc2c0f",
+      "name": "scen_vm_FO0C",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d319",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1073741824.0,
+      "cpu_usage": "0.0",
+      "uuid": "9c591dcb-560f-4137-b63d-a7db9930ebd5",
+      "name": "scen_vm_Tkpy",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet39",
+          "net_receive_reques": 1,
+          "mac": "00:1a:4a:16:01:f8",
+          "net_receive_write": 90
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 0,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 1,
+          "source_type": "block",
+          "total_size": 1073741824,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/2a7ae64f-89a6-485c-986f-fe722f2bc7aa/2b336496-f670-4633-89f7-61da5f7fc6e6",
+          "disk_write": 0,
+          "disk_read": 512,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 1,
+      "memory_total": 1073741824.0,
+      "domain_name": "scen_vm_Tkpy",
+      "state": 1,
+      "memory_usage": 100.0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "9c591dcb-560f-4137-b63d-a7db9930ebd5",
+      "name": "scen_vm_Tkpy",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d31a",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 2539454464.0,
+      "cpu_usage": "3.24627951012",
+      "uuid": "ae23e920-9369-4a87-bcc6-4d2c49ace986",
+      "name": "container2",
+      "nics": [
+        {
+          "net_send_read": 5417039926,
+          "net_send_request": 16679942,
+          "ip": "",
+          "nic_name": "vnet34",
+          "net_receive_reques": 18036426,
+          "mac": "00:1a:4a:16:01:33",
+          "net_receive_write": 21497438739
+        },
+        {
+          "net_send_read": 14393892154,
+          "net_send_request": 24154377,
+          "ip": "",
+          "nic_name": "vnet35",
+          "net_receive_reques": 33063474,
+          "mac": "00:1a:4a:16:01:46",
+          "net_receive_write": 24718147718
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 12,
+          "source_type": "file",
+          "total_size": 0,
+          "allocated_size": 0,
+          "source_path": "",
+          "disk_write": 0,
+          "disk_read": 456,
+          "source": "",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 0,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 40072,
+          "source_type": "block",
+          "total_size": 214748364800,
+          "allocated_size": 15663038464,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/4d722836-5661-4d4a-b58e-e05c0f5b58b6/10c3a92c-c671-11ea-818a-6805caab8de0",
+          "disk_write": 84677304320,
+          "disk_read": 1800524800,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 16508780544,
+          "disk_write_request": 5811104
+        }
+      ],
+      "cpus": 8,
+      "memory_total": 8199929856.0,
+      "domain_name": "container2",
+      "state": 1,
+      "memory_usage": 30.96922179330408
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "ae23e920-9369-4a87-bcc6-4d2c49ace986",
+      "name": "container2",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d31b",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "0.249618814348",
+      "uuid": "a29d3000-7f73-48ae-bfd3-d7b43379efdb",
+      "name": "houminxi-OptimizeTarget-27",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet28",
+          "net_receive_reques": 780359,
+          "mac": "00:1a:4a:16:01:77",
+          "net_receive_write": 43039323
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 66791,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 4775213584,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 0,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/7d660790-a17f-4316-b4db-6c1a419269f8/a4c4e4f0-80b0-4a02-8894-1729ebbd4c57",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "houminxi-OptimizeTarget-27",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "a29d3000-7f73-48ae-bfd3-d7b43379efdb",
+      "name": "houminxi-OptimizeTarget-27",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d31c",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "3.74711080638",
+      "uuid": "ec533654-459a-41fe-8d7d-cb53426c078c",
+      "name": "houminxi-OptimizeTarget-14",
+      "nics": [
+        {
+          "net_send_read": 19371,
+          "net_send_request": 145,
+          "ip": "",
+          "nic_name": "vnet14",
+          "net_receive_reques": 781519,
+          "mac": "00:1a:4a:16:01:5f",
+          "net_receive_write": 43181215
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 35053,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 4590674164,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 255648,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 178716672,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/63164571-8e87-4965-8c92-cca64cd42a7d/bd8fede3-ea80-4a62-80a0-cc2c22044b16",
+          "disk_write": 2375208960,
+          "disk_read": 9943937024,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 1073741824,
+          "disk_write_request": 314930
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "houminxi-OptimizeTarget-14",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "ec533654-459a-41fe-8d7d-cb53426c078c",
+      "name": "houminxi-OptimizeTarget-14",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d31d",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 1073741824.0,
+      "cpu_usage": "0.997356032913",
+      "uuid": "e7366675-976e-49b3-9382-68206ff09e31",
+      "name": "scen_vm_Ohs4",
+      "nics": [
+        {
+          "net_send_read": 0,
+          "net_send_request": 0,
+          "ip": "",
+          "nic_name": "vnet36",
+          "net_receive_reques": 1,
+          "mac": "00:1a:4a:16:01:b8",
+          "net_receive_write": 90
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 0,
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "disk_write": 0,
+          "disk_read": 0,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856,
+          "disk_write_request": 0
+        },
+        {
+          "disk_read_request": 1,
+          "source_type": "block",
+          "total_size": 1073741824,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/5ff8cb7d-115f-4eaf-9e41-2b971fb0ea7d/cebe3d27-00c2-4c75-bbbf-41393ef12fe8",
+          "disk_write": 0,
+          "disk_read": 512,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "vda",
+          "used_size": 1073741824,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 1,
+      "memory_total": 1073741824.0,
+      "domain_name": "scen_vm_Ohs4",
+      "state": 1,
+      "memory_usage": 100.0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "e7366675-976e-49b3-9382-68206ff09e31",
+      "name": "scen_vm_Ohs4",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d31e",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "memory_used": 0,
+      "cpu_usage": "0.499280535803",
+      "uuid": "ad5989f0-ee17-4469-b95c-814881ed9327",
+      "name": "houtf-3n-pool02",
+      "nics": [
+        {
+          "net_send_read": 6953121,
+          "net_send_request": 69660,
+          "ip": "",
+          "nic_name": "vnet4",
+          "net_receive_reques": 96649746,
+          "mac": "00:1a:4a:16:01:d1",
+          "net_receive_write": 7116931984
+        }
+      ],
+      "disks": [
+        {
+          "disk_read_request": 63732,
+          "source_type": "block",
+          "total_size": 53687091200,
+          "allocated_size": 64946176,
+          "source_path": "/rhev/data-center/mnt/blockSD/2b93e603-a282-4378-a56f-d3d6b1406a91/images/edc831f5-e8fe-435c-8207-a58520bcb944/4a04b03e-fa6a-4dbc-8d49-4e33a0cd2dfd",
+          "disk_write": 1012429824,
+          "disk_read": 158646272,
+          "source": "dev",
+          "device_type": "disk",
+          "device": "hda",
+          "used_size": 1073741824,
+          "disk_write_request": 159958
+        },
+        {
+          "disk_read_request": 24,
+          "source_type": "file",
+          "total_size": 4588568576,
+          "allocated_size": 4588568576,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-DVD-1810.iso",
+          "disk_write": 0,
+          "disk_read": 1052876,
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 4588568576,
+          "disk_write_request": 0
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 0,
+      "domain_name": "houtf-3n-pool02",
+      "state": 1,
+      "memory_usage": 0
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "ad5989f0-ee17-4469-b95c-814881ed9327",
+      "name": "houtf-3n-pool02",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d31f",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "cpu_usage": "0.0",
+      "uuid": "6331e3c7-54bd-4082-aa48-b232622a7cf4",
+      "nics": [],
+      "disks": [
+        {
+          "source_type": "file",
+          "total_size": 950009856,
+          "allocated_size": 950009856,
+          "source_path": "/rhev/data-center/mnt/glusterSD/192.168.10.106:_iso/13dec6f4-cb62-4105-adfc-4159e1562dce/images/11111111-1111-1111-1111-111111111111/CentOS-7-x86_64-Minimal-1804.iso",
+          "source": "file",
+          "device_type": "cdrom",
+          "device": "hdc",
+          "used_size": 950009856
+        },
+        {
+          "source_type": "block",
+          "total_size": 0,
+          "allocated_size": 0,
+          "source_path": "/rhev/data-center/mnt/blockSD/3b2d3b26-d1c5-4356-8c29-68466b8bc2c0/images/10731007-6d6b-45cd-8cf5-b48fc330fb12/36ce8039-1e74-4361-9b67-1b830c0991b0",
+          "source": "dev",
+          "device_type": "disk",
+          "device": "sda",
+          "used_size": 0
+        }
+      ],
+      "cpus": 6,
+      "memory_total": 4194304,
+      "domain_name": "bwm-test",
+      "state": 0,
+      "name": "bwm-test"
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "6331e3c7-54bd-4082-aa48-b232622a7cf4",
+      "name": "bwm-test",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfd32177320da4a26d320",
+    "timestamp": "2020-08-07 07:00:42.500000",
+    "value": {
+      "cpu_usage": "0.0",
+      "uuid": "b5276b10-959e-4253-8bab-a0b49333ff0a",
+      "nics": [],
+      "disks": [
+        {
+          "source_type": "file",
+          "total_size": 107374182400,
+          "allocated_size": 1421545472,
+          "source_path": "/images/test.qcow2",
+          "source": "file",
+          "device_type": "disk",
+          "device": "hda",
+          "used_size": 1421541376
+        }
+      ],
+      "cpus": 4,
+      "memory_total": 4296704,
+      "domain_name": "test",
+      "state": 0,
+      "name": "test"
+    },
+    "dimensions": {
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "uuid": "b5276b10-959e-4253-8bab-a0b49333ff0a",
+      "name": "test",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  }
+]

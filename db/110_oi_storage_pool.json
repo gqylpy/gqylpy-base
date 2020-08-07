@@ -1,0 +1,162 @@
+[
+  {
+    "_id": "5f2cf031ab7bc43a31d63d19",
+    "timestamp": "2020-08-07 06:23:26.968000",
+    "value": {
+      "instance": "localhost:9200",
+      "datacenter_name": "ECR-cloud1",
+      "cluster": "ceph",
+      "datacenter_uuid": "3ec33506-95c8-11ea-aac0-fa163e1c36d3",
+      "region": "default",
+      "value": 355424001305369,
+      "tenantId": "3867f5749abe47c9847816b9157c0f98",
+      "datacenter_type": "openstack",
+      "job": "lab",
+      "cluster_uuid": "3ec33970-95c8-11ea-aac0-fa163e1c36d3",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "ceph",
+      "host_uuid": "99213AD0-59AB-11E8-A73F-8C16456982A5",
+      "pool": "volumes"
+    },
+    "dimensions": {
+      "_tenant_id": "3867f5749abe47c9847816b9157c0f98",
+      "uuid": "volumes",
+      "datacenter_uuid": "3ec33506-95c8-11ea-aac0-fa163e1c36d3",
+      "cluster": "ceph",
+      "capacity_bytes": 355424001305369,
+      "cluster_uuid": "3ec33970-95c8-11ea-aac0-fa163e1c36d3",
+      "type": "ceph",
+      "name": ""
+    },
+    "tenant_id": "3867f5749abe47c9847816b9157c0f98",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cf031ab7bc43a31d63d1a",
+    "timestamp": "2020-08-07 06:23:26.968000",
+    "value": {
+      "instance": "localhost:9200",
+      "datacenter_name": "ECR-cloud1",
+      "cluster": "ceph",
+      "datacenter_uuid": "3ec33506-95c8-11ea-aac0-fa163e1c36d3",
+      "region": "default",
+      "value": 302392461791368,
+      "tenantId": "3867f5749abe47c9847816b9157c0f98",
+      "datacenter_type": "openstack",
+      "job": "lab",
+      "cluster_uuid": "3ec33970-95c8-11ea-aac0-fa163e1c36d3",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "ceph",
+      "host_uuid": "99213AD0-59AB-11E8-A73F-8C16456982A5",
+      "pool": "vms"
+    },
+    "dimensions": {
+      "_tenant_id": "3867f5749abe47c9847816b9157c0f98",
+      "uuid": "vms",
+      "datacenter_uuid": "3ec33506-95c8-11ea-aac0-fa163e1c36d3",
+      "cluster": "ceph",
+      "capacity_bytes": 302392461791368,
+      "cluster_uuid": "3ec33970-95c8-11ea-aac0-fa163e1c36d3",
+      "type": "ceph",
+      "name": ""
+    },
+    "tenant_id": "3867f5749abe47c9847816b9157c0f98",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cf031ab7bc43a31d63d1b",
+    "timestamp": "2020-08-07 06:23:26.969000",
+    "value": {
+      "instance": "localhost:9200",
+      "datacenter_name": "ECR-cloud1",
+      "cluster": "ceph",
+      "datacenter_uuid": "3ec33506-95c8-11ea-aac0-fa163e1c36d3",
+      "region": "default",
+      "value": 264156490226222,
+      "tenantId": "3867f5749abe47c9847816b9157c0f98",
+      "datacenter_type": "openstack",
+      "job": "lab",
+      "cluster_uuid": "3ec33970-95c8-11ea-aac0-fa163e1c36d3",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "ceph",
+      "host_uuid": "99213AD0-59AB-11E8-A73F-8C16456982A5",
+      "pool": "images"
+    },
+    "dimensions": {
+      "_tenant_id": "3867f5749abe47c9847816b9157c0f98",
+      "uuid": "images",
+      "datacenter_uuid": "3ec33506-95c8-11ea-aac0-fa163e1c36d3",
+      "cluster": "ceph",
+      "capacity_bytes": 264156490226222,
+      "cluster_uuid": "3ec33970-95c8-11ea-aac0-fa163e1c36d3",
+      "type": "ceph",
+      "name": ""
+    },
+    "tenant_id": "3867f5749abe47c9847816b9157c0f98",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cf031ab7bc43a31d63d1c",
+    "timestamp": "2020-08-07 06:23:26.969000",
+    "value": {
+      "instance": "localhost:9200",
+      "datacenter_name": "ECR-cloud1",
+      "cluster": "ceph",
+      "datacenter_uuid": "3ec33506-95c8-11ea-aac0-fa163e1c36d3",
+      "region": "default",
+      "value": 258490553217180,
+      "tenantId": "3867f5749abe47c9847816b9157c0f98",
+      "datacenter_type": "openstack",
+      "job": "lab",
+      "cluster_uuid": "3ec33970-95c8-11ea-aac0-fa163e1c36d3",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "ceph",
+      "host_uuid": "99213AD0-59AB-11E8-A73F-8C16456982A5",
+      "pool": "gnocli"
+    },
+    "dimensions": {
+      "_tenant_id": "3867f5749abe47c9847816b9157c0f98",
+      "uuid": "gnocli",
+      "datacenter_uuid": "3ec33506-95c8-11ea-aac0-fa163e1c36d3",
+      "cluster": "ceph",
+      "capacity_bytes": 258490553217180,
+      "cluster_uuid": "3ec33970-95c8-11ea-aac0-fa163e1c36d3",
+      "type": "ceph",
+      "name": ""
+    },
+    "tenant_id": "3867f5749abe47c9847816b9157c0f98",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cf031ab7bc43a31d63d1d",
+    "timestamp": "2020-08-07 06:23:26.969000",
+    "value": {
+      "instance": "localhost:9200",
+      "datacenter_name": "ECR-cloud1",
+      "cluster": "ceph",
+      "datacenter_uuid": "3ec33506-95c8-11ea-aac0-fa163e1c36d3",
+      "region": "default",
+      "value": 259673728733645,
+      "tenantId": "3867f5749abe47c9847816b9157c0f98",
+      "datacenter_type": "openstack",
+      "job": "lab",
+      "cluster_uuid": "3ec33970-95c8-11ea-aac0-fa163e1c36d3",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "ceph",
+      "host_uuid": "99213AD0-59AB-11E8-A73F-8C16456982A5",
+      "pool": "backups"
+    },
+    "dimensions": {
+      "_tenant_id": "3867f5749abe47c9847816b9157c0f98",
+      "uuid": "backups",
+      "datacenter_uuid": "3ec33506-95c8-11ea-aac0-fa163e1c36d3",
+      "cluster": "ceph",
+      "capacity_bytes": 259673728733645,
+      "cluster_uuid": "3ec33970-95c8-11ea-aac0-fa163e1c36d3",
+      "type": "ceph",
+      "name": ""
+    },
+    "tenant_id": "3867f5749abe47c9847816b9157c0f98",
+    "region": "useast"
+  }
+]

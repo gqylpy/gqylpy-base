@@ -1,3 +1,4 @@
+import abc
 import time
 import functools
 
@@ -5,46 +6,57 @@ import tools
 from . import log
 
 
-class TryExcept:
+class BaseDecorator(metaclass=abc.ABCMeta):
+
+    def __call__(self, func):
+        @functools.wraps(func)
+        def inner(*a, **kw):
+            return self.core(func, *a, **kw)
+
+        return inner
+
+    @abc.abstractmethod
+    def core(self, func, *a, **kw):
+        ...
+
+
+class TryExcept(BaseDecorator):
 
     def __init__(
             self,
             exc_type: type = Exception,
             mark: str = None,
-            no_log: bool = False,
+            ignore: bool = False,
             exc_return: ... = None
     ):
         self.mark = mark
-        self.no_log = no_log
+        self.ignore = ignore
         self.exc_type = exc_type
         self.exc_return = exc_return
 
-    def __call__(self, func):
-
-        @functools.wraps(func)
-        def inner(*a, **kw):
-            return self.try_except(func, *a, **kw)
-
-        return inner
-
-    def try_except(self, func, *a, **kw):
+    def core(self, func, *a, **kw):
         try:
             return func(*a, **kw)
         except self.exc_type as e:
-            if self.no_log:
-                return
-
-            mark: str = self.mark or tools.hump(func.__name__)
-            exc_name: str = type(e).__name__
-
-            log.simple.error(f'{mark}.{exc_name}: {e}')
-            tools.aliyun.send_mail(
-                Subject=f'{mark}.{exc_name}', TextBody=e)
+            if not self.ignore:
+                try:
+                    self.exception_handler(func.__name__, e)
+                except Exception as e:
+                    print(f'[{int(time.time())}] TryExceptError: {e}')
 
         return self.exc_return
 
+    def exception_handler(self, func_name: str, err: Exception):
+        mark: str = self.mark or tools.hump(func_name)
+        exc_name: str = type(err).__name__
 
-class WhileTrue:
+        log.simple.error(f'{mark}.{exc_name}: {str(err)}')
+
+        # tools.aliyun.send_mail(
+        #     Subject=f'{mark}.{exc_name}', TextBody=err)
+
+
+class WhileTrue(BaseDecorator):
 
     def __init__(
             self,
@@ -56,15 +68,7 @@ class WhileTrue:
         self.cycle = cycle
         self.before = before
 
-    def __call__(self, func):
-
-        @functools.wraps(func)
-        def inner(*a, **kw):
-            self.while_true(func, *a, **kw)
-
-        return inner
-
-    def while_true(self, func, *a, **kw):
+    def core(self, func, *a, **kw):
         while self.cond:
             if self.before:
                 time.sleep(self.cycle)
@@ -73,6 +77,7 @@ class WhileTrue:
 
             if ret == '_break_':
                 break
+
             if ret == '_continue_':
                 continue
 
@@ -80,7 +85,7 @@ class WhileTrue:
                 time.sleep(self.cycle)
 
 
-class Retry:
+class Retry(BaseDecorator):
 
     def __init__(
             self,
@@ -94,15 +99,7 @@ class Retry:
         self.mark = mark
         self.cycle = cycle
 
-    def __call__(self, func):
-
-        @functools.wraps(func)
-        def inner(*a, **kw):
-            return self.retry(func, *a, **kw)
-
-        return inner
-
-    def retry(self, func, *a, **kw):
+    def core(self, func, *a, **kw):
         count = 0
 
         while True:
@@ -156,22 +153,18 @@ def after_func(func=None, independent: bool = False):
     return timer
 
 
-class TestFuncSpeed:
+class TestFuncSpeed(BaseDecorator):
 
     def __init__(self, count: int, keep: int = 7):
         self.count = count
         self.keep = keep
 
-    def __call__(self, func):
-        self.func = func
-        return self.test_func_speed
-
-    def test_func_speed(self, *a, **kw):
+    def core(self, func, *a, **kw):
         speeds = []
 
         for _ in range(self.count):
             start = time.time()
-            self.func(*a, **kw)
+            func(*a, **kw)
             end = time.time()
             speeds.append(end - start)
 
@@ -180,20 +173,12 @@ class TestFuncSpeed:
             print(f'{action.__name__}: {result}')
 
 
-class RecordDuration:
+class RecordDuration(BaseDecorator):
 
     def __init__(self, mark: str = None):
         self.mark = mark
 
-    def __call__(self, func):
-
-        @functools.wraps(func)
-        def inner(*a, **kw):
-            return self.record_duration(func, *a, **kw)
-
-        return inner
-
-    def record_duration(self, func, *a, **kw):
+    def core(self, func, *a, **kw):
         start = time.time()
         func(*a, **kw)
         end = time.time()

@@ -85,4 +85,14 @@ class Aliyun:
         log.logger.info(result)
 
 
+send_sms: Aliyun
+# send_sms **active_params:
+#   TemplateParam:
+#     Pass the value of the variable defined at the back end.
+#     e.g. {'variable_name': 'replace_value', ...}
+
 send_mail: Aliyun
+# send_mail **active_params:
+#   Subject: Email subject, it is recommended to fill in.
+#   HtmlBody: Email HTML body, limit 28K. Priority greater than 'TextBody'.
+#   TextBody: Email text body, limit 28K.

@@ -1,0 +1,211 @@
+[
+  {
+    "_id": "5f2cfafb177320da4a26cef1",
+    "timestamp": "2020-08-07 06:55:55.327000",
+    "value": {
+      "name": "test",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "region": "default",
+      "value": 1,
+      "tenantId": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "volume": "test",
+      "instance": "10.121.219.106:9189",
+      "job": "10.121.219.106_glusterfs",
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "glusterfs",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "dimensions": {
+      "_tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "uuid": "test",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "cluster": "",
+      "capacity_bytes": 1,
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "type": "glusterfs",
+      "name": "test"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfafb177320da4a26cef3",
+    "timestamp": "2020-08-07 06:55:55.333000",
+    "value": {
+      "name": "iso",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "region": "default",
+      "value": 1,
+      "tenantId": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "volume": "iso",
+      "instance": "10.121.219.106:9189",
+      "job": "10.121.219.106_glusterfs",
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "glusterfs",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "dimensions": {
+      "_tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "uuid": "iso",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "cluster": "",
+      "capacity_bytes": 1,
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "type": "glusterfs",
+      "name": "iso"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfafb177320da4a26cef4",
+    "timestamp": "2020-08-07 06:55:55.339000",
+    "value": {
+      "name": "demo",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "region": "default",
+      "value": 1,
+      "tenantId": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "volume": "demo",
+      "instance": "10.121.219.106:9189",
+      "job": "10.121.219.106_glusterfs",
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "glusterfs",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f"
+    },
+    "dimensions": {
+      "_tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "uuid": "demo",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "cluster": "",
+      "capacity_bytes": 1,
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "type": "glusterfs",
+      "name": "demo"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfafb177320da4a26cef5",
+    "timestamp": "2020-08-07 06:55:55.341000",
+    "value": {
+      "name": "test1",
+      "cluster": "ceph",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "region": "default",
+      "value": 42270703288643,
+      "tenantId": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "instance": "10.121.219.106:9128",
+      "job": "10.121.219.106_ceph",
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "ceph",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f",
+      "pool": "test1"
+    },
+    "dimensions": {
+      "_tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "uuid": "test1",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "cluster": "ceph",
+      "capacity_bytes": 42270703288643,
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "type": "ceph",
+      "name": "test1"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfafb177320da4a26cef6",
+    "timestamp": "2020-08-07 06:55:55.342000",
+    "value": {
+      "name": "renyb",
+      "cluster": "ceph",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "region": "default",
+      "value": 42270699028585,
+      "tenantId": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "instance": "10.121.219.106:9128",
+      "job": "10.121.219.106_ceph",
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "ceph",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f",
+      "pool": "renyb"
+    },
+    "dimensions": {
+      "_tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "uuid": "renyb",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "cluster": "ceph",
+      "capacity_bytes": 42270699028585,
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "type": "ceph",
+      "name": "renyb"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfafb177320da4a26cef7",
+    "timestamp": "2020-08-07 06:55:55.342000",
+    "value": {
+      "name": "Thinkedge",
+      "cluster": "ceph",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "region": "default",
+      "value": 44103805301425,
+      "tenantId": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "instance": "10.121.219.106:9128",
+      "job": "10.121.219.106_ceph",
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "ceph",
+      "host_uuid": "10189e1e-28cd-11ea-a4d8-3a68dd23099f",
+      "pool": "Thinkedge"
+    },
+    "dimensions": {
+      "_tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "uuid": "Thinkedge",
+      "datacenter_uuid": "7e70bed744994494a19259bef23f35ec",
+      "cluster": "ceph",
+      "capacity_bytes": 44103805301425,
+      "cluster_uuid": "44c5c5e8f50948259f285e1084839544",
+      "type": "ceph",
+      "name": "Thinkedge"
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  },
+  {
+    "_id": "5f2cfafb177320da4a26cef8",
+    "timestamp": "2020-08-07 06:55:55.353000",
+    "value": {
+      "instance": "ceph-exporter:9128",
+      "value": 3038553661823,
+      "cluster": "ceph",
+      "job": "ceph-exporter",
+      "alias": "ceph-exporter",
+      "__name__": "oi_storage_pool_capacity_bytes",
+      "type": "ceph",
+      "pool": "rbd"
+    },
+    "dimensions": {
+      "_tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+      "uuid": "rbd",
+      "datacenter_uuid": "8b66aae9c9024983b4e6d9c650c416ec",
+      "cluster": "ceph",
+      "capacity_bytes": 3038553661823,
+      "cluster_uuid": "08c98c32f7834a039bf670fac1a5c52d",
+      "type": "ceph",
+      "name": ""
+    },
+    "tenant_id": "156bae0eb6ed4916a88bfc56284fa3cd",
+    "region": "useast"
+  }
+]

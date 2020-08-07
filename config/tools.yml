@@ -15,19 +15,19 @@ log:
     logfmt: '[%(asctime)s] [%(levelname)s] %(message)s'
 
 
-#mongo:
-#  mon:
-#    host: mongodb://10.121.11.219:30017/mon
+mongo:
+  mon:
+    host: mongodb://10.121.112.110:30017/mon
 
 
-#influx:
-#  init:
-#    username: root
-#    password: root
-#  mon:
-#    host: 10.121.12.120
-#    port: 31535
-#    database: mon
+influx:
+  init:
+    username: root
+    password: root
+  mon:
+    host: 10.121.112.110
+    port: 30886
+    database: mon
 
 
 #kafka:
@@ -59,18 +59,28 @@ log:
 #    method: post
 #    protocol_type: https
 #    accept_format: json
+#  send_sms:
+#    name: SendSms
+#    ak: LTAI4G4NyZNncAmN2vUc1Vep
+#    secret: 89QhmlEA7PtRQVTeHiPSEc6h8Wfn3m
+#    region_id: cn-hangzhou
+#    domain: dysmsapi.aliyuncs.com
+#    version: 2017-05-25
+#    SignName: 歌琪怡玲萍云
+#    TemplateCode: SMS_175571781
+#    PhoneNumbers: 15911146374
 #  send_mail:
 #    name: SingleSendMail
-#    ak: LTAI4FnwB7NR2ccdPetQAxBp
-#    secret: Xb3YSmlakPqIYkclnrWlQAmBQlXpi2
+#    ak: LTAI4G9oLHvrtHXwWC25L247
+#    secret: 1jtboO1MMl3PUIZLeggL5aHclNxXAa
 #    region_id: cn-hangzhou
 #    domain: dm.aliyuncs.com
-#    version: '2015-11-23'
+#    version: 2015-11-23
 #    AddressType: 1
 #    ReplyToAddress: true
 #    AccountName: trigger@mail.gqylpy.com
-#    ToAddress: 137326237@qq.com
-#    FromAlias: Anomaly Detect
+#    ToAddress: zhuyk4@lenovo.com
+#    FromAlias: EdgeAgent
 
 
 #dbpool:
