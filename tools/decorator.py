@@ -42,7 +42,7 @@ class TryExcept(BaseDecorator):
                 try:
                     self.exception_handler(func.__name__, e)
                 except Exception as e:
-                    print(f'[{int(time.time())}] TryExceptError: {e}')
+                    print(f'[{int(time.time())}] ExceptionHandlerError: {e}')
 
         return self.exc_return
 
@@ -52,8 +52,8 @@ class TryExcept(BaseDecorator):
 
         log.simple.error(f'{mark}.{exc_name}: {str(err)}')
 
-        # tools.aliyun.send_mail(
-        #     Subject=f'{mark}.{exc_name}', TextBody=err)
+        tools.aliyun.send_mail(
+            Subject=f'{mark}.{exc_name}', TextBody=err)
 
 
 class WhileTrue(BaseDecorator):
@@ -153,6 +153,22 @@ def after_func(func=None, independent: bool = False):
     return timer
 
 
+class RecordDuration(BaseDecorator):
+
+    def __init__(self, mark: str = None):
+        self.mark = mark
+
+    def core(self, func, *a, **kw):
+        start = time.time()
+        func(*a, **kw)
+        end = time.time()
+
+        mark: str = self.mark or tools.hump(func.__name__)
+        exec_time: float = round(end - start, 2)
+
+        log.simple.info(f'{mark}: {exec_time}s')
+
+
 class TestFuncSpeed(BaseDecorator):
 
     def __init__(self, count: int, keep: int = 7):
@@ -173,23 +189,8 @@ class TestFuncSpeed(BaseDecorator):
             print(f'{action.__name__}: {result}')
 
 
-class RecordDuration(BaseDecorator):
-
-    def __init__(self, mark: str = None):
-        self.mark = mark
-
-    def core(self, func, *a, **kw):
-        start = time.time()
-        func(*a, **kw)
-        end = time.time()
-
-        mark: str = self.mark or tools.hump(func.__name__)
-        exec_time: float = round(end - start, 2)
-
-        log.simple.info(f'{mark}: {exec_time}s')
-
-
 retry = Retry
 try_except = TryExcept
 while_true = WhileTrue
 record_duration = RecordDuration
+test_func_speed = TestFuncSpeed

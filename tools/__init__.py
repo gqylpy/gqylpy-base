@@ -35,6 +35,7 @@ from .decorator import while_true
 from .decorator import after_func
 from .decorator import before_func
 from .decorator import record_duration
+from .decorator import test_func_speed
 
 from .filedir import abspath
 from .filedir import dirname
