@@ -3,14 +3,26 @@ from collections import Iterable
 
 class SingletonMode:
     """Inherit me, you will
-    become a singleton class.
-    """
+    become a singleton class."""
     _instance = None
 
     def __new__(cls, *a, **kw):
         if cls._instance is None:
             cls._instance = object.__new__(cls)
         return cls._instance
+
+
+class DictMode:
+    """Inherit me, You will have
+    the grammar of the 'dict'."""
+    def __getitem__(self, name):
+        return self.__getattribute__(name)
+
+    def __setitem__(self, name, value):
+        self.__setattr__(name, value)
+
+    def __delitem__(self, name):
+        self.__delattr__(name)
 
 
 class Dict(dict):
