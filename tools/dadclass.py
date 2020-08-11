@@ -33,7 +33,7 @@ class Dict(dict):
 
     Warning:
         After testing, 'Dict' gets values about
-        6 times slower than the native `dict`.
+        2-6 times slower than the native `dict`.
     """
 
     def __init__(self, ____: dict or list = None, **kw):
