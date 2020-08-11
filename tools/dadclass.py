@@ -15,6 +15,7 @@ class SingletonMode:
 class DictMode:
     """Inherit me, You will have
     the grammar of the 'dict'."""
+
     def __getitem__(self, name):
         return self.__getattribute__(name)
 
@@ -26,7 +27,7 @@ class DictMode:
 
 
 class Dict(dict):
-    """Dict == dict
+    """GQYLPYDict == dict
     I inherited 'dict', my main function is to
     allow the dict to get or set values by `d.key`.
 

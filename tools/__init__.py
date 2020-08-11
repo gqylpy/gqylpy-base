@@ -22,6 +22,7 @@ from .crypto import encrypt
 from .crypto import decrypt
 
 from .dadclass import Dict
+from .dadclass import DictMode
 from .dadclass import SingletonMode
 
 from .time_process import str2stamp
