@@ -62,10 +62,11 @@ def query(
             for val in qst['values']]
             for qst in queryset.raw['series']])
         # uuid: str = qst.tags.uuid
-        if len(data) == 1:
-            data = data[0]
     else:
-        data = queryset.raw['series'][0]['values']
+        data = [series['values'] for series in queryset.raw['series']]
+
+    if len(data) == 1:
+        data = data[0]
 
     return data[0] if one else data
 
