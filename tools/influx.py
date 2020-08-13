@@ -65,7 +65,7 @@ def query(
     else:
         data = [series['values'] for series in queryset.raw['series']]
 
-    if len(data) == 1:
+    if 'GROUP BY' not in sql:
         data = data[0]
 
     return data[0] if one else data
