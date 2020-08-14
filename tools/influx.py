@@ -71,9 +71,16 @@ def query(
     return data[0] if one else data
 
 
-def write_points(data: list, client: InfluxDBClient = None, *a, **kw):
-    """Encapsulate the 'InfluxDBClient.write_points' method"""
-    return (client or __default__).write_points(data, *a, **kw)
+def write_points(
+        data: list,
+        time_precision: str = None,
+        client: InfluxDBClient = None,
+        *a, **kw
+) -> bool:
+    return (client or __default__).write_points(
+        points=data,
+        time_precision=time_precision,
+        *a, **kw)
 
 
 mon: InfluxDBClient
