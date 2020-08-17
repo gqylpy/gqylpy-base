@@ -2,7 +2,7 @@ log:
   init:
     level: DEBUG
     output: both
-    handler: default.log
+    handlers: [log/default.log, /var/log/mec_api.log]
     datefmt: '%d/%b/%y:%H:%M:%S %z'
     logfmt: '[%(asctime)s] [%(processName)s.%(threadName)s:%(levelname)s] %(message)s'
   logger:
@@ -10,7 +10,6 @@ log:
     datefmt: '%Y-%m-%d %H:%M:%S'
     logfmt: '[%(asctime)s] [%(module)s.%(funcName)s line:%(lineno)d] [%(levelname)s] %(message)s'
   simple:
-    level: INFO
     datefmt: '%Y-%m-%d %H:%M:%S'
     logfmt: '[%(asctime)s] [%(levelname)s] %(message)s'
 

@@ -8,6 +8,48 @@ from .decorator import retry
 __ = sys.modules[__name__]
 
 
+class Log:
+
+    def __init__(self, name: str, conf: Dict, root: str):
+        self.name = name
+        self.root = root
+
+        self.level: str = conf.level
+        self.output: str = conf.output
+        self.handlers: str or list = conf.handlers
+
+        self.log = logging.getLogger(self.name)
+        self.formatter = logging.Formatter(conf.logfmt, conf.datefmt)
+
+        self.log.setLevel(self.level)
+
+    def __call__(self):
+        if self.output in ['file', 'both']:
+            if isinstance(self.handlers, list):
+                for handler in self.handlers:
+                    self.add_file_handler(handler)
+            else:
+                self.add_file_handler(self.handlers)
+
+        if self.output in ['stream', 'both']:
+            stream_handler = logging.StreamHandler()
+            stream_handler.setFormatter(self.formatter)
+            self.log.addHandler(stream_handler)
+
+        return self.log
+
+    def add_file_handler(self, handler: str):
+        if not os.path.isabs(handler):
+            handler = os.path.join(self.root, handler)
+
+        if not os.path.exists(os.path.dirname(handler)):
+            os.makedirs(os.path.dirname(handler))
+
+        file_handler = logging.FileHandler(handler, encoding='UTF-8')
+        file_handler.setFormatter(self.formatter)
+        self.log.addHandler(file_handler)
+
+
 @retry('InitLog', cycle=60)
 def __init__(config: Dict):
     init: Dict = config.log.pop('init', {})
@@ -17,25 +59,7 @@ def __init__(config: Dict):
         for item in init.items():
             conf.setdefault(*item)
 
-        log = logging.getLogger(name)
-        log.setLevel(conf.level)
-        formatter = logging.Formatter(conf.logfmt, conf.datefmt)
-
-        if conf.output in ['file', 'both']:
-            if not os.path.isabs(conf.handler):
-                conf.handler = os.path.join(config.path.log, conf.handler)
-
-            if not os.path.exists(os.path.dirname(conf.handler)):
-                os.makedirs(os.path.dirname(conf.handler))
-
-            file_handler = logging.FileHandler(conf.handler, encoding='UTF-8')
-            file_handler.setFormatter(formatter)
-            log.addHandler(file_handler)
-
-        if conf.output in ['stream', 'both']:
-            stream_handler = logging.StreamHandler()
-            stream_handler.setFormatter(formatter)
-            log.addHandler(stream_handler)
+        log = Log(name, conf, config.path.root)()
 
         setattr(__, name, log)
 

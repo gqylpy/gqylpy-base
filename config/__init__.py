@@ -14,7 +14,6 @@ from tools import hump
 from tools import Dict
 from tools import abspath
 from tools import dirname
-from tools import save_pid
 from tools import over_func
 from tools import time2second
 from tools import in_container
@@ -46,7 +45,7 @@ init_tools(tools)
 
 if abspath(sys.argv[0]) == tools.path['go.py']:
     if not _in_container:
-        save_pid(abspath(tools.path.log, 'pid'))
+        _file['log/pid'] = os.getpid()
 
     over_func.add(log.simple.info, 'over')
     log.simple.info('start')

@@ -89,11 +89,6 @@ def regular_string_to_dict(
     return [dict(zip(keys, values)) for values in result[1:]]
 
 
-def save_pid(file: str):
-    """Save the main program id to file"""
-    filetor(file, os.getpid())
-
-
 def prt(*args, color: int = 31, font: int = 0,
         end: str = '\n', sep: str = ' ', file: open = None):
     """
