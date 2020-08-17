@@ -15,19 +15,19 @@ log:
     logfmt: '[%(asctime)s] [%(levelname)s] %(message)s'
 
 
-mongo:
-  mon:
-    host: mongodb://10.121.112.110:30017/mon
+#mongo:
+#  mon:
+#    host: mongodb://10.121.112.110:30017/mon
 
 
-influx:
-  init:
-    username: root
-    password: root
-  mon:
-    host: 10.121.112.110
-    port: 30886
-    database: mon
+#influx:
+#  init:
+#    username: root
+#    password: root
+#  mon:
+#    host: 10.121.112.110
+#    port: 30886
+#    database: mon
 
 
 #kafka:
@@ -79,8 +79,8 @@ influx:
 #    AddressType: 1
 #    ReplyToAddress: true
 #    AccountName: trigger@mail.gqylpy.com
-#    ToAddress: zhuyk4@lenovo.com
-#    FromAlias: EdgeAgent
+#    ToAddress: 137326237@qq.com
+#    FromAlias: Untitled
 
 
 #dbpool:

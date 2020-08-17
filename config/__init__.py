@@ -1,3 +1,10 @@
+"""
+    gqylpy
+    ~~~~~~
+
+    https://github.com/gqylpy/gqylpy-base
+
+"""
 import os
 import re
 import sys
