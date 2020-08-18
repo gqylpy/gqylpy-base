@@ -66,7 +66,7 @@ log:
 #    domain: dysmsapi.aliyuncs.com
 #    version: 2017-05-25
 #    SignName: 歌琪怡玲萍云
-#    TemplateCode: SMS_175571781
+#    TemplateCode: SMS_199195663
 #    PhoneNumbers: 15911146374
 #  send_mail:
 #    name: SingleSendMail
@@ -79,7 +79,7 @@ log:
 #    ReplyToAddress: true
 #    AccountName: trigger@mail.gqylpy.com
 #    ToAddress: 137326237@qq.com
-#    FromAlias: Untitled
+#    FromAlias: gqylpy-base
 
 
 #dbpool:

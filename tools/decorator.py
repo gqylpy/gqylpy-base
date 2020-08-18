@@ -52,8 +52,8 @@ class TryExcept(BaseDecorator):
 
         log.simple.error(f'{mark}.{exc_name}: {str(err)}')
 
-        tools.aliyun.send_mail(
-            Subject=f'{mark}.{exc_name}', TextBody=err)
+        # tools.aliyun.send_mail(
+        #     Subject=f'{mark}.{exc_name}', TextBody=err)
 
 
 class WhileTrue(BaseDecorator):

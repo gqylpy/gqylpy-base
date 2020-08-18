@@ -14,7 +14,7 @@ from . import influx
 from . import aliyun
 from . import crypto
 from . import dbpool
-from . import filetor
+from . import filedir
 from . import workers
 from . import dadclass
 from . import over_func
