@@ -32,9 +32,7 @@ class Log:
                 self.add_file_handler(self.handlers)
 
         if self.output in ['stream', 'both']:
-            stream_handler = logging.StreamHandler()
-            stream_handler.setFormatter(self.formatter)
-            self.log.addHandler(stream_handler)
+            self.add_stream_handler()
 
         return self.log
 
@@ -45,9 +43,14 @@ class Log:
         if not os.path.exists(os.path.dirname(handler)):
             os.makedirs(os.path.dirname(handler))
 
-        file_handler = logging.FileHandler(handler, encoding='UTF-8')
-        file_handler.setFormatter(self.formatter)
-        self.log.addHandler(file_handler)
+        handler = logging.FileHandler(handler, encoding='UTF-8')
+        handler.setFormatter(self.formatter)
+        self.log.addHandler(handler)
+
+    def add_stream_handler(self):
+        handler = logging.StreamHandler()
+        handler.setFormatter(self.formatter)
+        self.log.addHandler(handler)
 
 
 @retry('InitLog', cycle=60)
