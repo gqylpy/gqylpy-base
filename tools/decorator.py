@@ -153,7 +153,7 @@ def after_func(func=None, independent: bool = False):
     return timer
 
 
-class RecordDuration(BaseDecorator):
+class ElapsedTime(BaseDecorator):
 
     def __init__(self, mark: str = None):
         self.mark = mark
@@ -192,5 +192,5 @@ class TestFuncSpeed(BaseDecorator):
 retry = Retry
 try_except = TryExcept
 while_true = WhileTrue
-record_duration = RecordDuration
+elapsed_time = ElapsedTime
 test_func_speed = TestFuncSpeed
