@@ -4,13 +4,13 @@ from pymongo import MongoClient
 from pymongo.database import Database
 
 from . import over_func
-from .dadclass import Dict
+from .dadclass import gdict
 from .decorator import retry
 
 
 @retry('InitMongo', cycle=60)
-def __init__(config: Dict):
-    init: Dict = config.mongo.pop('init', {})
+def __init__(config: gdict):
+    init: gdict = config.mongo.pop('init', {})
 
     for name, conf in config.mongo.items():
 

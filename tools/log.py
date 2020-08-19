@@ -2,15 +2,17 @@ import os
 import sys
 import logging
 
-from .dadclass import Dict
+from .dadclass import gdict
 from .decorator import retry
+from .filedir import abspath
+from .filedir import genpath
 
 __ = sys.modules[__name__]
 
 
 class Log:
 
-    def __init__(self, name: str, conf: Dict, root: str):
+    def __init__(self, name: str, conf: gdict, root: str):
         self.name = name
         self.root = root
 
@@ -37,11 +39,10 @@ class Log:
         return self.log
 
     def add_file_handler(self, handler: str):
-        if not os.path.isabs(handler):
-            handler = os.path.join(self.root, handler)
-
-        if not os.path.exists(os.path.dirname(handler)):
-            os.makedirs(os.path.dirname(handler))
+        if os.path.isabs(handler):
+            genpath(os.path.dirname(handler))
+        else:
+            handler = abspath(self.root, handler)
 
         handler = logging.FileHandler(handler, encoding='UTF-8')
         handler.setFormatter(self.formatter)
@@ -54,8 +55,8 @@ class Log:
 
 
 @retry('InitLog', cycle=60)
-def __init__(config: Dict):
-    init: Dict = config.log.pop('init', {})
+def __init__(config: gdict):
+    init: gdict = config.log.pop('init', {})
 
     for name, conf in config.log.items():
 

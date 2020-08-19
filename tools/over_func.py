@@ -26,3 +26,5 @@ def __exec__():
 
 # Trigger '__exec__' function after being killed.
 signal.signal(signal.SIGTERM, lambda signum, stack_frame: exit(1))
+
+add_over_func = add

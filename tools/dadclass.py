@@ -26,7 +26,7 @@ class DictMode:
         self.__delattr__(name)
 
 
-class Dict(dict):
+class GQYLPYDict(dict):
     """GQYLPYDict == dict
     I inherited 'dict', my main function is to
     allow the dict to get or set values by `d.key`.
@@ -38,14 +38,14 @@ class Dict(dict):
 
     def __init__(self, ____: dict or list = None, **kw):
         for name, value in (____ or kw).items():
-            self[name] = Dict(value)
+            self[name] = GQYLPYDict(value)
 
     def __new__(cls, ____={}, **kw):
         if isinstance(____, dict):
             return dict.__new__(cls)
 
         if isinstance(____, Iterable) and not isinstance(____, str):
-            return [Dict(v) for v in ____]
+            return [GQYLPYDict(v) for v in ____]
 
         return ____
 
@@ -73,10 +73,13 @@ class Dict(dict):
         `KeyError: '__deepcopy__'` will appear when
         `copy.deepcopy (Dict obj)` is called.
         """
-        return Dict(self)
+        return GQYLPYDict(self)
 
     def __getstate__(self):
         return True
 
     def __setstate__(self, name):
         return True
+
+
+gdict = GQYLPYDict

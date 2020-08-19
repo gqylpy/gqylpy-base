@@ -2,11 +2,11 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   namespace: isddc
-  name: analytics-anomalydetection
+  name:
   labels:
     app: isddc-monasca
     chart: monasca-0.6.4
-    component: analytics-anomalydetection
+    component:
     heritage: Tiller
     release: isddc
 spec:
@@ -18,20 +18,20 @@ spec:
     metadata:
       labels:
         app: isddc-monasca
-        component: analytics-anomalydetection
+        component:
     spec:
 #      nodeSelector:
 #        kubernetes.io/hostname: minikube
       volumes:
         - name: root
           hostPath:
-            path: /opt/zyk/volumes/analytics-anomalydetection
+            path: /opt/zyk/volumes/
       containers:
-        - name: analytics-anomalydetection
-          image: analytics-anomalydetection:latest
+        - name:
+          image: :latest
           imagePullPolicy: IfNotPresent
 #          volumeMounts:
-#            - mountPath: /root/analytics-anomalydetection
+#            - mountPath: /root/
 #              name: root
           ports:
             - containerPort: 80

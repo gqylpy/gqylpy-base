@@ -3,7 +3,7 @@ import sys
 from influxdb import InfluxDBClient
 
 from . import over_func
-from .dadclass import Dict
+from .dadclass import gdict
 from .decorator import retry
 
 __ = sys.modules[__name__]
@@ -12,9 +12,9 @@ __default__: InfluxDBClient
 
 
 @retry('InitInflux', cycle=60)
-def __init__(config: Dict):
-    influx: Dict = config.influx
-    init: Dict = influx.pop('init', {})
+def __init__(config: gdict):
+    influx: gdict = config.influx
+    init: gdict = influx.pop('init', {})
 
     for name, conf in influx.items():
 
@@ -56,7 +56,7 @@ def query(
         return {} if datastyle is dict and one else []
 
     if datastyle is dict:
-        data = Dict([[dict(
+        data = gdict([[dict(
             (qst['columns'][i], val[i])
             for i in range(len(val)))
             for val in qst['values']]

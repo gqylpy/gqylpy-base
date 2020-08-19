@@ -39,16 +39,16 @@ from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
 
 from . import log
-from .dadclass import Dict
+from .dadclass import gdict
 from .decorator import retry
 
 __ = sys.modules[__name__]
 
 
 @retry('InitAliyun', cycle=60)
-def __init__(config: Dict):
-    aliyun: Dict = config.aliyun
-    init: Dict = aliyun.pop('init', {})
+def __init__(config: gdict):
+    aliyun: gdict = config.aliyun
+    init: gdict = aliyun.pop('init', {})
 
     for name, conf in aliyun.items():
 
@@ -60,7 +60,7 @@ def __init__(config: Dict):
 
 class Aliyun:
 
-    def __init__(self, action: Dict):
+    def __init__(self, action: gdict):
         self.client = AcsClient(
             ak=action.ak,
             secret=action.secret,

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   namespace: isddc
-  name: analytics-anomalydetection
+  name:
   labels:
     app: isddc-monasca
     chart: monasca-0.6.4
@@ -17,4 +17,4 @@ spec:
       targetPort: 80
   selector:
     app: isddc-monasca
-    component: analytics-anomalydetection
+    component:

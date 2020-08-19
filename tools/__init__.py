@@ -14,13 +14,15 @@ from . import influx
 from . import aliyun
 from . import crypto
 from . import dbpool
-from . import filedir
 from . import workers
-from . import dadclass
 from . import over_func
 from . import secure_shell
+from . import filedir as file
+from . import dadclass as base
 from . import decorator as dec
-from . import time_process as tm
+from . import time_parser as tm
+
+from .over_func import add_over_func
 
 from .workers import Workers
 from .secure_shell import SecureShell
@@ -28,21 +30,21 @@ from .secure_shell import SecureShell
 from .crypto import encrypt
 from .crypto import decrypt
 
-from .dadclass import Dict
+from .dadclass import gdict
 from .dadclass import DictMode
 from .dadclass import SingletonMode
 
-from .time_process import str2stamp
-from .time_process import stamp2str
-from .time_process import time2second
-from .time_process import second2time
+from .time_parser import str2stamp
+from .time_parser import stamp2str
+from .time_parser import time2second
+from .time_parser import second2time
 
 from .decorator import retry
 from .decorator import try_except
 from .decorator import while_true
 from .decorator import after_func
 from .decorator import before_func
-from .decorator import ElapsedTime
+from .decorator import elapsed_time
 from .decorator import test_func_speed
 
 from .filedir import abspath
@@ -54,7 +56,7 @@ from .filedir import FileDataOperator
 
 
 @retry('InitTools', cycle=10)
-def __init__(config: Dict):
+def __init__(config: gdict):
     config = copy.deepcopy(config)
 
     for name in config:
@@ -64,7 +66,7 @@ def __init__(config: Dict):
             pass
 
 
-@retry(count=3, cycle=5)
+@retry(count=3, cycle=0.3)
 def exec_cmd(cmd: str) -> str:
     """
     if exec the cmd success:
@@ -137,7 +139,7 @@ class md5:
         return self.m5.hexdigest()
 
 
-class Response(Dict):
+class Response(gdict):
     """API Response"""
 
     def __init__(
@@ -208,7 +210,13 @@ def load_object(class_path: str, *a, **kw):
 
 
 def hump(name: str) -> str:
-    return ''.join(_.capitalize() for _ in name.split('_'))
+    if '_' in name:
+        name: str = ''.join(_.capitalize() for _ in name.split('_'))
+
+    if '-' in name:
+        name: str = ''.join(_.capitalize() for _ in name.split('-'))
+
+    return name
 
 
 def underline(name: str) -> str:

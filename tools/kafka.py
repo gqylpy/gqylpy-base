@@ -7,7 +7,7 @@ from pykafka import Producer
 from pykafka import KafkaClient
 
 from . import log
-from .dadclass import Dict
+from .dadclass import gdict
 from .decorator import retry
 
 __ = sys.modules[__name__]
@@ -16,8 +16,8 @@ __default__: Topic
 
 
 @retry('InitKafka', cycle=60)
-def __init__(config: Dict):
-    init: Dict = config.kafka.pop('init', {})
+def __init__(config: gdict):
+    init: gdict = config.kafka.pop('init', {})
 
     for name, conf in config.kafka.items():
 

@@ -50,7 +50,7 @@ import sys
 
 from DBUtils.PooledDB import PooledDB
 
-from .dadclass import Dict
+from .dadclass import gdict
 from .decorator import retry
 from .mysql import Transaction
 
@@ -60,9 +60,9 @@ __default__: PooledDB
 
 
 @retry('InitDBPool', cycle=60)
-def __init__(config: Dict):
-    dbpool: Dict = config.dbpool
-    init: Dict = dbpool.pop('init', {})
+def __init__(config: gdict):
+    dbpool: gdict = config.dbpool
+    init: gdict = dbpool.pop('init', {})
 
     for name, conf in dbpool.items():
         conf.creator = sys.modules[conf.creator]

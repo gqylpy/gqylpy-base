@@ -7,7 +7,7 @@ from multiprocessing.pool import Pool
 from multiprocessing.pool import ApplyResult
 
 from . import log
-from .time_process import second2time
+from .time_parser import second2time
 
 
 class Workers(Pool):

@@ -8,7 +8,7 @@ from pymysql import cursors
 from pymysql.connections import Connection
 
 from . import log
-from .dadclass import Dict
+from .dadclass import gdict
 from .decorator import retry
 
 __ = sys.modules[__name__]
@@ -19,9 +19,9 @@ __default__: Connection
 
 
 @retry('InitMySQL', cycle=60)
-def __init__(config: Dict):
-    mysql: Dict = config.mysql
-    init: Dict = mysql.pop('init', {})
+def __init__(config: gdict):
+    mysql: gdict = config.mysql
+    init: gdict = mysql.pop('init', {})
     conn_check_cycle: int = init.pop('connect_check_cycle', None)
 
     for name, conf in mysql.items():
@@ -101,7 +101,7 @@ class Transaction:
 
     def __upgrade_datastyle__(self, data: list = None) -> list:
         """dict -> Dict"""
-        return list(map(lambda x: Dict(**x), data))
+        return list(map(lambda x: gdict(**x), data))
 
     @property
     def fetchone(self):
@@ -110,7 +110,7 @@ class Transaction:
         if self.datastyle is tuple:
             return queryset
 
-        return Dict(**queryset)
+        return gdict(**queryset)
 
     @property
     def fetchall(self):

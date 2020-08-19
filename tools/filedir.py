@@ -1,15 +1,15 @@
 import os
-import json
 import yaml
+import json
 
-from .dadclass import Dict
+from .dadclass import gdict
 
 
 class FileDataOperator:
 
     def __init__(self, db_dir: str):
         self.root: str = genpath(db_dir)
-        self.path: Dict = fetch_deep_path(self.root)
+        self.path: gdict = fetch_deep_path(self.root)
 
     def __getitem__(self, file):
         full = self.path[file]
@@ -116,8 +116,8 @@ def fetch_deep_path(
         root: str = None,
         _paths: 'Not param' = None,
         _root: 'Not param' = None
-) -> Dict:
-    paths = _paths or Dict()
+) -> gdict:
+    paths = _paths or gdict()
     _root = _root or root
 
     if root == _root:
