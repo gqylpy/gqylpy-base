@@ -21,7 +21,7 @@ class Workers(Pool):
             error_callback=None,
             *a, **kw):
         name = name or job_content.__name__
-        workers = workers or (mp.cpu_count() or 4)
+        workers = workers or (mp.cpu_count() or 1)
 
         super().__init__(
             processes=workers,

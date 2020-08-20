@@ -40,11 +40,11 @@ from .time_parser import time2second
 from .time_parser import second2time
 
 from .decorator import retry
+from .decorator import run_time
 from .decorator import try_except
 from .decorator import while_true
 from .decorator import after_func
 from .decorator import before_func
-from .decorator import elapsed_time
 from .decorator import test_func_speed
 
 from .filedir import abspath

@@ -2,7 +2,7 @@ log:
   init:
     level: DEBUG
     output: both
-    handlers: [log/default.log, /var/log/mec_api.log]
+    handlers: [log/default.log, /var/log/gqylpy-base.log]
     datefmt: '%d/%b/%y:%H:%M:%S %z'
     logfmt: '[%(asctime)s] [%(processName)s.%(threadName)s:%(levelname)s] %(message)s'
   logger:
@@ -24,7 +24,7 @@ log:
 #    username: root
 #    password: root
 #  mon:
-#    host: 10.121.112.110
+#    host: 10.121.11.219
 #    port: 30886
 #    database: mon
 
