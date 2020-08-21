@@ -14,7 +14,6 @@ from . import influx
 from . import aliyun
 from . import crypto
 from . import dbpool
-from . import workers
 from . import over_func
 from . import secure_shell
 from . import filedir as file
@@ -24,7 +23,7 @@ from . import time_parser as tm
 
 from .over_func import add_over_func
 
-from .workers import Workers
+from .pool import GQYLPYPool
 from .secure_shell import SecureShell
 
 from .crypto import encrypt
