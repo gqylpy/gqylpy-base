@@ -7,6 +7,7 @@ import subprocess
 import collections
 
 from . import log
+from . import pool
 from . import kafka
 from . import mongo
 from . import mysql
@@ -23,7 +24,7 @@ from . import time_parser as tm
 
 from .over_func import add_over_func
 
-from .pool import GQYLPYPool
+from .pool import ProcessPool
 from .secure_shell import SecureShell
 
 from .crypto import encrypt

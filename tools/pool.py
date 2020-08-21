@@ -7,7 +7,7 @@ from multiprocessing.pool import Pool
 from multiprocessing.pool import AsyncResult
 
 
-class GQYLPYPool(Pool):
+class GQYLPYProcessPool(Pool):
 
     def __init__(
             self,
@@ -84,3 +84,6 @@ class GQYLPYPool(Pool):
                 running_last_change_time = time.time()
 
         return True
+
+
+ProcessPool = GQYLPYProcessPool
