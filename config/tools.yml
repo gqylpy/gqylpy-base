@@ -2,16 +2,16 @@ log:
   init:
     level: DEBUG
     output: both
-    handlers: [log/default.log, /var/log/gqylpy-base.log]
     datefmt: '%d/%b/%y:%H:%M:%S %z'
+    handlers: [log/default.log, /var/log/gqylpy-base.log]
     logfmt: '[%(asctime)s] [%(processName)s.%(threadName)s:%(levelname)s] %(message)s'
+  simple:
+    datefmt: '%Y-%m-%d %H:%M:%S'
+    logfmt: '[%(asctime)s] [%(levelname)s] %(message)s'
   logger:
     output: stream
     datefmt: '%Y-%m-%d %H:%M:%S'
     logfmt: '[%(asctime)s] [%(module)s.%(funcName)s line:%(lineno)d] [%(levelname)s] %(message)s'
-  simple:
-    datefmt: '%Y-%m-%d %H:%M:%S'
-    logfmt: '[%(asctime)s] [%(levelname)s] %(message)s'
 
 
 #mongo:
