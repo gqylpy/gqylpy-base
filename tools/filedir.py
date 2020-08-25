@@ -103,13 +103,8 @@ class Filetor:
 
         return fp.write(str(data))
 
-    @classmethod
-    def _for_yml_(cls, *a, **kw):
-        return cls._for_yaml_(*a, **kw)
-
-    @classmethod
-    def _for_txt_(cls, *a, **kw):
-        return cls._for_text_(*a, **kw)
+    _for_yml_ = _for_yaml_
+    _for_txt_ = _for_text_
 
 
 def fetch_deep_path(
