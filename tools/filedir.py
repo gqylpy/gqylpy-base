@@ -153,4 +153,9 @@ def genpath(*a) -> str:
     return dir
 
 
+isabs = os.path.isabs
+isdir = os.path.isdir
+isfile = os.path.isfile
+exists = os.path.exists
+
 filetor = Filetor
