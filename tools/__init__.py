@@ -47,10 +47,10 @@ from .decorator import after_func
 from .decorator import before_func
 from .decorator import test_func_speed
 
+from .filedir import filetor
 from .filedir import abspath
 from .filedir import dirname
 from .filedir import genpath
-from .filedir import filetor
 from .filedir import fetch_deep_path
 from .filedir import FileDataOperator
 
@@ -79,14 +79,14 @@ def exec_cmd(cmd: str) -> str:
     return output
 
 
-def regular_string_to_dict(
-        regular_string: str,
+def cmd_list_to_dict(
+        cmd_list: str,
         split: str = None
 ) -> list:
     """Used to turn the command output result with a title
     into a dictionary, such as `kubectl get pod`."""
     result = [[value.strip() for value in line.split(split)]
-              for line in regular_string.splitlines()]
+              for line in cmd_list.splitlines()]
     keys = [key.lower() for key in result[0]]
     return [dict(zip(keys, values)) for values in result[1:]]
 
@@ -216,7 +216,7 @@ def hump(name: str) -> str:
     if '-' in name:
         name: str = ''.join(_.capitalize() for _ in name.split('-'))
 
-    return name
+    return name[0].upper() + name[1:]
 
 
 def underline(name: str) -> str:
