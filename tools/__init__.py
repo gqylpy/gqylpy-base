@@ -103,9 +103,9 @@ def prt(*args, color: int = 31, font: int = 0,
     sep:
         string inserted between values, default a space.
     """
-    print(
-        f'\033[{font};{color};0m{sep.join(str(i) for i in args)}\033[0m',
-        end=end, file=file)
+    info: str = sep.join(str(i) for i in args)
+    format: str = f'\033[{font};{color};0m{info}\033[0m'
+    print(format, end=end, file=file)
 
 
 class md5:
