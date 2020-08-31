@@ -94,7 +94,7 @@ def cmd_list_to_dict(
 def prt(*args, color: int = 31, font: int = 0,
         end: str = '\n', sep: str = ' ', file: open = None):
     """
-    Custom Print Font and Color.
+    Custom print font and color.
 
     Color:
         31-red 32-green 34-blue 37-Gray 38-black
