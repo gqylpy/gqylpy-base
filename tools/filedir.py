@@ -39,8 +39,6 @@ class FileDataOperator:
             os.removedirs(full)
 
     def __getattr__(self, file):
-        if file in ['root', 'path']:
-            return super().__getattribute__(file)
         return self[file]
 
     def __setattr__(self, file, value):
