@@ -112,7 +112,7 @@ class Retry(BaseDecorator):
                 exc_name: str = type(e).__name__
 
                 log.simple.warning(
-                    f'[count:{count}] {sign}.{exc_name}: {e}')
+                    f'[count:{count}/{self.count or "N"}] {sign}.{exc_name}: {e}')
 
                 if self.count and count == self.count:
                     raise e
