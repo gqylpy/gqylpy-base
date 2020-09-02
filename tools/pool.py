@@ -1,13 +1,14 @@
 import os
 import time
 
+import threading as th
 import multiprocessing as mp
 
 from multiprocessing.pool import Pool
 from multiprocessing.pool import AsyncResult
 
 
-class GQYLPYProcessPool(Pool):
+class GQYLPYBatchProcessPool(Pool):
 
     def __init__(
             self,
@@ -29,14 +30,13 @@ class GQYLPYProcessPool(Pool):
         self.name = name
         self.processes = processes
 
-        self.running = []
-        self.results = []
-        self.timeout_count = None
+        self.running = {}
 
     @staticmethod
     def _initializer_(name: str, send_conn):
-        send_conn.send(os.getpid())
-        mp.current_process().name = name
+        pid: int = os.getpid()
+        # send_conn.send(pid)
+        mp.current_process().name = name + str(pid)
 
     def submit(self, func, *a, **kw) -> AsyncResult:
         callback = kw.pop('callback', None)
@@ -47,43 +47,57 @@ class GQYLPYProcessPool(Pool):
             callback=callback,
             error_callback=error_callback)
 
-        task.pid = self.recv_conn.recv()
+        # task.pid = self.recv_conn.recv()
 
-        self.running.append(task)
+        self.running.setdefault(self.thread_name, []).append(task)
 
         return task
 
-    def block(self, timeout: int = None) -> bool:
-        self.results = []
-        self.timeout_count = None
+    def block(
+            self,
+            timeout: int or float = None,
+            cycle: int or float = .1
+    ) -> list:
+        thread_name: str = self.thread_name
 
-        running_length = len(self.running)
+        if thread_name not in self.running:
+            return []
+
+        running: list = self.running[thread_name]
+        results = []
+
+        running_length = len(running)
         running_last_change_time = time.time()
 
-        while self.running:
-            for task, _ in self.running.copy():
+        while running:
+            time.sleep(cycle)
+
+            for task in running.copy():
                 if task.ready():
-                    self.running.remove(task)
+                    running.remove(task)
 
-                    if task.successful():
-                        self.results.append(task.get())
+                    if task.successful() and task.get():
+                        results.append(task.get())
 
-            running_length_now = len(self.running)
+            running_length_now = len(running)
 
             if timeout and running_length_now == running_length:
                 if time.time() - running_last_change_time > timeout:
-                    self.timeout_count = running_length_now
+                    # for task in running:
+                    #     os.kill(task.pid, 9)
 
-                    for _, pid in self.running:
-                        os.kill(pid, 9)
-
-                    return False
+                    running.clear()
+                    break
 
             else:
                 running_length = running_length_now
                 running_last_change_time = time.time()
 
-        return True
+        return results
+
+    @property
+    def thread_name(self) -> str:
+        return th.current_thread().name
 
 
-ProcessPool = GQYLPYProcessPool
+BatchProcessPool = GQYLPYBatchProcessPool

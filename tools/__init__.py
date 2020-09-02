@@ -24,7 +24,7 @@ from . import time_parser as tm
 
 from .over_func import add_over_func
 
-from .pool import ProcessPool
+from .pool import BatchProcessPool
 from .secure_shell import SecureShell
 
 from .crypto import encrypt
