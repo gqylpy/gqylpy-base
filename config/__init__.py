@@ -36,8 +36,7 @@ for _name in _file.config:
 gqy.__init__(tools)
 
 if file.abspath(sys.argv[0]) == tools.path['go.py']:
-    if not _in_container:
-        _file['log/pid'] = os.getpid()
+    _file['log/pid'] = os.getpid()
 
     gqy.add_over_func(log.simple.info, 'over')
     log.simple.info('start')

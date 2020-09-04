@@ -12,22 +12,21 @@ class FileDataOperator:
         self.path: gdict = fetch_deep_path(self.root)
 
     def __getitem__(self, file):
-        full = self.path[file]
+        full: str = self.path[file]
 
-        if os.path.isfile(full):
+        if isfile(full):
             return filetor(self.path[file])
 
         return os.listdir(full)
 
     def __setitem__(self, file, data):
-        if file not in self.path:
-            self.path[file] = abspath(self.root, file)
+        try:
+            full = self.path[file]
+        except KeyError:
+            full = abspath(self.root, file)
+            self.path[file] = full
 
-        full = self.path[file]
-
-        if not os.path.isdir(os.path.dirname(full)):
-            os.makedirs(os.path.dirname(full))
-
+        genpath(dirname(full))
         filetor(full, data)
 
     def __delitem__(self, file):
