@@ -94,10 +94,10 @@ class Retry(BaseDecorator):
             cycle: int = 0,
             retry_exc: type = Exception,
     ):
-        self.retry_exc = retry_exc
-        self.count = count
         self.mark = mark
+        self.count = count
         self.cycle = cycle
+        self.retry_exc = retry_exc
 
     def core(self, func, *a, **kw):
         count = 0
