@@ -91,7 +91,7 @@ class Retry(BaseDecorator):
             self,
             mark: str = None,
             count: int = None,
-            cycle: int = 10,
+            cycle: int = 0,
             retry_exc: type = Exception,
     ):
         self.retry_exc = retry_exc
