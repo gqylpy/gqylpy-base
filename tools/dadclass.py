@@ -1,4 +1,4 @@
-from collections import Iterable
+from collections.abc import Iterable
 
 
 class SingletonMode:
@@ -36,18 +36,18 @@ class GQYLPYDict(dict):
         2-6 times slower than the native `dict`.
     """
 
-    def __init__(self, ____: dict or list = None, **kw):
-        for name, value in (____ or kw).items():
+    def __init__(self, __=None, **kw):
+        for name, value in (__ or kw).items():
             self[name] = GQYLPYDict(value)
 
-    def __new__(cls, ____={}, **kw):
-        if isinstance(____, dict):
+    def __new__(cls, __={}, **kw):
+        if isinstance(__, dict):
             return dict.__new__(cls)
 
-        if isinstance(____, Iterable) and not isinstance(____, str):
-            return [GQYLPYDict(v) for v in ____]
+        if isinstance(__, Iterable) and not isinstance(__, str):
+            return [GQYLPYDict(v) for v in __]
 
-        return ____
+        return __
 
     def __getattribute__(self, name):
         """`self.name` to `self[name]`"""
