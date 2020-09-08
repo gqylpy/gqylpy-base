@@ -12,7 +12,10 @@ class FileDataOperator:
         self.path: gdict = fetch_deep_path(self.root)
 
     def __getitem__(self, file):
-        full: str = self.path[file]
+        full = self.path[file]
+
+        assert exists(full), \
+            'The file was deleted after the program started.'
 
         if isfile(full):
             return filetor(self.path[file])
@@ -20,19 +23,20 @@ class FileDataOperator:
         return os.listdir(full)
 
     def __setitem__(self, file, data):
-        try:
-            full = self.path[file]
-        except KeyError:
-            full = abspath(self.root, file)
-            self.path[file] = full
+        if file not in self.path:
+            self.path[file] = abspath(self.root, file)
 
-        genpath(dirname(full))
+        full = self.path[file]
+
+        if not isdir(dirname(full)):
+            os.makedirs(dirname(full))
+
         filetor(full, data)
 
     def __delitem__(self, file):
         full = self.path.pop(file)
 
-        if os.path.isfile(full):
+        if isfile(full):
             os.remove(full)
         else:
             os.removedirs(full)
@@ -119,7 +123,7 @@ def fetch_deep_path(
         full = abspath(root, name)
         paths[full.replace(_root, '')[1:].replace('\\', '/')] = full
 
-        if os.path.isdir(full):
+        if isdir(full):
             fetch_deep_path(full, paths, _root)
 
     return paths
@@ -146,7 +150,7 @@ def genpath(*a) -> str:
     creates it if it does not exist, and returns it.
     """
     dir: str = abspath(*a)
-    os.path.exists(dir) or os.makedirs(dir)
+    exists(dir) or os.makedirs(dir)
     return dir
 
 

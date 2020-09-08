@@ -24,7 +24,7 @@ class TryExcept(BaseDecorator):
 
     def __init__(
             self,
-            exc_type: type = Exception,
+            exc_type=Exception,
             mark: str = None,
             ignore: bool = False,
             exc_return: ... = None
@@ -51,9 +51,6 @@ class TryExcept(BaseDecorator):
         exc_name: str = type(err).__name__
 
         log.simple.error(f'{mark}.{exc_name}: {str(err)}')
-
-        # tools.aliyun.send_mail(
-        #     Subject=f'{mark}.{exc_name}', TextBody=err)
 
 
 class WhileTrue(BaseDecorator):
@@ -92,7 +89,7 @@ class Retry(BaseDecorator):
             mark: str = None,
             count: int = None,
             cycle: int = 0,
-            retry_exc: type = Exception,
+            retry_exc=Exception,
     ):
         self.mark = mark
         self.count = count
@@ -190,7 +187,7 @@ class TestFuncSpeed(BaseDecorator):
 
 
 retry = Retry
-run_time = RunTime
 try_except = TryExcept
 while_true = WhileTrue
+run_time = RunTime
 test_func_speed = TestFuncSpeed
