@@ -8,7 +8,7 @@ from multiprocessing.pool import Pool
 from multiprocessing.pool import AsyncResult
 
 
-class GQYLPYBatchProcessPool(Pool):
+class GQYLPYProcessPool(Pool):
 
     def __init__(
             self,
@@ -100,4 +100,4 @@ class GQYLPYBatchProcessPool(Pool):
         return th.current_thread().name
 
 
-BatchProcessPool = GQYLPYBatchProcessPool
+ProcessPool = GQYLPYProcessPool
