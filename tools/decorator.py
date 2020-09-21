@@ -4,6 +4,7 @@ import functools
 
 import tools
 from . import log
+from .time_parser import second2time
 
 
 class BaseDecorator(metaclass=abc.ABCMeta):
@@ -24,7 +25,7 @@ class TryExcept(BaseDecorator):
 
     def __init__(
             self,
-            exc_type=Exception,
+            exc_type: type = Exception,
             mark: str = None,
             ignore: bool = False,
             exc_return: ... = None
@@ -42,7 +43,7 @@ class TryExcept(BaseDecorator):
                 try:
                     self.exception_handler(func.__name__, e)
                 except Exception as e:
-                    print(f'[{int(time.time())}] ExceptionHandlerError: {e}')
+                    print(f'[{int(time.time())}] TryExceptError: {e}')
 
         return self.exc_return
 
@@ -88,8 +89,8 @@ class Retry(BaseDecorator):
             self,
             mark: str = None,
             count: int = None,
-            cycle: int = 0,
-            retry_exc=Exception,
+            cycle: int = 10,
+            retry_exc: type = Exception,
     ):
         self.mark = mark
         self.count = count
@@ -103,16 +104,20 @@ class Retry(BaseDecorator):
             try:
                 return func(*a, **kw)
             except self.retry_exc as e:
-                count += 1
+                try:
+                    count += 1
 
-                sign: str = self.mark or tools.hump(func.__name__)
-                exc_name: str = type(e).__name__
+                    sign: str = self.mark or tools.hump(func.__name__)
+                    exc_name: str = type(e).__name__
 
-                log.simple.warning(
-                    f'[count:{count}/{self.count or "N"}] {sign}.{exc_name}: {e}')
+                    log.simple.warning(
+                        f'[count:{count}/{self.count or "N"}] {sign}.{exc_name}: {e}')
 
-                if self.count and count == self.count:
-                    raise e
+                    if self.count and count == self.count:
+                        raise e
+
+                except Exception as e:
+                    print(f'[{int(time.time())}] RetryError: {e}')
 
             time.sleep(self.cycle)
 
@@ -187,7 +192,7 @@ class TestFuncSpeed(BaseDecorator):
 
 
 retry = Retry
+run_time = RunTime
 try_except = TryExcept
 while_true = WhileTrue
-run_time = RunTime
 test_func_speed = TestFuncSpeed
