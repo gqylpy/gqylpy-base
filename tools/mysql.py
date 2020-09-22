@@ -145,7 +145,7 @@ def __health_examination__(cycle: int = 60 * 10):
         # Fetch all connection.
         for name in sys.modules[__name__].__dir__():
             value = getattr(sys.modules[__name__], name)
-            if name != 'default' and isinstance(value, Connection):
+            if name != '__default__' and isinstance(value, Connection):
                 conns.append(value)
 
         while True:

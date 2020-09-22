@@ -113,11 +113,11 @@ class Retry(BaseDecorator):
                     log.simple.warning(
                         f'[count:{count}/{self.count or "N"}] {sign}.{exc_name}: {e}')
 
-                    if self.count and count == self.count:
-                        raise e
+                except Exception as ee:
+                    print(f'[{int(time.time())}] RetryError: {ee}')
 
-                except Exception as e:
-                    print(f'[{int(time.time())}] RetryError: {e}')
+                if self.count and count == self.count:
+                    raise e
 
             time.sleep(self.cycle)
 
@@ -166,9 +166,9 @@ class RunTime(BaseDecorator):
         end = time.time()
 
         mark: str = self.mark or tools.hump(func.__name__)
-        exec_time: float = round(end - start, 2)
+        exec_time: str = second2time(end - start)
 
-        log.simple.info(f'{mark}: {exec_time}s')
+        log.simple.info(f'{mark}: {exec_time}')
 
 
 class TestFuncSpeed(BaseDecorator):
