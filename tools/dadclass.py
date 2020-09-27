@@ -36,18 +36,18 @@ class GQYLPYDict(dict):
         2-6 times slower than the native `dict`.
     """
 
-    def __init__(self, __=None, **kw):
-        for name, value in (__ or kw).items():
+    def __init__(self, _data=None, **kw):
+        for name, value in (_data or kw).items():
             self[name] = GQYLPYDict(value)
 
-    def __new__(cls, __={}, **kw):
-        if isinstance(__, dict):
+    def __new__(cls, _data={}, **kw):
+        if isinstance(_data, dict):
             return dict.__new__(cls)
 
-        if isinstance(__, Iterable) and not isinstance(__, str):
-            return [GQYLPYDict(v) for v in __]
+        if isinstance(_data, Iterable) and not isinstance(_data, str):
+            return [GQYLPYDict(v) for v in _data]
 
-        return __
+        return _data
 
     def __getattribute__(self, name):
         """`self.name` to `self[name]`"""
