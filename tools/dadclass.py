@@ -32,7 +32,7 @@ class GQYLPYDict(dict):
     allow the dict to get or set values by `d.key`.
 
     Warning:
-        After testing, 'Dict' gets values about
+        After testing, 'GQYLPYDict' gets values about
         2-6 times slower than the native `dict`.
     """
 
