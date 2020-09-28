@@ -1,8 +1,6 @@
 *.pyc
 *~
-/.push
-/nohup.out
-/log/pid
+.gitreview
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
