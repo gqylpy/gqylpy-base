@@ -1,8 +1,8 @@
 import abc
 import time
 import functools
+import tools as gqy
 
-import tools
 from . import log
 from .time_parser import second2time
 
@@ -48,7 +48,7 @@ class TryExcept(BaseDecorator):
         return self.exc_return
 
     def exception_handler(self, func_name: str, err: Exception):
-        mark: str = self.mark or tools.hump(func_name)
+        mark: str = self.mark or gqy.hump(func_name)
         exc_name: str = type(err).__name__
 
         log.simple.error(f'{mark}.{exc_name}: {str(err)}')
@@ -107,7 +107,7 @@ class Retry(BaseDecorator):
                 try:
                     count += 1
 
-                    sign: str = self.mark or tools.hump(func.__name__)
+                    sign: str = self.mark or gqy.hump(func.__name__)
                     exc_name: str = type(e).__name__
 
                     log.simple.warning(
@@ -165,7 +165,7 @@ class RunTime(BaseDecorator):
         func(*a, **kw)
         end = time.time()
 
-        mark: str = self.mark or tools.hump(func.__name__)
+        mark: str = self.mark or gqy.hump(func.__name__)
         exec_time: str = second2time(end - start)
 
         log.simple.info(f'{mark}: {exec_time}')
@@ -186,7 +186,7 @@ class TestFuncSpeed(BaseDecorator):
             end = time.time()
             speeds.append(end - start)
 
-        for action in min, max, tools.mean, sum:
+        for action in min, max, gqy.mean, sum:
             result = round(action(speeds), self.keep)
             print(f'{action.__name__}: {result}')
 
