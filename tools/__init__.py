@@ -7,6 +7,7 @@ import subprocess
 import collections
 
 from . import log
+from . import kube
 from . import pool
 from . import kafka
 from . import mongo

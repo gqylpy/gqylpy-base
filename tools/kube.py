@@ -1,16 +1,17 @@
 import sys
-import tools as gqy
 
-from .decorator import retry
 from kubernetes import client as kube_client
+
+from .dadclass import gdict
+from .decorator import retry
 
 __ = sys.modules[__name__]
 
 
 @retry('InitKube', cycle=60)
-def __init__(config: gqy.gdict):
-    kube: gqy.gdict = config.kube
-    init: gqy.gdict = kube.pop('init', {})
+def __init__(config: gdict):
+    kube: gdict = config.kube
+    init: gdict = kube.pop('init', {})
 
     for name, conf in kube.items():
 
@@ -37,9 +38,8 @@ def __init__(config: gqy.gdict):
         setattr(__, name, kube_api)
 
 
-mec_cluster: kube_client.CoreV1Api
-oi219_cluster: kube_client.CoreV1Api
-oi_public_cluster: kube_client.CoreV1Api
+mec: kube_client.CoreV1Api
+
 
 """
 apiVersion: v1
