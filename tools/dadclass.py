@@ -26,6 +26,14 @@ class DictMode:
         self.__delattr__(name)
 
 
+class IterMode:
+    """Inherit me, your object can be iterated,
+    and can be called by the 'if in' statement."""
+
+    def __iter__(self):
+        yield from self
+
+
 class GQYLPYDict(dict):
     """GQYLPYDict == dict
     I inherited 'dict', my main function is to

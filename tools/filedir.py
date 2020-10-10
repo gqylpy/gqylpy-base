@@ -158,5 +158,6 @@ isabs = os.path.isabs
 isdir = os.path.isdir
 isfile = os.path.isfile
 exists = os.path.exists
+basename = os.path.basename
 
 filetor = Filetor
