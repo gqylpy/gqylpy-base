@@ -15,28 +15,31 @@ from tools import file
 core: gqy.gdict
 tools: gqy.gdict
 
-_in_container: bool = gqy.in_container()
-_file = file.FileDataOperator(file.dirname(__file__, level=2))
-_db = file.FileDataOperator(_file.path.db)
-_title: str = gqy.hump(os.path.basename(_file.root))
+in_container: bool = gqy.in_container()
+basedir = file.FileDataOperator(file.dirname(__file__, 2))
+db = file.FileDataOperator(basedir.path.db)
+title: str = gqy.hump(os.path.basename(basedir.root))
 
-for _name in _file.config:
-    if _name.endswith('.yml') or _name.endswith('.yaml'):
-        __ = gqy.gdict(_file[f'config/{_name}'] or {})
+for name in basedir.config:
+    if name.endswith('.yml') or name.endswith('.yaml'):
+        cnf = gqy.gdict(basedir[f'config/{name}'] or {})
 
-        __.title, __.file, __.db, __.path, __.in_container = \
-            _title, _file, _db, _file.path, _in_container
+        cnf.db = db
+        cnf.title = title
+        cnf.basedir = basedir
+        cnf.path = basedir.path
+        cnf.in_container = in_container
 
-        gqy.dict_inter_process(__, lambda k, v: re.findall(
+        gqy.dict_inter_process(cnf, lambda k, v: re.findall(
             tm.Time2Second.pattern.pattern, str(v), re.X
         ) and tm.Time2Second(v))
 
-        setattr(sys.modules[__name__], _name.split('.')[0], __)
+        setattr(sys.modules[__name__], name.split('.')[0], cnf)
 
 gqy.__init__(tools)
 
 if file.abspath(sys.argv[0]) == tools.path['go.py']:
-    _file['log/pid'] = os.getpid()
+    basedir['log/pid'] = os.getpid()
 
     gqy.add_over_func(log.simple.info, 'over')
     log.simple.info('start')
