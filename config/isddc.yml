@@ -15,9 +15,14 @@ log:
 
 
 #mongo:
-#  mon:
-#    host: mongodb://10.121.112.110:30017/mon
-
+#  m219:
+#    host: 10.121.11.219
+#    port: 30017
+#    db: mon
+#  m151:
+#    host: 10.121.8.151
+#    port: 30017
+#    db: mon
 
 #influx:
 #  init:

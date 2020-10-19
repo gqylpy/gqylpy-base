@@ -13,6 +13,7 @@ def __init__(config: gdict):
     init: gdict = config.mongo.pop('init', {})
 
     for name, conf in config.mongo.items():
+        db: str = conf.pop('db', name)
 
         for item in init.items():
             conf.setdefault(item)
@@ -21,7 +22,7 @@ def __init__(config: gdict):
 
         over_func.add(client.close)
 
-        setattr(sys.modules[__name__], name, client[name])
+        setattr(sys.modules[__name__], name, client[db])
 
 
 mon: Database

@@ -1,28 +1,28 @@
-"""https://github.com/gqylpy/gqylpy-base
-The code architecture developed by the gqylpy team,
+"""https://github.com/idclpy/idclpy-base
+The code architecture developed by the idclpy team,
 it has unique configuration pattern and a large toolset,
 improvements have been under way since the beginning of 2019.
 """
 import os
 import re
 import sys
-import tools as gqy
+import isddc as idc
 
-from tools import tm
-from tools import log
-from tools import file
+from isddc import tm
+from isddc import log
+from isddc import file
 
-core: gqy.gdict
-tools: gqy.gdict
+core: idc.gdict
+isddc: idc.gdict
 
-in_container: bool = gqy.in_container()
+in_container: bool = idc.in_container()
 basedir = file.FileDataOperator(file.dirname(__file__, 2))
 db = file.FileDataOperator(basedir.path.db)
-title: str = gqy.hump(os.path.basename(basedir.root))
+title: str = idc.hump(os.path.basename(basedir.root))
 
 for name in basedir.config:
     if name.endswith('.yml') or name.endswith('.yaml'):
-        cnf = gqy.gdict(basedir[f'config/{name}'] or {})
+        cnf = idc.gdict(basedir[f'config/{name}'] or {})
 
         cnf.db = db
         cnf.title = title
@@ -30,16 +30,16 @@ for name in basedir.config:
         cnf.path = basedir.path
         cnf.in_container = in_container
 
-        gqy.dict_inter_process(cnf, lambda k, v: re.findall(
+        idc.dict_inter_process(cnf, lambda k, v: re.findall(
             tm.Time2Second.pattern.pattern, str(v), re.X
         ) and tm.Time2Second(v))
 
         setattr(sys.modules[__name__], name.split('.')[0], cnf)
 
-gqy.__init__(tools)
+idc.__init__(isddc)
 
-if file.abspath(sys.argv[0]) == tools.path['go.py']:
+if file.abspath(sys.argv[0]) == isddc.path['go.py']:
     basedir['log/pid'] = os.getpid()
 
-    gqy.add_over_func(log.simple.info, 'over')
+    idc.add_over_func(log.simple.info, 'over')
     log.simple.info('start')
